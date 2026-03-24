@@ -2,6 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -35,9 +39,18 @@ app.post('/db', async (req, res) => {
   }
 });
 
+// Serve Frontend in Production
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (req, res) => {
+  const file = path.join(__dirname, 'dist', 'index.html');
+  res.sendFile(file, (err) => {
+     if (err) res.status(404).send("Frontend build not found. Run 'npm run build' first.");
+  });
+});
+
 // Start Server
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`\n✅ DSM Ops Hub Backend Server running on http://localhost:${PORT}`);
+  console.log(`\n✅ DSM Ops Hub Backend Server running on port ${PORT}`);
   console.log(`💾 Database synced to: ${dbPath}\n`);
 });
