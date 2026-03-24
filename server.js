@@ -41,7 +41,7 @@ app.post('/db', async (req, res) => {
 
 // Serve Frontend in Production
 app.use(express.static(path.join(__dirname, 'dist')));
-app.get(/.*/, (req, res) => {
+app.use((req, res) => {
   const file = path.join(__dirname, 'dist', 'index.html');
   res.sendFile(file, (err) => {
      if (err) res.status(404).send("Frontend build not found. Run 'npm run build' first.");
