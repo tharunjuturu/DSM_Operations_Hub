@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Database - Optional depending on if they want to track data
+# database.json
+
+# Portable Node
+node/

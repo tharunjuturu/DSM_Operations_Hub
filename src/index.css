@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  
+  --success: #10b981;
+  --success-bg: #d1fae5;
+  
+  --warning: #f59e0b;
+  --warning-bg: #fef3c7;
+  
+  --danger: #ef4444;
+  --danger-bg: #fee2e2;
+  
+  --info: #3b82f6;
+  --info-bg: #dbeafe;
+
+  --purple: #8b5cf6;
+  --purple-bg: #f3e8ff;
+  
+  --bg: #f8fafc;
+  --focus: #f1f5f9;
+  
+  --text: #0f172a;
+  --text-muted: #64748b;
+  
+  --border: #e2e8f0;
+
+  --sidebar-w: 260px;
+  
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background-color: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--text);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 2px var(--info-bg);
+}
+
+/* Typography Utilities */
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Base Components */
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-md);
+  border: 1px solid var(--border);
+}
+
+/* Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--focus);
+}
+
+.btn-icon-sm {
+  padding: 4px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon-sm:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Badges */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.badge-success { background: var(--success-bg); color: var(--success); }
+.badge-info { background: var(--info-bg); color: var(--info); }
+.badge-warning { background: var(--warning-bg); color: var(--warning); }
+.badge-danger { background: var(--danger-bg); color: var(--danger); }
+.badge-neutral { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+
+/* Global Tables */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  border-bottom: 2px solid var(--border);
+  background: white;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+tr:hover td {
+  background-color: var(--focus);
+}
+
+.row-danger,
+.row-danger td {
+  background-color: var(--danger-bg) !important;
+}
+
+.row-warning,
+.row-warning td {
+  background-color: var(--warning-bg) !important;
+}
+
+/* Dashboard Specific Table Additions */
+.table-container {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.col-fixed {
+  position: sticky;
+  z-index: 5;
+  background-color: white; 
+}
+
+thead .col-fixed {
+  z-index: 11;
+  background-color: white;
+}
+
+tfoot .col-fixed {
+  z-index: 11;
+  background-color: white;
+}
+
+/* Tasks.jsx Freeze 1 Column */
+.freeze-col-1 th:nth-child(1),
+.freeze-col-1 td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background-color: white;
+  border-right: 1px solid var(--border);
+}
+
+.freeze-col-1 thead th:nth-child(1) {
+  z-index: 11;
+}
+
+/* DSR.jsx Freeze 2 Columns */
+.freeze-col-2 th:nth-child(1),
+.freeze-col-2 td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 5;
+  background-color: white;
+}
+
+.freeze-col-2 th:nth-child(2),
+.freeze-col-2 td:nth-child(2) {
+  position: sticky;
+  left: 50px;
+  z-index: 5;
+  background-color: white;
+  border-right: 1px solid var(--border);
+}
+
+.freeze-col-2 thead th:nth-child(1),
+.freeze-col-2 thead th:nth-child(2) {
+  z-index: 11;
+}
+
+/* Zebra Striping */
+tr:nth-child(even) td:not(.col-fixed) {
+  background-color: #fafafa;
+}
+
+tr:nth-child(even) .col-fixed,
+tr:nth-child(even) .freeze-col-1 td:nth-child(1),
+tr:nth-child(even) .freeze-col-2 td:nth-child(1),
+tr:nth-child(even) .freeze-col-2 td:nth-child(2) {
+  background-color: #fafafa;
+}
+
+tr:hover .col-fixed,
+tr:hover .freeze-col-1 td:nth-child(1),
+tr:hover .freeze-col-2 td:nth-child(1),
+tr:hover .freeze-col-2 td:nth-child(2),
+tr:hover td {
+  background-color: #f0f7ff !important;
+}
+
+.row-selected .col-fixed,
+.row-selected td {
+  background-color: #e6f4ff !important;
+}
+
+.freeze-shadow {
+  box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+  z-index: 6;
+}
+
+thead .freeze-shadow,
+tfoot .freeze-shadow {
+  z-index: 12;
+}
+
+.attendance-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}

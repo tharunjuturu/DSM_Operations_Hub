@@ -1,0 +1,1824 @@
+{
+  "tasks": [
+    {
+      "sno": 1,
+      "function": "FSEE_PHAB",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "SPA_00122",
+        "SPA_00122",
+        "SPA_00341",
+        "SPA_00343"
+      ],
+      "startDate": "2026-02-02",
+      "endDate": "2026-03-31",
+      "remarks": "Kimaya Patil is the task owner.",
+      "owners": [
+        {
+          "id": "usr_165",
+          "name": "Kimaya Patil",
+          "totalFT": 702,
+          "completedFT": 517,
+          "startDate": "2026-02-02",
+          "endDate": "2026-03-31",
+          "status": "In Progress",
+          "remarks": "",
+          "todayFTs": {
+            "2026-03-20": 10,
+            "2026-03-19": 5,
+            "2026-03-23": 16
+          },
+          "dailyRemarks": {
+            "2026-03-20": "Impacted 10 sheets",
+            "2026-03-23": "Impacted 16 sheets"
+          }
+        },
+        {
+          "id": "usr_69",
+          "name": "Tharun Kumar Juturu",
+          "totalFT": 100,
+          "completedFT": 56,
+          "startDate": "2026-03-13",
+          "endDate": "2026-03-31",
+          "status": "In Progress",
+          "remarks": "",
+          "todayFTs": {
+            "2026-03-20": 15,
+            "2026-03-19": 5,
+            "2026-03-23": 15
+          },
+          "dailyRemarks": {
+            "2026-03-20": "Impacted 15 sheets and DC review worked",
+            "2026-03-23": "Impacted 15 sheets"
+          }
+        },
+        {
+          "id": "usr_613",
+          "name": "Divya",
+          "totalFT": 100,
+          "completedFT": 4,
+          "startDate": "2026-02-23",
+          "endDate": "2026-03-31",
+          "status": "Yet To Start",
+          "remarks": "",
+          "todayFTs": {
+            "2026-03-20": 5,
+            "2026-03-19": 5,
+            "2026-03-23": 4
+          },
+          "dailyRemarks": {
+            "2026-03-20": "Impacted 5 sheets and worked on new task analysis",
+            "2026-03-23": "treated 4 requirements. 4 sheet newly impacted 1 sheet previously."
+          }
+        }
+      ],
+      "totalFT": 902,
+      "completedFT": 577,
+      "progress": 0.6396895787139689,
+      "status": "In Progress",
+      "last_updated": "2026-03-23",
+      "include_in_dsr": true,
+      "todayFTs": {
+        "2026-03-20": 10
+      }
+    },
+    {
+      "sno": 2,
+      "function": "FSEE_PICC",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "SPA_00359"
+      ],
+      "startDate": "2026-01-28",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_206",
+          "name": "Sri Suriya Prakash",
+          "totalFT": 147,
+          "completedFT": 147,
+          "startDate": "2026-01-28",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-03-23": "worked on QIA files and sent PT for FR pending with check files generation"
+          }
+        },
+        {
+          "id": "usr_611",
+          "name": "Sandeep P",
+          "totalFT": 41,
+          "completedFT": 41,
+          "startDate": "2026-01-28",
+          "endDate": "2026-03-31",
+          "remarks": ""
+        }
+      ],
+      "totalFT": 188,
+      "completedFT": 188,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23",
+      "deliveredDate": "2026-03-23"
+    },
+    {
+      "sno": 3,
+      "function": "FSEE_ECLI",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00232"
+      ],
+      "startDate": "2026-03-06",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_483",
+          "name": "Kavipriya Balasubramani ",
+          "totalFT": 34,
+          "completedFT": 34,
+          "startDate": "2026-03-06",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-03-23": "Worked on the check files generation and solving the check report errors"
+          }
+        }
+      ],
+      "totalFT": 34,
+      "completedFT": 34,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23",
+      "deliveredDate": "2026-03-23"
+    },
+    {
+      "sno": 4,
+      "function": "FSEE_CVMODE",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "SPA_00348",
+        "SPA_00371",
+        "AMAL_00234"
+      ],
+      "startDate": "2026-02-02",
+      "endDate": "2026-03-31",
+      "status": "FR",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_130",
+          "name": "Divya Patil",
+          "totalFT": 235,
+          "completedFT": 235,
+          "startDate": "2026-02-02",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-03-23": "validated 3 points. Refused 1point"
+          }
+        }
+      ],
+      "totalFT": 235,
+      "completedFT": 235,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23",
+      "deliveredDate": "2026-03-23"
+    },
+    {
+      "sno": 5,
+      "function": "FSEE_ODB",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "SPA_00360",
+        "SPA_00363",
+        "AMAL_00204"
+      ],
+      "startDate": "2025-12-31",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_379",
+          "name": "Isha Rai",
+          "totalFT": 191,
+          "completedFT": 191,
+          "startDate": "2025-12-31",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "todayFTs": {
+            "2026-03-23": 7
+          },
+          "dailyRemarks": {
+            "2026-03-23": "Created 3 sheets and impacted 4 sheets"
+          }
+        }
+      ],
+      "totalFT": 191,
+      "completedFT": 191,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23",
+      "deliveredDate": "2026-03-23"
+    },
+    {
+      "sno": 6,
+      "function": "FSEE_LIGHTING",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00206",
+        "AMAL_00217",
+        "AMAL_00236",
+        "AMAL_00279",
+        "AMAL_00280"
+      ],
+      "startDate": "2026-03-23",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_382",
+          "name": "Sampath Akula",
+          "totalFT": 70,
+          "completedFT": 4,
+          "startDate": "2026-03-23",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "todayFTs": {
+            "2026-03-23": 4
+          },
+          "dailyRemarks": {
+            "2026-03-23": "Impacted 4 sheets"
+          }
+        }
+      ],
+      "totalFT": 70,
+      "completedFT": 4,
+      "progress": 0.05714285714285714,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23",
+      "deliveredDate": "2026-03-23"
+    },
+    {
+      "sno": 7,
+      "function": "FSEE_PUCSM",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00207",
+        "AMAL_00213",
+        "AMAL_00235",
+        "AMAL_00238",
+        "AMAL_00251",
+        "AMAL_00269",
+        "AMAL_00259"
+      ],
+      "startDate": "2026-02-27",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_903",
+          "name": "Hepsiba Pilli",
+          "totalFT": 110,
+          "completedFT": 110,
+          "startDate": "2026-02-27",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "todayFTs": {
+            "2026-03-23": -20
+          },
+          "dailyRemarks": {
+            "2026-03-23": "Worked on QIA PT points and check files generation\n\nBlocked some FEPS after that 20 sheets removed from the total impact \n"
+          }
+        }
+      ],
+      "totalFT": 110,
+      "completedFT": 110,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23",
+      "deliveredDate": "2026-03-23"
+    },
+    {
+      "sno": 8,
+      "function": "--",
+      "taskType": "DRE",
+      "taskIds": [
+        "--"
+      ],
+      "startDate": "2026-03-17",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_460",
+          "name": "Minal hage",
+          "totalFT": 29,
+          "completedFT": 6,
+          "startDate": "2026-03-17",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-03-23": "Working on CVMODE FR completed GC sheets and N1 30 sheets."
+          }
+        }
+      ],
+      "totalFT": 29,
+      "completedFT": 6,
+      "progress": 0.20689655172413793,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23"
+    },
+    {
+      "sno": 9,
+      "function": "--",
+      "taskType": "IA",
+      "taskIds": [
+        "--"
+      ],
+      "startDate": "2026-03-01",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_614",
+          "name": "Mamata Patil",
+          "totalFT": 1,
+          "completedFT": 0,
+          "startDate": "2026-03-01",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-03-23": "Worked on PPT preparation and supported for the Task FSEE_PUCSM Check Report Generation."
+          }
+        }
+      ],
+      "totalFT": 1,
+      "completedFT": 0,
+      "progress": 0,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23"
+    },
+    {
+      "sno": 10,
+      "function": "FSEE_ACT_TC",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00274",
+        "AMAL_00261",
+        "AMAL_00270"
+      ],
+      "startDate": "2026-03-23",
+      "endDate": "2026-03-31",
+      "status": "In Progress",
+      "remarks": "",
+      "owners": [
+        {
+          "id": "usr_27",
+          "name": "Megadesh S",
+          "totalFT": 45,
+          "completedFT": 5,
+          "startDate": "2026-03-23",
+          "endDate": "2026-03-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-03-23": "Impacted 5 sheets"
+          }
+        }
+      ],
+      "totalFT": 45,
+      "completedFT": 5,
+      "progress": 0.1111111111111111,
+      "include_in_dsr": true,
+      "last_updated": "2026-03-23"
+    }
+  ],
+  "logs": [],
+  "teamModes": [
+    {
+      "name": "Divya",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya",
+      "date": "2026-03-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya",
+      "date": "2026-03-06",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Srivijay",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Srivijay",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Srivijay",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya",
+      "date": "2026-03-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Srivijay",
+      "date": "2026-03-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Rahul",
+      "date": "2026-03-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Anita",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar Juturu",
+      "date": "2026-03-20",
+      "mode": "HALF_DAY",
+      "half": "AM"
+    },
+    {
+      "name": "Divya",
+      "date": "2026-03-23",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Srivijay",
+      "date": "2026-03-23",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Rahul",
+      "date": "2026-03-23",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Anita",
+      "date": "2026-03-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-02",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-02",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-02",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-02",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-03",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-03",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-03",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-03",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-03",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-05",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-06",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-05",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-05",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-06",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-04",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-05",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-05",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-05",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-06",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-06",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-05",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-06",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-09",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-10",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-09",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-09",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-10",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-10",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-10",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-10",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-11",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-11",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-13",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-13",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-12",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-12",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-12",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-12",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-13",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-13",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-17",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-18",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-16",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-17",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-18",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-20",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-17",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-18",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-16",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-17",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-18",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-20",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-17",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-18",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-18",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-17",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-17",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-18",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-17",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-18",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-17",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-18",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-20",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-17",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-17",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-17",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-17",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-18",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-18",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-18",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-18",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-23",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-03-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-03-06",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-03-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-03-24",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-03-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-03-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-03-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-03-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-03-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-03-24",
+      "mode": "WFH",
+      "half": null
+    }
+  ],
+  "teamMembers": [
+    {
+      "sno": 1,
+      "name": "Kavipriya Balasubramani ",
+      "location": "Bangalore",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 2,
+      "name": "Malik Angadi",
+      "location": "Bangalore",
+      "perimeter": "VSM LT"
+    },
+    {
+      "sno": 3,
+      "name": "Megadesh S",
+      "location": "Bangalore",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 4,
+      "name": "Sri Suriya Prakash",
+      "location": "Bangalore",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 5,
+      "name": "Sampath Akula",
+      "location": "Bangalore",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 6,
+      "name": "Sandeep P",
+      "location": "Bangalore",
+      "perimeter": "VSM QG"
+    },
+    {
+      "sno": 7,
+      "name": "Tharun Kumar",
+      "location": "Bangalore",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 8,
+      "name": "Kimaya Patil",
+      "location": "PUNE",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 9,
+      "name": "Divya Patil",
+      "location": "PUNE",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 10,
+      "name": "Hepsiba Pilli",
+      "location": "PUNE",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 11,
+      "name": "Isha Rai",
+      "location": "PUNE",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 12,
+      "name": "Minal hage",
+      "location": "PUNE",
+      "perimeter": "VSM"
+    },
+    {
+      "sno": 13,
+      "name": "Mamata Patil",
+      "location": "PUNE",
+      "perimeter": "VSM IA"
+    }
+  ],
+  "leaveData": [],
+  "holidays": [
+    {
+      "date": "2026-03-19",
+      "name": "Ugadi",
+      "scope": "ALL",
+      "locations": []
+    },
+    {
+      "date": "2026-05-01",
+      "name": "Labour Day",
+      "scope": "ALL",
+      "locations": []
+    }
+  ],
+  "reviews": []
+}

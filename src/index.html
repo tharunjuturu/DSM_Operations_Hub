@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSM Operations Hub</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel standalone for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Zustand UMD build -->
+    <script src="https://unpkg.com/zustand@4.5.2/umd/index.development.js"></script>
+    
+    <!-- React Router DOM UMD build -->
+    <script src="https://unpkg.com/@remix-run/router@1.16.0/dist/router.umd.min.js"></script>
+    <script src="https://unpkg.com/react-router@6.23.0/dist/umd/react-router.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.23.0/dist/umd/react-router-dom.development.js"></script>
+
+    <!-- date-fns minimal implementation (since UMD requires module loaders) -->
+    <script>
+      window.dateFns = {
+        differenceInDays: function(dateLeft, dateRight) {
+          const diffTime = Math.abs(dateLeft - dateRight);
+          return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        },
+        parseISO: function(isoString) {
+          return new Date(isoString);
+        }
+      };
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- Define the Store First -->
+    <script type="text/babel" data-type="module">
+        const { create } = window.zustand;
+        
+        const getToday = () => new Date().toISOString().split('T')[0];
+
+        window.useStore = create((set, get) => ({
+          tasks: [
+            {
+              task_id: "SPA_00348", function: "FSEE_CVMODE", task_type: "PT_Update",
+              owner: "Divya", total_ft: 230, completed_ft: 210, status: "In Progress",
+              start_date: "2026-03-01", delivery_date: "2026-03-22", remarks: "",
+              include_in_dsr: true, last_updated: "2026-03-16"
+            },
+            {
+              task_id: "SPA_00349", function: "FSEE_DRE", task_type: "DRE",
+              owner: "Srivijay", total_ft: 100, completed_ft: 100, status: "FR",
+              start_date: "2026-03-05", delivery_date: "2026-03-15", remarks: "Ready for review",
+              include_in_dsr: false, last_updated: "2026-03-15"
+            }
+          ],
+          logs: [
+            { date: "2026-03-16", task_id: "SPA_00348", owner: "Divya", completed_ft: 210, status: "In Progress", comment: "Updated 2 sheets" }
+          ],
+          teamModes: [
+            { name: "Divya", date: "2026-03-16", mode: "WFH" },
+            { name: "Srivijay", date: "2026-03-16", mode: "WFO" },
+          ],
+          reviews: [
+            { task_id: "SPA_00349", review_type: "FR", reviewer: "Srivijay", review_status: "Pending", assigned_date: "2026-03-15" }
+          ],
+
+          addTask: (task) => set((state) => ({ tasks: [...state.tasks, task] })),
+
+          updateTask: (task_id, updates) => set((state) => {
+            const today = getToday();
+            return {
+              tasks: state.tasks.map(t => {
+                if (t.task_id !== task_id) return t;
+                
+                let newStatus = updates.status || t.status;
+                let newCompleted = updates.completed_ft !== undefined ? updates.completed_ft : t.completed_ft;
+                
+                if (newCompleted > t.total_ft) newCompleted = t.total_ft;
+                if (newCompleted < 0) newCompleted = 0;
+
+                if (updates.completed_ft !== undefined) {
+                   if (newCompleted === 0) newStatus = 'Yet To Start';
+                   else if (newCompleted > 0 && newCompleted < t.total_ft && newStatus === 'Yet To Start') newStatus = 'In Progress';
+                }
+
+                if ((newStatus === 'FR' || newStatus === 'QG') && t.status !== newStatus) {
+                    const reviewExists = state.reviews.find(r => r.task_id === task_id);
+                    if (!reviewExists) {
+                       setTimeout(() => get().assignReviewer({ task_id, review_type: newStatus, reviewer: '', review_status: 'Pending', assigned_date: today }), 0);
+                    }
+                }
+
+                return { ...t, ...updates, completed_ft: newCompleted, status: newStatus, last_updated: today };
+              })
+            };
+          }),
+
+          appendTaskLog: (log) => set((state) => ({ logs: [...state.logs, log] })),
+          assignReviewer: (review) => set((state) => ({ reviews: [...state.reviews, review] })),
+          updateReviewStatus: (task_id, review_status) => set((state) => ({
+            reviews: state.reviews.map(r => r.task_id === task_id ? { ...r, review_status } : r)
+          })),
+
+          setTeamMode: (name, date, mode) => set((state) => {
+            const existing = state.teamModes.find(m => m.name === name && m.date === date);
+            if (existing) {
+              return { teamModes: state.teamModes.map(m => (m.name === name && m.date === date) ? { ...m, mode } : m) };
+            }
+            return { teamModes: [...state.teamModes, { name, date, mode }] };
+          }),
+
+          getActiveTasks: () => get().tasks.filter(t => t.status !== 'Delivered' && t.status !== 'Archive'),
+          getDSRTasks: () => get().tasks.filter(t => t.include_in_dsr)
+        }));
+    </script>
+
+    <!-- Load Local Components -->
+    <script type="text/babel" src="pages/Dashboard.jsx"></script>
+    <script type="text/babel" src="pages/Tasks.jsx"></script>
+    <script type="text/babel" src="pages/MockPages.jsx"></script>
+    <script type="text/babel" src="components/Layout.jsx"></script>
+    <script type="text/babel" src="App.jsx"></script>
+</body>
+</html>
