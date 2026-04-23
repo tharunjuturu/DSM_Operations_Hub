@@ -19,6 +19,10 @@ const dbPath = path.resolve('database.json');
 app.get('/db', async (req, res) => {
   try {
     const data = await fs.readFile(dbPath, 'utf8');
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    res.setHeader('Surrogate-Control', 'no-store');
     res.json(JSON.parse(data));
   } catch (err) {
     if (err.code === 'ENOENT') {

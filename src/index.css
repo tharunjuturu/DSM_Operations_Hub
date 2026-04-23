@@ -316,3 +316,43 @@ tfoot .freeze-shadow {
   from { transform: translateX(100%); }
   to { transform: translateX(0); }
 }
+
+/* Premium UI Enhancements */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-sm);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.hover-lift {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .6; }
+}

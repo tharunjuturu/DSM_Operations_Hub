@@ -8,4 +8,7 @@ export default defineConfig({
       '/db': 'http://localhost:3001',
     },
   },
+  test: {
+    environment: 'node',
+  },
 })

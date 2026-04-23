@@ -1,0 +1,292 @@
+[
+  {
+    "name": "DatabaseManager",
+    "methods": [
+      "__init__",
+      "_connect",
+      "_ensure_db",
+      "initialize_schema",
+      "_introspect_task_columns",
+      "is_seeded",
+      "_get_task_type_id",
+      "_get_task_status_id",
+      "seed_sample_data",
+      "ensure_reference_data",
+      "get_week_summary",
+      "get_active_tasks_count",
+      "get_quick_stats",
+      "get_completion_rate_percent",
+      "count_total_records",
+      "get_holidays_between",
+      "get_day_details",
+      "add_holiday",
+      "delete_holiday",
+      "list_holidays_year",
+      "upsert_work_day",
+      "get_work_day",
+      "delete_work_day",
+      "recent_work_days",
+      "list_tasks",
+      "create_task",
+      "update_task",
+      "delete_task",
+      "get_task_types",
+      "get_task_statuses",
+      "list_active_tasks",
+      "list_daily_work_for_date",
+      "add_daily_work",
+      "update_daily_work_entry",
+      "delete_daily_work",
+      "get_daily_summary",
+      "list_notes",
+      "create_note",
+      "update_note",
+      "delete_note",
+      "analytics",
+      "fetch_table",
+      "get_meta",
+      "set_meta",
+      "get_task_by_task_id",
+      "update_task_fields",
+      "get_task_type_id_by_name",
+      "get_task_status_id_by_name",
+      "rename_task_id",
+      "list_aging_tasks"
+    ]
+  },
+  {
+    "name": "ModernButton",
+    "methods": [
+      "__init__",
+      "_on_enter",
+      "_on_leave",
+      "_shade_color"
+    ]
+  },
+  {
+    "name": "ModernCard",
+    "methods": [
+      "__init__",
+      "apply_theme"
+    ]
+  },
+  {
+    "name": "ModernEntry",
+    "methods": [
+      "__init__",
+      "apply_theme",
+      "_apply_placeholder",
+      "_clear_placeholder",
+      "_on_focus_in",
+      "_on_focus_out",
+      "get",
+      "set"
+    ]
+  },
+  {
+    "name": "SideNav",
+    "methods": [
+      "__init__",
+      "select",
+      "apply_theme"
+    ]
+  },
+  {
+    "name": "Tooltip",
+    "methods": [
+      "__init__",
+      "_schedule",
+      "_show",
+      "_hide"
+    ]
+  },
+  {
+    "name": "LabeledCombo",
+    "methods": [
+      "__init__",
+      "set_values",
+      "get",
+      "set",
+      "apply_theme"
+    ]
+  },
+  {
+    "name": "LabeledText",
+    "methods": [
+      "__init__",
+      "get",
+      "set",
+      "apply_theme"
+    ]
+  },
+  {
+    "name": "DatePicker",
+    "methods": [
+      "__init__",
+      "_render",
+      "_pick",
+      "_pick_today",
+      "_prev_month",
+      "_next_month"
+    ]
+  },
+  {
+    "name": "Header",
+    "methods": [
+      "__init__",
+      "_build",
+      "_set_logo",
+      "_tick_clock",
+      "apply_theme",
+      "refresh_stats"
+    ]
+  },
+  {
+    "name": "Footer",
+    "methods": [
+      "__init__",
+      "_build",
+      "set_status"
+    ]
+  },
+  {
+    "name": "DashboardTab",
+    "methods": [
+      "__init__",
+      "_build",
+      "refresh",
+      "apply_theme",
+      "_render_calendar",
+      "_render_deadlines",
+      "_render_charts",
+      "_due_toasts",
+      "_show_day_details",
+      "_go_month"
+    ]
+  },
+  {
+    "name": "ScheduleTab",
+    "methods": [
+      "__init__",
+      "apply_theme",
+      "_build",
+      "refresh",
+      "_set_today",
+      "_update_hours",
+      "_save",
+      "_delete",
+      "_load",
+      "_refresh_table",
+      "_load_holidays",
+      "_add_holiday",
+      "_del_holiday"
+    ]
+  },
+  {
+    "name": "TasksTab",
+    "methods": [
+      "__init__",
+      "_build",
+      "_apply_search_placeholder",
+      "_clear_search_placeholder",
+      "refresh",
+      "_sort_by",
+      "_sorted_header_text",
+      "_refresh_table",
+      "_selected_task_id",
+      "_add_task",
+      "_edit_task",
+      "_delete_task",
+      "_on_tree_double_click"
+    ]
+  },
+  {
+    "name": "TaskDialog",
+    "methods": [
+      "__init__",
+      "_build",
+      "_load",
+      "_validate_task",
+      "_resolve_fk",
+      "_open_date_picker",
+      "_save"
+    ]
+  },
+  {
+    "name": "DailyWorkTab",
+    "methods": [
+      "__init__",
+      "apply_theme",
+      "apply_theme",
+      "_build",
+      "refresh",
+      "_parse_selected_task_id",
+      "_add_work",
+      "_delete_selected",
+      "_refresh",
+      "_on_row_select",
+      "_update_selected"
+    ]
+  },
+  {
+    "name": "NotesTab",
+    "methods": [
+      "__init__",
+      "apply_theme",
+      "_build",
+      "refresh",
+      "_clear_filters",
+      "_selected_note_id",
+      "_add",
+      "_edit",
+      "_delete",
+      "_refresh"
+    ]
+  },
+  {
+    "name": "NoteDialog",
+    "methods": [
+      "__init__",
+      "_build",
+      "_load",
+      "_save"
+    ]
+  },
+  {
+    "name": "AnalyticsTab",
+    "methods": [
+      "__init__",
+      "apply_theme",
+      "_build",
+      "refresh"
+    ]
+  },
+  {
+    "name": "ExportBackupTab",
+    "methods": [
+      "__init__",
+      "apply_theme",
+      "_build",
+      "refresh",
+      "_export_csvs",
+      "_export_excel",
+      "_backup_db",
+      "_restore_db"
+    ]
+  },
+  {
+    "name": "GoldenLionWorkTrackerApp",
+    "methods": [
+      "__init__",
+      "_on_tab_changed",
+      "refresh_current_tab",
+      "refresh_all",
+      "_set_status",
+      "set_theme",
+      "_on_close",
+      "_periodic_refresh",
+      "show_tab",
+      "_maybe_weekly_backup"
+    ]
+  }
+]

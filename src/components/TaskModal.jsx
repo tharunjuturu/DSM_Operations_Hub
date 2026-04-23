@@ -18,6 +18,8 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
     endDate: '',
     status: 'Initial',
     remarks: '',
+    deliveredDate: '',
+    ftrOtd: '',
     owners: []
   });
 
@@ -45,7 +47,9 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
     if (existingTask) {
       setFormData({
          ...existingTask,
-         taskIds: existingTask.taskIds ? existingTask.taskIds.join(', ') : ''
+         taskIds: existingTask.taskIds ? existingTask.taskIds.join(', ') : '',
+         deliveredDate: existingTask.deliveredDate || '',
+         ftrOtd: existingTask.ftrOtd || ''
       });
     } else {
       const nextSno = tasks.length > 0 ? Math.max(...tasks.map(t => t.sno)) + 1 : 1;
@@ -58,6 +62,8 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
         endDate: '',
         status: 'Initial',
         remarks: '',
+        deliveredDate: '',
+        ftrOtd: '',
         owners: []
       });
     }
@@ -133,6 +139,11 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
     const calculatedCompletedFT = formData.owners.reduce((s, o) => s + Number(o.completedFT || 0), 0);
     const calculatedProgress = calculatedTotalFT > 0 ? (calculatedCompletedFT / calculatedTotalFT) : 0;
     
+    if ((formData.status === 'Delivered' || formData.status === 'Archive') && !formData.deliveredDate) {
+      setError("Delivered Date is required when status is Delivered or Archive.");
+      return;
+    }
+
     const finalTaskGroup = { 
        ...formData,
        taskIds: processedTaskIds,
@@ -140,6 +151,8 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
        completedFT: calculatedCompletedFT,
        progress: calculatedProgress,
        status: formData.status,
+       deliveredDate: formData.deliveredDate,
+       ftrOtd: formData.ftrOtd,
        include_in_dsr: existingTask ? existingTask.include_in_dsr : true,
        last_updated: new Date().toISOString().split('T')[0]
     };
@@ -187,7 +200,7 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
              <input type="text" value={formData.taskIds} onChange={e => setFormData({...formData, taskIds: e.target.value})} placeholder="SPA_00122, SPA_00341" style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: (formData.status === 'Delivered' || formData.status === 'Archive' || formData.deliveredDate) ? '1fr 1fr 1fr 1fr' : '1fr 1fr 1fr', gap: '16px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>Task Group Start Date *</label>
               <input type="date" value={formData.startDate} onChange={e => setFormData({...formData, startDate: e.target.value})} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
@@ -198,7 +211,16 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>Global Task Status *</label>
-              <select value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }}>
+              <select value={formData.status} onChange={e => {
+                  const newStatus = e.target.value;
+                  setFormData(prev => {
+                     const updates = { status: newStatus };
+                     if ((newStatus === 'Delivered' || newStatus === 'Archive') && prev.status !== 'Delivered' && prev.status !== 'Archive' && !prev.deliveredDate) {
+                        updates.deliveredDate = new Date().toISOString().split('T')[0];
+                     }
+                     return { ...prev, ...updates };
+                  });
+              }} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }}>
                  <option>In Progress</option>
                  <option>Yet To Start</option>
                  <option>Training</option>
@@ -207,9 +229,28 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
                  <option>QG</option>
                  <option>Blocked</option>
                  <option>Delivered</option>
+                 <option>Archive</option>
                  <option>Initial</option>
               </select>
             </div>
+            
+            {(formData.status === 'Delivered' || formData.status === 'Archive' || formData.deliveredDate) && (
+              <>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>Delivered Date *</label>
+                  <input type="date" value={formData.deliveredDate || ''} onChange={e => setFormData({...formData, deliveredDate: e.target.value})} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+                </div>
+                <div>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>FTR/OTD</label>
+                  <select value={formData.ftrOtd || ''} onChange={e => setFormData({...formData, ftrOtd: e.target.value})} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }}>
+                    <option value="">- Select -</option>
+                    <option value="OK FTR">OK FTR</option>
+                    <option value="NOK FTR">NOK FTR</option>
+                    <option value="NOK OTD">NOK OTD</option>
+                  </select>
+                </div>
+              </>
+            )}
           </div>
 
           <div style={{ marginTop: '16px' }}>

@@ -1,0 +1,3657 @@
+export const glLegacyData = {
+  "tasks": [
+    {
+      "id": 1,
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "function_name": "FSEE_CLIM_IHM",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 212,
+      "completed_work": 212,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-08-04",
+      "delivery_date": "2025-09-15",
+      "remarks": "got one FTR point from Hafsa but requested as a QIA PT and Hafsa accepted",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-26 09:55:33",
+      "updated_at": "2025-10-17 09:33:52",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 2,
+      "task_id": "SIN_00139",
+      "function_name": "FSEE_ACTIVE_BRAKE",
+      "task_type_id": 12,
+      "collab_responsible": "Tharun",
+      "total_work": 81,
+      "completed_work": 81,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-08-26",
+      "delivery_date": "2025-08-29",
+      "remarks": "Task owners - Divyandhu/Pratiksha",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-26 09:57:01",
+      "updated_at": "2025-09-22 10:26:27",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 3,
+      "task_id": "JSR_00671",
+      "function_name": "FSEE_S_AS",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 6,
+      "completed_work": 6,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-04-09",
+      "delivery_date": "2025-04-14",
+      "remarks": "Got 2 FTR points from Stephane, but both are refused, and he also accepted our refusal.",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-28 04:04:50",
+      "updated_at": "2025-08-28 06:30:53",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 4,
+      "task_id": "JSR_00687",
+      "function_name": "FSEE_ATSV",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 4,
+      "completed_work": 4,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-04-15",
+      "delivery_date": "2025-04-23",
+      "remarks": "No Remarks",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-28 04:07:52",
+      "updated_at": "2025-08-28 06:30:27",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 6,
+      "task_id": "JSR_00681",
+      "function_name": "FSEE_BIG_DATA",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 7,
+      "priority": "High",
+      "start_date": "2025-04-24",
+      "delivery_date": "2025-04-24",
+      "remarks": "task canelled",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 04:10:23",
+      "updated_at": "2025-09-03 04:54:57",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 7,
+      "task_id": "JSR_00678",
+      "function_name": "FSEE_LISTEN_AUDIO_MEDIA",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 7,
+      "priority": "High",
+      "start_date": "2025-04-25",
+      "delivery_date": "2025-04-25",
+      "remarks": "Task Cancelled",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 04:14:06",
+      "updated_at": "2025-08-28 06:30:29",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 8,
+      "task_id": "JSR_00679",
+      "function_name": "FSEE_FAP",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 14,
+      "completed_work": 14,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-04-24",
+      "delivery_date": "2025-05-09",
+      "remarks": "No remarks",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-28 04:15:21",
+      "updated_at": "2025-08-28 06:30:32",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 9,
+      "task_id": "JSR_00680",
+      "function_name": "FSEE_AFTM",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 16,
+      "completed_work": 16,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-04-21",
+      "delivery_date": "2025-04-30",
+      "remarks": "One FTR point from Philippe still the point is not closed because of the Req not clear",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-28 04:18:30",
+      "updated_at": "2025-08-28 06:30:30",
+      "otd_ftr": "FTR"
+    },
+    {
+      "id": 10,
+      "task_id": "SPA_00146",
+      "function_name": "FSEE_TSC",
+      "task_type_id": 10,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-05-05",
+      "delivery_date": "2025-05-07",
+      "remarks": "Campaign Genaration",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 04:19:47",
+      "updated_at": "2025-08-28 06:30:31",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 11,
+      "task_id": "SPA_00147",
+      "function_name": "FSEE_TSC",
+      "task_type_id": 10,
+      "collab_responsible": "Tharun",
+      "total_work": 29,
+      "completed_work": 29,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-05-05",
+      "delivery_date": "2025-06-23",
+      "remarks": "VSM_Validation_Automatization",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-28 04:20:59",
+      "updated_at": "2025-08-28 04:20:59",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 12,
+      "task_id": "JSR_00683",
+      "function_name": "FSEE_CLIM_IHM",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 143,
+      "completed_work": 143,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-06-03",
+      "delivery_date": "2025-07-31",
+      "remarks": "No remarks",
+      "completion_percentage": 100.0,
+      "created_at": "2025-08-28 04:22:39",
+      "updated_at": "2025-08-28 04:23:06",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 13,
+      "task_id": "SPA_00162",
+      "function_name": "FSEE_OTA_UPDATE",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-05-29",
+      "delivery_date": "2025-05-29",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 05:12:22",
+      "updated_at": "2025-08-28 06:30:33",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 14,
+      "task_id": "SPA_00167",
+      "function_name": "FSEE_AFTM",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-06-09",
+      "delivery_date": "2025-06-09",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 05:13:09",
+      "updated_at": "2025-08-28 06:30:35",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 15,
+      "task_id": "SPA_00172",
+      "function_name": "FSEE_OTA_UPDATE",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-06-10",
+      "delivery_date": "2025-06-11",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 05:13:35",
+      "updated_at": "2025-08-28 06:30:36",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 16,
+      "task_id": "SPA_00179",
+      "function_name": "FSEE_EEM_VLV",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-06-11",
+      "delivery_date": "2025-06-13",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 05:14:07",
+      "updated_at": "2025-08-28 06:30:39",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 17,
+      "task_id": "SPA_00186",
+      "function_name": "FSEE_PARAM",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-06-13",
+      "delivery_date": "2025-06-13",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 05:14:32",
+      "updated_at": "2025-08-28 05:14:32",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 18,
+      "task_id": "SPA_00190",
+      "function_name": "FSEE_OTA_UPDATE",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-06-24",
+      "delivery_date": "2025-06-25",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 05:14:57",
+      "updated_at": "2025-08-28 05:14:57",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 19,
+      "task_id": "SPA_00229",
+      "function_name": "FSEE_SUPERVISION",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 0,
+      "completed_work": 0,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-07-28",
+      "delivery_date": "2025-07-28",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-08-28 05:15:24",
+      "updated_at": "2025-08-28 05:15:24",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 20,
+      "task_id": "Task_0001",
+      "function_name": "Cyborg ",
+      "task_type_id": 1,
+      "collab_responsible": "Tharun",
+      "total_work": 100,
+      "completed_work": 1,
+      "task_status_id": 1,
+      "priority": "Critical",
+      "start_date": "2025-01-01",
+      "delivery_date": "2025-12-31",
+      "remarks": "This task is for ading the work info related to the Cyborg",
+      "completion_percentage": 1.0,
+      "created_at": "2025-08-29 10:36:00",
+      "updated_at": "2025-09-18 08:58:43",
+      "otd_ftr": null
+    },
+    {
+      "id": 21,
+      "task_id": "TASK_0002",
+      "function_name": "FTR",
+      "task_type_id": 8,
+      "collab_responsible": "Tharun",
+      "total_work": 1,
+      "completed_work": 0,
+      "task_status_id": 1,
+      "priority": "High",
+      "start_date": "2025-01-01",
+      "delivery_date": "2025-12-31",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-09-01 15:52:51",
+      "updated_at": "2026-01-06 11:49:52",
+      "otd_ftr": null
+    },
+    {
+      "id": 22,
+      "task_id": "Task_003",
+      "function_name": "Meetings",
+      "task_type_id": 6,
+      "collab_responsible": "Tharun",
+      "total_work": 1,
+      "completed_work": 0,
+      "task_status_id": 1,
+      "priority": "High",
+      "start_date": "2025-09-01",
+      "delivery_date": "2025-12-31",
+      "remarks": "",
+      "completion_percentage": 0.0,
+      "created_at": "2025-09-08 11:57:09",
+      "updated_at": "2026-02-25 08:39:27",
+      "otd_ftr": null
+    },
+    {
+      "id": 23,
+      "task_id": "SIN_00123\nSIN_00124",
+      "function_name": "FSEE_REPAS_HAB_NEA_NTW",
+      "task_type_id": 12,
+      "collab_responsible": "Thaun",
+      "total_work": 235,
+      "completed_work": 235,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-09-15",
+      "delivery_date": "2025-09-22",
+      "remarks": "Task owner - Akanksha Wankhade",
+      "completion_percentage": 100.0,
+      "created_at": "2025-09-15 12:35:36",
+      "updated_at": "2025-10-06 08:26:10",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 24,
+      "task_id": "SPA_00223, SPA_00224",
+      "function_name": "FSEE_ULTRASONIC_PERCEPTION",
+      "task_type_id": 12,
+      "collab_responsible": "Tharun",
+      "total_work": 6,
+      "completed_work": 6,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-08-22",
+      "delivery_date": "2025-08-22",
+      "remarks": "got one point from PBO",
+      "completion_percentage": 100.0,
+      "created_at": "2025-09-22 10:28:15",
+      "updated_at": "2025-10-10 04:37:33",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 25,
+      "task_id": "SPA_00269",
+      "function_name": "FSEE_CLIM_IHM",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 25,
+      "completed_work": 25,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-10-06",
+      "delivery_date": "2025-10-13",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2025-10-06 08:26:59",
+      "updated_at": "2025-11-10 08:32:18",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 26,
+      "task_id": "SPA_00271",
+      "function_name": "FSEE_ACTIVE_BRAKE",
+      "task_type_id": 12,
+      "collab_responsible": "Tharun",
+      "total_work": 123,
+      "completed_work": 123,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-10-15",
+      "delivery_date": "2025-10-24",
+      "remarks": "task owner - Divya Patil",
+      "completion_percentage": 100.0,
+      "created_at": "2025-10-21 08:39:22",
+      "updated_at": "2025-11-28 04:31:35",
+      "otd_ftr": "FTR"
+    },
+    {
+      "id": 27,
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "function_name": "FSEE_OTA_UPDATE",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 325,
+      "completed_work": 325,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-10-27",
+      "delivery_date": "2025-11-21",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2025-10-28 03:18:35",
+      "updated_at": "2026-01-05 12:38:56",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 28,
+      "task_id": "SPA_00238",
+      "function_name": "FSEE_DAGMP",
+      "task_type_id": 13,
+      "collab_responsible": "Tharun",
+      "total_work": 6,
+      "completed_work": 6,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-10-27",
+      "delivery_date": "2025-10-27",
+      "remarks": "task owner \nKavipriya Balasubramani",
+      "completion_percentage": 100.0,
+      "created_at": "2025-10-28 03:20:58",
+      "updated_at": "2025-11-28 04:31:46",
+      "otd_ftr": "FTR"
+    },
+    {
+      "id": 29,
+      "task_id": "SPA_00272\nSPA_00273\nSPA_00316\nSPA_00319\nSPA_00325\nSPA_00337",
+      "function_name": " FSEE_PUCSM",
+      "task_type_id": 13,
+      "collab_responsible": "Tharun",
+      "total_work": 105,
+      "completed_work": 105,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2025-11-26",
+      "delivery_date": "2025-11-27",
+      "remarks": "Task Owner - Hepsiba Pilli",
+      "completion_percentage": 100.0,
+      "created_at": "2025-11-26 07:58:55",
+      "updated_at": "2026-02-25 08:42:32",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 30,
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "function_name": "FSEE_LIGHTING",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 200,
+      "completed_work": 200,
+      "task_status_id": 8,
+      "priority": "Critical",
+      "start_date": "2025-12-01",
+      "delivery_date": "2025-12-31",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2025-12-01 03:55:28",
+      "updated_at": "2026-01-06 11:49:43",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 31,
+      "task_id": "SPA_00332",
+      "function_name": "FSEE_ACTIVE_BRAKE",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 50,
+      "completed_work": 33,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-01-02",
+      "delivery_date": "2026-01-16",
+      "remarks": "",
+      "completion_percentage": 66.0,
+      "created_at": "2026-01-05 12:38:24",
+      "updated_at": "2026-02-25 08:42:19",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 32,
+      "task_id": "SIN_00242",
+      "function_name": "FSEE_PUCSM",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 1,
+      "completed_work": 1,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-01-12",
+      "delivery_date": "2026-01-12",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2026-01-13 04:29:57",
+      "updated_at": "2026-02-25 09:09:19",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 33,
+      "task_id": "SPA_00260",
+      "function_name": "FSEE_REPAS_HAB_NTW",
+      "task_type_id": 12,
+      "collab_responsible": "Tharun",
+      "total_work": 900,
+      "completed_work": 900,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-01-21",
+      "delivery_date": "2026-01-28",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2026-01-22 05:01:34",
+      "updated_at": "2026-02-25 08:42:02",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 34,
+      "task_id": "SPA_00352\nAMAL_00244",
+      "function_name": "FSEE_CONFORT_THERMIQUE",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 35,
+      "completed_work": 33,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-02-03",
+      "delivery_date": "2026-02-24",
+      "remarks": "",
+      "completion_percentage": 94.28571428571428,
+      "created_at": "2026-02-25 08:30:16",
+      "updated_at": "2026-02-25 08:50:20",
+      "otd_ftr": null
+    },
+    {
+      "id": 35,
+      "task_id": "AMAL_0230",
+      "function_name": "FSEE_ACTIVE_BREAK",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 1,
+      "completed_work": 1,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-02-20",
+      "delivery_date": "2026-02-24",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2026-02-25 08:31:07",
+      "updated_at": "2026-02-25 08:50:27",
+      "otd_ftr": null
+    },
+    {
+      "id": 36,
+      "task_id": "SPA_00303\nSPA_00323\nSPA_00334\nSPA_00353\nSPA_00367",
+      "function_name": "FSEE_EEM_VLV",
+      "task_type_id": 12,
+      "collab_responsible": "Tharun",
+      "total_work": 70,
+      "completed_work": 70,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-02-09",
+      "delivery_date": "2026-02-12",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2026-02-25 08:43:25",
+      "updated_at": "2026-02-25 08:50:08",
+      "otd_ftr": null
+    },
+    {
+      "id": 37,
+      "task_id": "AMAL_00248\nAMAL_00233",
+      "function_name": "FSEE_OTA_UPDATE",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 294,
+      "completed_work": 294,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-02-24",
+      "delivery_date": "2026-03-06",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2026-02-25 08:51:39",
+      "updated_at": "2026-03-05 08:31:21",
+      "otd_ftr": null
+    },
+    {
+      "id": 38,
+      "task_id": "MPA_00004",
+      "function_name": "FSEE_PHOT",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 3,
+      "completed_work": 3,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-02-03",
+      "delivery_date": "2026-02-06",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2026-02-25 09:08:19",
+      "updated_at": "2026-02-25 09:09:06",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 39,
+      "task_id": "MPA_00005",
+      "function_name": "FSEE_RVM",
+      "task_type_id": 11,
+      "collab_responsible": "Tharun",
+      "total_work": 5,
+      "completed_work": 5,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-02-09",
+      "delivery_date": "2026-02-10",
+      "remarks": "",
+      "completion_percentage": 100.0,
+      "created_at": "2026-02-25 09:09:56",
+      "updated_at": "2026-02-25 09:10:19",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 40,
+      "task_id": "SPA_00362",
+      "function_name": "FSEE_LIGHTING",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 14,
+      "completed_work": 14,
+      "task_status_id": 8,
+      "priority": "High",
+      "start_date": "2026-03-09",
+      "delivery_date": "2026-03-13",
+      "remarks": "Task owner is Megadesh S just assined me for support to treat for QIA PT",
+      "completion_percentage": 100.0,
+      "created_at": "2026-03-11 11:34:58",
+      "updated_at": "2026-03-24 04:29:05",
+      "otd_ftr": "OK"
+    },
+    {
+      "id": 41,
+      "task_id": "SPA_00122\nSPA_00122\nSPA_00341\nSPA_00343",
+      "function_name": "FSEE_PHAB",
+      "task_type_id": 9,
+      "collab_responsible": "Tharun",
+      "total_work": 702,
+      "completed_work": 587,
+      "task_status_id": 1,
+      "priority": "High",
+      "start_date": "2026-03-13",
+      "delivery_date": "2026-03-31",
+      "remarks": "Task owner is Kimaya Patil",
+      "completion_percentage": 83.61823361823362,
+      "created_at": "2026-03-23 09:23:30",
+      "updated_at": "2026-03-23 09:24:58",
+      "otd_ftr": null
+    }
+  ],
+  "work_days": [
+    {
+      "id": 1,
+      "date": "2025-08-26",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:01",
+      "work_hours": 9.02,
+      "notes": "",
+      "created_at": "2025-08-26 10:03:19"
+    },
+    {
+      "id": 3,
+      "date": "2025-08-28",
+      "work_mode": "WFO",
+      "login_time": "08:50",
+      "logout_time": "18:06",
+      "work_hours": 9.27,
+      "notes": "",
+      "created_at": "2025-08-28 03:53:48"
+    },
+    {
+      "id": 7,
+      "date": "2025-08-29",
+      "work_mode": "WFH",
+      "login_time": "08:56",
+      "logout_time": "18:00",
+      "work_hours": 9.07,
+      "notes": "",
+      "created_at": "2025-08-29 03:26:36"
+    },
+    {
+      "id": 8,
+      "date": "2025-08-25",
+      "work_mode": "WFO",
+      "login_time": "08:56",
+      "logout_time": "18:00",
+      "work_hours": 9.07,
+      "notes": "",
+      "created_at": "2025-08-29 03:27:27"
+    },
+    {
+      "id": 9,
+      "date": "2025-09-01",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:25",
+      "work_hours": 9.42,
+      "notes": "",
+      "created_at": "2025-09-01 04:06:13"
+    },
+    {
+      "id": 13,
+      "date": "2025-09-02",
+      "work_mode": "WFO",
+      "login_time": "08:54",
+      "logout_time": "18:15",
+      "work_hours": 9.35,
+      "notes": "",
+      "created_at": "2025-09-03 03:55:14"
+    },
+    {
+      "id": 16,
+      "date": "2025-09-03",
+      "work_mode": "WFH",
+      "login_time": "08:54",
+      "logout_time": "18:15",
+      "work_hours": 9.35,
+      "notes": "",
+      "created_at": "2025-09-03 04:45:04"
+    },
+    {
+      "id": 17,
+      "date": "2025-09-04",
+      "work_mode": "WFO",
+      "login_time": "08:52",
+      "logout_time": "18:10",
+      "work_hours": 9.3,
+      "notes": "",
+      "created_at": "2025-09-08 04:02:40"
+    },
+    {
+      "id": 18,
+      "date": "2025-09-05",
+      "work_mode": "WFH",
+      "login_time": "08:52",
+      "logout_time": "18:10",
+      "work_hours": 9.3,
+      "notes": "",
+      "created_at": "2025-09-08 04:02:45"
+    },
+    {
+      "id": 19,
+      "date": "2025-09-08",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:10",
+      "work_hours": 8.92,
+      "notes": "",
+      "created_at": "2025-09-08 04:03:43"
+    },
+    {
+      "id": 20,
+      "date": "2025-09-09",
+      "work_mode": "WFO",
+      "login_time": "09:10",
+      "logout_time": "18:15",
+      "work_hours": 9.08,
+      "notes": "",
+      "created_at": "2025-09-09 04:03:03"
+    },
+    {
+      "id": 21,
+      "date": "2025-09-10",
+      "work_mode": "WFH",
+      "login_time": "09:30",
+      "logout_time": "18:30",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-09-10 04:06:42"
+    },
+    {
+      "id": 23,
+      "date": "2025-09-11",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-09-11 06:13:22"
+    },
+    {
+      "id": 24,
+      "date": "2025-09-12",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-09-12 05:55:25"
+    },
+    {
+      "id": 25,
+      "date": "2025-09-15",
+      "work_mode": "WFO",
+      "login_time": "09:02",
+      "logout_time": "18:10",
+      "work_hours": 9.13,
+      "notes": "",
+      "created_at": "2025-09-15 03:40:35"
+    },
+    {
+      "id": 26,
+      "date": "2025-09-16",
+      "work_mode": "WFO",
+      "login_time": "09:10",
+      "logout_time": "18:20",
+      "work_hours": 9.17,
+      "notes": "",
+      "created_at": "2025-09-16 09:38:07"
+    },
+    {
+      "id": 28,
+      "date": "2025-09-17",
+      "work_mode": "WFH",
+      "login_time": "09:10",
+      "logout_time": "18:20",
+      "work_hours": 9.17,
+      "notes": "",
+      "created_at": "2025-09-17 12:25:00"
+    },
+    {
+      "id": 29,
+      "date": "2025-09-18",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:20",
+      "work_hours": 9.08,
+      "notes": "",
+      "created_at": "2025-09-18 08:57:13"
+    },
+    {
+      "id": 30,
+      "date": "2025-09-19",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-09-22 09:40:02"
+    },
+    {
+      "id": 31,
+      "date": "2025-09-22",
+      "work_mode": "WFO",
+      "login_time": "09:18",
+      "logout_time": "17:47",
+      "work_hours": 8.48,
+      "notes": "",
+      "created_at": "2025-09-22 10:21:01"
+    },
+    {
+      "id": 34,
+      "date": "2025-09-23",
+      "work_mode": "WFO",
+      "login_time": "09:08",
+      "logout_time": "18:20",
+      "work_hours": 9.2,
+      "notes": "",
+      "created_at": "2025-09-23 03:43:01"
+    },
+    {
+      "id": 35,
+      "date": "2025-09-24",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-09-25 03:38:00"
+    },
+    {
+      "id": 36,
+      "date": "2025-09-25",
+      "work_mode": "WFO",
+      "login_time": "08:48",
+      "logout_time": "18:00",
+      "work_hours": 9.2,
+      "notes": "",
+      "created_at": "2025-09-25 03:38:30"
+    },
+    {
+      "id": 38,
+      "date": "2025-10-06",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-06 08:23:43"
+    },
+    {
+      "id": 39,
+      "date": "2025-10-03",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-06 08:24:00"
+    },
+    {
+      "id": 43,
+      "date": "2025-09-26",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-06 08:24:55"
+    },
+    {
+      "id": 44,
+      "date": "2025-09-29",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-06 08:25:05"
+    },
+    {
+      "id": 45,
+      "date": "2025-09-30",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-06 08:25:08"
+    },
+    {
+      "id": 46,
+      "date": "2025-10-07",
+      "work_mode": "WFO",
+      "login_time": "09:10",
+      "logout_time": "18:20",
+      "work_hours": 9.17,
+      "notes": "",
+      "created_at": "2025-10-07 04:03:25"
+    },
+    {
+      "id": 47,
+      "date": "2025-10-08",
+      "work_mode": "WFO",
+      "login_time": "09:20",
+      "logout_time": "18:20",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-08 04:46:25"
+    },
+    {
+      "id": 48,
+      "date": "2025-10-10",
+      "work_mode": "WFO",
+      "login_time": "09:05",
+      "logout_time": "18:20",
+      "work_hours": 9.25,
+      "notes": "",
+      "created_at": "2025-10-10 04:16:49"
+    },
+    {
+      "id": 49,
+      "date": "2025-10-09",
+      "work_mode": "WFO",
+      "login_time": "09:20",
+      "logout_time": "18:30",
+      "work_hours": 9.17,
+      "notes": "",
+      "created_at": "2025-10-10 04:16:59"
+    },
+    {
+      "id": 50,
+      "date": "2025-10-13",
+      "work_mode": "WFO",
+      "login_time": "09:05",
+      "logout_time": "18:25",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2025-10-13 13:47:32"
+    },
+    {
+      "id": 51,
+      "date": "2025-10-14",
+      "work_mode": "WFO",
+      "login_time": "09:10",
+      "logout_time": "18:20",
+      "work_hours": 9.17,
+      "notes": "",
+      "created_at": "2025-10-14 03:54:47"
+    },
+    {
+      "id": 52,
+      "date": "2025-10-15",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-21 08:36:17"
+    },
+    {
+      "id": 53,
+      "date": "2025-10-16",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "19:00",
+      "work_hours": 10.0,
+      "notes": "",
+      "created_at": "2025-10-21 08:45:11"
+    },
+    {
+      "id": 54,
+      "date": "2025-10-17",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "16:30",
+      "work_hours": 7.5,
+      "notes": "",
+      "created_at": "2025-10-21 08:45:25"
+    },
+    {
+      "id": 59,
+      "date": "2025-10-21",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "19:00",
+      "work_hours": 10.0,
+      "notes": "",
+      "created_at": "2025-10-21 08:46:10"
+    },
+    {
+      "id": 60,
+      "date": "2025-10-22",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-22 04:37:47"
+    },
+    {
+      "id": 61,
+      "date": "2025-10-27",
+      "work_mode": "WFO",
+      "login_time": "09:05",
+      "logout_time": "18:20",
+      "work_hours": 9.25,
+      "notes": "",
+      "created_at": "2025-10-28 03:17:03"
+    },
+    {
+      "id": 62,
+      "date": "2025-10-23",
+      "work_mode": "WFH",
+      "login_time": "09:05",
+      "logout_time": "18:20",
+      "work_hours": 9.25,
+      "notes": "",
+      "created_at": "2025-10-28 03:23:12"
+    },
+    {
+      "id": 63,
+      "date": "2025-10-24",
+      "work_mode": "WFH",
+      "login_time": "09:05",
+      "logout_time": "18:20",
+      "work_hours": 9.25,
+      "notes": "",
+      "created_at": "2025-10-28 03:27:42"
+    },
+    {
+      "id": 64,
+      "date": "2025-10-28",
+      "work_mode": "WFO",
+      "login_time": "08:40",
+      "logout_time": "18:20",
+      "work_hours": 9.67,
+      "notes": "",
+      "created_at": "2025-10-28 12:29:06"
+    },
+    {
+      "id": 65,
+      "date": "2025-10-29",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2025-10-30 03:55:09"
+    },
+    {
+      "id": 66,
+      "date": "2025-10-30",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-10-30 03:56:53"
+    },
+    {
+      "id": 67,
+      "date": "2025-10-31",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:10",
+      "work_hours": 9.17,
+      "notes": "",
+      "created_at": "2025-11-03 04:22:34"
+    },
+    {
+      "id": 68,
+      "date": "2025-11-03",
+      "work_mode": "WFO",
+      "login_time": "09:05",
+      "logout_time": "18:10",
+      "work_hours": 9.08,
+      "notes": "",
+      "created_at": "2025-11-03 04:23:26"
+    },
+    {
+      "id": 69,
+      "date": "2025-11-04",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:20",
+      "work_hours": 9.08,
+      "notes": "",
+      "created_at": "2025-11-04 09:52:07"
+    },
+    {
+      "id": 70,
+      "date": "2025-11-05",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-06 06:51:28"
+    },
+    {
+      "id": 71,
+      "date": "2025-11-06",
+      "work_mode": "WFO",
+      "login_time": "09:25",
+      "logout_time": "18:20",
+      "work_hours": 8.92,
+      "notes": "",
+      "created_at": "2025-11-07 04:42:20"
+    },
+    {
+      "id": 74,
+      "date": "2025-11-07",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-07 04:42:53"
+    },
+    {
+      "id": 76,
+      "date": "2025-11-10",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:20",
+      "work_hours": 8.83,
+      "notes": "",
+      "created_at": "2025-11-10 08:32:10"
+    },
+    {
+      "id": 77,
+      "date": "2025-11-12",
+      "work_mode": "WFH",
+      "login_time": "09:05",
+      "logout_time": "18:05",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-12 02:45:52"
+    },
+    {
+      "id": 79,
+      "date": "2025-11-11",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:15",
+      "work_hours": 8.75,
+      "notes": "",
+      "created_at": "2025-11-12 02:47:03"
+    },
+    {
+      "id": 82,
+      "date": "2025-11-13",
+      "work_mode": "WFO",
+      "login_time": "09:05",
+      "logout_time": "18:05",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-13 12:10:58"
+    },
+    {
+      "id": 86,
+      "date": "2025-11-14",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-17 04:37:15"
+    },
+    {
+      "id": 87,
+      "date": "2025-11-17",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:30",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-17 04:37:38"
+    },
+    {
+      "id": 88,
+      "date": "2025-11-18",
+      "work_mode": "WFO",
+      "login_time": "09:25",
+      "logout_time": "18:25",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-21 03:19:14"
+    },
+    {
+      "id": 89,
+      "date": "2025-11-19",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:15",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-21 03:19:45"
+    },
+    {
+      "id": 90,
+      "date": "2025-11-20",
+      "work_mode": "WFH",
+      "login_time": "09:15",
+      "logout_time": "18:15",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-21 03:20:25"
+    },
+    {
+      "id": 91,
+      "date": "2025-11-21",
+      "work_mode": "WFH",
+      "login_time": "09:15",
+      "logout_time": "18:15",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-21 03:20:58"
+    },
+    {
+      "id": 92,
+      "date": "2025-11-24",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-26 07:55:52"
+    },
+    {
+      "id": 93,
+      "date": "2025-11-25",
+      "work_mode": "WFO",
+      "login_time": "08:50",
+      "logout_time": "18:30",
+      "work_hours": 9.67,
+      "notes": "",
+      "created_at": "2025-11-26 07:56:43"
+    },
+    {
+      "id": 96,
+      "date": "2025-11-26",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-11-26 07:59:29"
+    },
+    {
+      "id": 97,
+      "date": "2025-11-27",
+      "work_mode": "WFO",
+      "login_time": "08:35",
+      "logout_time": "18:15",
+      "work_hours": 9.67,
+      "notes": "",
+      "created_at": "2025-11-27 03:12:58"
+    },
+    {
+      "id": 98,
+      "date": "2025-11-28",
+      "work_mode": "WFO",
+      "login_time": "09:08",
+      "logout_time": "18:15",
+      "work_hours": 9.12,
+      "notes": "",
+      "created_at": "2025-11-28 04:27:24"
+    },
+    {
+      "id": 99,
+      "date": "2025-12-01",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:15",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-12-01 03:50:47"
+    },
+    {
+      "id": 101,
+      "date": "2025-12-02",
+      "work_mode": "WFO",
+      "login_time": "09:40",
+      "logout_time": "18:00",
+      "work_hours": 8.33,
+      "notes": "",
+      "created_at": "2025-12-02 04:14:52"
+    },
+    {
+      "id": 102,
+      "date": "2025-12-03",
+      "work_mode": "WFO",
+      "login_time": "09:36",
+      "logout_time": "18:00",
+      "work_hours": 8.4,
+      "notes": "",
+      "created_at": "2025-12-08 04:06:11"
+    },
+    {
+      "id": 103,
+      "date": "2025-12-04",
+      "work_mode": "WFO",
+      "login_time": "09:40",
+      "logout_time": "18:20",
+      "work_hours": 8.67,
+      "notes": "",
+      "created_at": "2025-12-08 04:06:24"
+    },
+    {
+      "id": 104,
+      "date": "2025-12-05",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "team Outing at RR Retreat \u2013 5th Dec 2025",
+      "created_at": "2025-12-08 04:08:08"
+    },
+    {
+      "id": 105,
+      "date": "2025-12-08",
+      "work_mode": "WFO",
+      "login_time": "08:55",
+      "logout_time": "18:15",
+      "work_hours": 9.33,
+      "notes": "team Outing at RR Retreat \u2013 5th Dec 2025",
+      "created_at": "2025-12-08 04:08:29"
+    },
+    {
+      "id": 106,
+      "date": "2025-12-09",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-12-16 03:43:10"
+    },
+    {
+      "id": 107,
+      "date": "2025-12-16",
+      "work_mode": "WFO",
+      "login_time": "08:55",
+      "logout_time": "18:20",
+      "work_hours": 9.42,
+      "notes": "",
+      "created_at": "2025-12-17 11:50:53"
+    },
+    {
+      "id": 108,
+      "date": "2025-12-17",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:10",
+      "work_hours": 8.67,
+      "notes": "",
+      "created_at": "2025-12-17 11:51:22"
+    },
+    {
+      "id": 109,
+      "date": "2025-12-11",
+      "work_mode": "Leave",
+      "login_time": null,
+      "logout_time": null,
+      "work_hours": 0.0,
+      "notes": "",
+      "created_at": "2025-12-17 11:51:59"
+    },
+    {
+      "id": 110,
+      "date": "2025-12-12",
+      "work_mode": "Leave",
+      "login_time": null,
+      "logout_time": null,
+      "work_hours": 0.0,
+      "notes": "",
+      "created_at": "2025-12-17 11:52:26"
+    },
+    {
+      "id": 111,
+      "date": "2025-12-10",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-12-17 11:52:48"
+    },
+    {
+      "id": 113,
+      "date": "2025-12-15",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-12-17 11:55:42"
+    },
+    {
+      "id": 114,
+      "date": "2025-12-18",
+      "work_mode": "WFO",
+      "login_time": "09:25",
+      "logout_time": "18:05",
+      "work_hours": 8.67,
+      "notes": "",
+      "created_at": "2025-12-18 12:28:27"
+    },
+    {
+      "id": 115,
+      "date": "2025-12-19",
+      "work_mode": "WFO",
+      "login_time": "08:50",
+      "logout_time": "18:10",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2025-12-22 04:30:01"
+    },
+    {
+      "id": 116,
+      "date": "2025-12-22",
+      "work_mode": "WFO",
+      "login_time": "09:20",
+      "logout_time": "18:20",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2025-12-22 04:31:45"
+    },
+    {
+      "id": 117,
+      "date": "2025-12-23",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:20",
+      "work_hours": 9.08,
+      "notes": "",
+      "created_at": "2025-12-23 03:54:44"
+    },
+    {
+      "id": 118,
+      "date": "2025-12-24",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-02 04:14:10"
+    },
+    {
+      "id": 119,
+      "date": "2025-12-26",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-02 04:15:00"
+    },
+    {
+      "id": 120,
+      "date": "2025-12-29",
+      "work_mode": "WFO",
+      "login_time": "09:20",
+      "logout_time": "18:20",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-02 04:15:44"
+    },
+    {
+      "id": 122,
+      "date": "2025-12-30",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-01-02 04:16:35"
+    },
+    {
+      "id": 125,
+      "date": "2025-12-31",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-01-02 04:18:04"
+    },
+    {
+      "id": 126,
+      "date": "2026-01-05",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:15",
+      "work_hours": 8.75,
+      "notes": "",
+      "created_at": "2026-01-05 12:37:05"
+    },
+    {
+      "id": 127,
+      "date": "2026-01-06",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:15",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-06 11:46:01"
+    },
+    {
+      "id": 128,
+      "date": "2026-01-07",
+      "work_mode": "WFO",
+      "login_time": "09:40",
+      "logout_time": "18:20",
+      "work_hours": 8.67,
+      "notes": "",
+      "created_at": "2026-01-07 06:49:12"
+    },
+    {
+      "id": 129,
+      "date": "2026-01-12",
+      "work_mode": "WFO",
+      "login_time": "10:13",
+      "logout_time": "18:20",
+      "work_hours": 8.12,
+      "notes": "",
+      "created_at": "2026-01-12 04:50:08"
+    },
+    {
+      "id": 130,
+      "date": "2026-01-09",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-01-12 04:50:27"
+    },
+    {
+      "id": 131,
+      "date": "2026-01-08",
+      "work_mode": "WFO",
+      "login_time": "10:02",
+      "logout_time": "18:20",
+      "work_hours": 8.3,
+      "notes": "",
+      "created_at": "2026-01-12 04:50:43"
+    },
+    {
+      "id": 132,
+      "date": "2026-01-13",
+      "work_mode": "WFO",
+      "login_time": "09:45",
+      "logout_time": "18:20",
+      "work_hours": 8.58,
+      "notes": "",
+      "created_at": "2026-01-13 04:28:27"
+    },
+    {
+      "id": 133,
+      "date": "2026-01-14",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-19 04:17:49"
+    },
+    {
+      "id": 134,
+      "date": "2026-01-16",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-19 04:18:19"
+    },
+    {
+      "id": 135,
+      "date": "2026-01-19",
+      "work_mode": "WFO",
+      "login_time": "09:45",
+      "logout_time": "18:33",
+      "work_hours": 8.8,
+      "notes": "",
+      "created_at": "2026-01-19 04:19:03"
+    },
+    {
+      "id": 137,
+      "date": "2026-01-20",
+      "work_mode": "WFO",
+      "login_time": "09:43",
+      "logout_time": "18:25",
+      "work_hours": 8.7,
+      "notes": "",
+      "created_at": "2026-01-22 04:58:39"
+    },
+    {
+      "id": 140,
+      "date": "2026-01-21",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-22 05:00:10"
+    },
+    {
+      "id": 141,
+      "date": "2026-01-22",
+      "work_mode": "WFO",
+      "login_time": "09:43",
+      "logout_time": "18:30",
+      "work_hours": 8.78,
+      "notes": "",
+      "created_at": "2026-01-22 05:00:26"
+    },
+    {
+      "id": 142,
+      "date": "2026-01-23",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-28 04:40:27"
+    },
+    {
+      "id": 143,
+      "date": "2026-01-27",
+      "work_mode": "WFO",
+      "login_time": "09:15",
+      "logout_time": "18:20",
+      "work_hours": 9.08,
+      "notes": "",
+      "created_at": "2026-01-28 04:41:27"
+    },
+    {
+      "id": 146,
+      "date": "2026-01-28",
+      "work_mode": "WFO",
+      "login_time": "10:05",
+      "logout_time": "18:35",
+      "work_hours": 8.5,
+      "notes": "",
+      "created_at": "2026-01-28 04:42:15"
+    },
+    {
+      "id": 147,
+      "date": "2026-01-02",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-01-28 04:44:45"
+    },
+    {
+      "id": 149,
+      "date": "2026-01-29",
+      "work_mode": "WFO",
+      "login_time": "10:05",
+      "logout_time": "18:10",
+      "work_hours": 8.08,
+      "notes": "",
+      "created_at": "2026-01-29 05:51:50"
+    },
+    {
+      "id": 151,
+      "date": "2026-02-02",
+      "work_mode": "WFO",
+      "login_time": "10:00",
+      "logout_time": "18:20",
+      "work_hours": 8.33,
+      "notes": "",
+      "created_at": "2026-02-02 04:47:28"
+    },
+    {
+      "id": 152,
+      "date": "2026-01-30",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-02 04:48:04"
+    },
+    {
+      "id": 153,
+      "date": "2026-02-03",
+      "work_mode": "WFO",
+      "login_time": "10:00",
+      "logout_time": "18:25",
+      "work_hours": 8.42,
+      "notes": "",
+      "created_at": "2026-02-03 04:53:49"
+    },
+    {
+      "id": 154,
+      "date": "2026-02-25",
+      "work_mode": "WFO",
+      "login_time": "10:05",
+      "logout_time": "18:20",
+      "work_hours": 8.25,
+      "notes": "",
+      "created_at": "2026-02-25 07:35:36"
+    },
+    {
+      "id": 155,
+      "date": "2026-02-24",
+      "work_mode": "WFO",
+      "login_time": "09:35",
+      "logout_time": "18:20",
+      "work_hours": 8.75,
+      "notes": "",
+      "created_at": "2026-02-25 07:35:48"
+    },
+    {
+      "id": 156,
+      "date": "2026-02-04",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:33:49"
+    },
+    {
+      "id": 157,
+      "date": "2026-02-05",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:33:57"
+    },
+    {
+      "id": 158,
+      "date": "2026-02-06",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:34:06"
+    },
+    {
+      "id": 162,
+      "date": "2026-02-09",
+      "work_mode": "Leave",
+      "login_time": null,
+      "logout_time": null,
+      "work_hours": 0.0,
+      "notes": "",
+      "created_at": "2026-02-25 08:35:06"
+    },
+    {
+      "id": 163,
+      "date": "2026-02-10",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:20",
+      "work_hours": 8.83,
+      "notes": "",
+      "created_at": "2026-02-25 08:35:21"
+    },
+    {
+      "id": 164,
+      "date": "2026-02-11",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:20",
+      "work_hours": 8.83,
+      "notes": "",
+      "created_at": "2026-02-25 08:35:26"
+    },
+    {
+      "id": 165,
+      "date": "2026-02-12",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:35:36"
+    },
+    {
+      "id": 166,
+      "date": "2026-02-13",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:35:45"
+    },
+    {
+      "id": 169,
+      "date": "2026-02-16",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:36:00"
+    },
+    {
+      "id": 170,
+      "date": "2026-02-17",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:36:04"
+    },
+    {
+      "id": 171,
+      "date": "2026-02-18",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:36:07"
+    },
+    {
+      "id": 172,
+      "date": "2026-02-19",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:36:10"
+    },
+    {
+      "id": 174,
+      "date": "2026-02-20",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:20",
+      "work_hours": 9.33,
+      "notes": "",
+      "created_at": "2026-02-25 08:37:09"
+    },
+    {
+      "id": 175,
+      "date": "2026-02-23",
+      "work_mode": "Leave",
+      "login_time": null,
+      "logout_time": null,
+      "work_hours": 0.0,
+      "notes": "",
+      "created_at": "2026-02-25 08:37:17"
+    },
+    {
+      "id": 176,
+      "date": "2026-03-03",
+      "work_mode": "WFO",
+      "login_time": "09:34",
+      "logout_time": "18:34",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-03 04:33:14"
+    },
+    {
+      "id": 177,
+      "date": "2026-03-02",
+      "work_mode": "WFO",
+      "login_time": "09:00",
+      "logout_time": "18:10",
+      "work_hours": 9.17,
+      "notes": "",
+      "created_at": "2026-03-03 04:33:23"
+    },
+    {
+      "id": 178,
+      "date": "2026-03-04",
+      "work_mode": "WFO",
+      "login_time": "09:30",
+      "logout_time": "18:30",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-04 04:25:27"
+    },
+    {
+      "id": 179,
+      "date": "2026-03-05",
+      "work_mode": "WFO",
+      "login_time": "10:00",
+      "logout_time": "16:30",
+      "work_hours": 6.5,
+      "notes": "",
+      "created_at": "2026-03-05 04:40:08"
+    },
+    {
+      "id": 180,
+      "date": "2026-03-06",
+      "work_mode": "Leave",
+      "login_time": null,
+      "logout_time": null,
+      "work_hours": 0.0,
+      "notes": "",
+      "created_at": "2026-03-11 11:32:35"
+    },
+    {
+      "id": 181,
+      "date": "2026-03-09",
+      "work_mode": "WFO",
+      "login_time": "09:34",
+      "logout_time": "18:20",
+      "work_hours": 8.77,
+      "notes": "",
+      "created_at": "2026-03-11 11:32:57"
+    },
+    {
+      "id": 182,
+      "date": "2026-03-10",
+      "work_mode": "WFH",
+      "login_time": "09:00",
+      "logout_time": "18:00",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-11 11:33:12"
+    },
+    {
+      "id": 183,
+      "date": "2026-03-11",
+      "work_mode": "WFO",
+      "login_time": "09:35",
+      "logout_time": "18:20",
+      "work_hours": 8.75,
+      "notes": "",
+      "created_at": "2026-03-11 11:33:20"
+    },
+    {
+      "id": 185,
+      "date": "2026-03-23",
+      "work_mode": "WFO",
+      "login_time": "09:24",
+      "logout_time": "18:24",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-23 04:31:25"
+    },
+    {
+      "id": 186,
+      "date": "2026-03-20",
+      "work_mode": "WFH",
+      "login_time": "09:24",
+      "logout_time": "18:24",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-23 09:21:09"
+    },
+    {
+      "id": 187,
+      "date": "2026-03-12",
+      "work_mode": "WFO",
+      "login_time": "09:24",
+      "logout_time": "18:24",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-23 09:29:53"
+    },
+    {
+      "id": 188,
+      "date": "2026-03-13",
+      "work_mode": "WFH",
+      "login_time": "09:24",
+      "logout_time": "18:24",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-23 09:29:57"
+    },
+    {
+      "id": 189,
+      "date": "2026-03-16",
+      "work_mode": "WFO",
+      "login_time": "09:24",
+      "logout_time": "18:24",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-23 09:30:09"
+    },
+    {
+      "id": 190,
+      "date": "2026-03-17",
+      "work_mode": "WFH",
+      "login_time": "09:24",
+      "logout_time": "18:24",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-23 09:30:13"
+    },
+    {
+      "id": 191,
+      "date": "2026-03-18",
+      "work_mode": "WFO",
+      "login_time": "09:24",
+      "logout_time": "18:24",
+      "work_hours": 9.0,
+      "notes": "",
+      "created_at": "2026-03-23 09:30:19"
+    },
+    {
+      "id": 192,
+      "date": "2026-03-24",
+      "work_mode": "WFO",
+      "login_time": "09:34",
+      "logout_time": "18:20",
+      "work_hours": 8.77,
+      "notes": "",
+      "created_at": "2026-03-24 04:28:30"
+    }
+  ],
+  "daily_work": [
+    {
+      "id": 1,
+      "date": "2025-08-26",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 3,
+      "notes": "",
+      "time_spent": 2.0,
+      "created_at": "2025-08-26 09:59:30"
+    },
+    {
+      "id": 2,
+      "date": "2025-08-26",
+      "task_id": "SIN_00139",
+      "work_done": 25,
+      "notes": "",
+      "time_spent": 6.0,
+      "created_at": "2025-08-26 10:02:32"
+    },
+    {
+      "id": 3,
+      "date": "2025-08-28",
+      "task_id": "SIN_00139",
+      "work_done": 56,
+      "notes": "verifed all files and all QIA PT points send all remaks total 7 got relay from the corrections and verifed all the corrections",
+      "time_spent": 4.0,
+      "created_at": "2025-08-28 10:14:32"
+    },
+    {
+      "id": 4,
+      "date": "2025-08-28",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 1,
+      "notes": "QIA PT point no 396 -> one sheet impacted and one is not impacted\nQIA PT point no 395 - > N1 (1162B, 1163, 1163B, 1164, 1164B) this point is refused \nQIA PT point no 394 - > N1 (1175) this point is refused",
+      "time_spent": 4.0,
+      "created_at": "2025-08-28 12:04:10"
+    },
+    {
+      "id": 5,
+      "date": "2025-08-29",
+      "task_id": "SIN_00139",
+      "work_done": 0,
+      "notes": "Verified all remarks and settled sent internal review ok mail",
+      "time_spent": 1.0,
+      "created_at": "2025-08-29 05:25:53"
+    },
+    {
+      "id": 6,
+      "date": "2025-08-29",
+      "task_id": "Task_0001",
+      "work_done": 1,
+      "notes": "Worked on Testcases Generation prompt for clint demo",
+      "time_spent": 2.0,
+      "created_at": "2025-08-29 10:36:46"
+    },
+    {
+      "id": 7,
+      "date": "2025-08-29",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 13,
+      "notes": "QIA PT point 393, impacted sheets 254X total 13 sheets",
+      "time_spent": 5.0,
+      "created_at": "2025-08-29 12:53:56"
+    },
+    {
+      "id": 8,
+      "date": "2025-09-01",
+      "task_id": "Task_0001",
+      "work_done": 0,
+      "notes": "AI test case generater prompt update with VSM teamplate",
+      "time_spent": 2.0,
+      "created_at": "2025-09-01 15:50:48"
+    },
+    {
+      "id": 9,
+      "date": "2025-09-01",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 5,
+      "notes": "competed 2 QIA PT points with 5 sheets",
+      "time_spent": 4.0,
+      "created_at": "2025-09-01 15:51:19"
+    },
+    {
+      "id": 10,
+      "date": "2025-09-01",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "attanded meeting for ECLI FTR and verified the created sheet",
+      "time_spent": 2.0,
+      "created_at": "2025-09-01 15:53:46"
+    },
+    {
+      "id": 11,
+      "date": "2025-09-02",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 8,
+      "notes": "Completed 2 QIA PT points",
+      "time_spent": 6.0,
+      "created_at": "2025-09-03 03:56:08"
+    },
+    {
+      "id": 12,
+      "date": "2025-09-02",
+      "task_id": "Task_0001",
+      "work_done": 0,
+      "notes": "worked on AI prompt",
+      "time_spent": 1.0,
+      "created_at": "2025-09-03 03:56:31"
+    },
+    {
+      "id": 13,
+      "date": "2025-09-02",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "reviewd the ECLI FTR point new sheet",
+      "time_spent": 1.0,
+      "created_at": "2025-09-03 03:57:27"
+    },
+    {
+      "id": 14,
+      "date": "2025-09-03",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "attended two meetings for ECLI FTR point",
+      "time_spent": 2.0,
+      "created_at": "2025-09-03 10:12:10"
+    },
+    {
+      "id": 16,
+      "date": "2025-09-03",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 20,
+      "notes": "",
+      "time_spent": 6.0,
+      "created_at": "2025-09-03 10:12:47"
+    },
+    {
+      "id": 17,
+      "date": "2025-09-04",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 10,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-09-08 04:04:22"
+    },
+    {
+      "id": 18,
+      "date": "2025-09-04",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "Corrected 11 SS sheets for FOTA",
+      "time_spent": 4.0,
+      "created_at": "2025-09-08 04:05:48"
+    },
+    {
+      "id": 19,
+      "date": "2025-09-05",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 5,
+      "notes": "impacted 5 sheets and redused the total FT's from 257 to 200",
+      "time_spent": 8.0,
+      "created_at": "2025-09-08 04:06:29"
+    },
+    {
+      "id": 20,
+      "date": "2025-09-08",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 1,
+      "notes": "[FEPS_138606] [SPA_00194] [FSPS_139483] [SPA_00195]: FEPS 0% Coverage Due to Missing Supporting Requirements for REQ-0604583(O) REQ-0604605(B) REQ-0604669(B)\n\t\nGERER_REGULATION_CLIM\n\t\nFSEE_CLIM_REGUL\n\t\nSent mail to the input analyis team requirement wrongly linked to the FSEE_CLIM_IHM test plan.\nREQ-0604605(B)\n\t\nBUILD_INFO_INT_POLLUT\n\t\nFSEE_CLIM_IHM\n\t\nOpened QIA Point No. 272 in  01407_20_03654 within SSD Cabin Thermal.\nREQ-0604669(B)",
+      "time_spent": 7.0,
+      "created_at": "2025-09-08 11:56:17"
+    },
+    {
+      "id": 21,
+      "date": "2025-09-08",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "KT- Input Analysis from 3PM to 4 PM",
+      "time_spent": 1.0,
+      "created_at": "2025-09-08 11:57:45"
+    },
+    {
+      "id": 22,
+      "date": "2025-09-09",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 16,
+      "notes": "completed all sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-09-09 08:25:32"
+    },
+    {
+      "id": 23,
+      "date": "2025-09-10",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "DSR - 1hr and IA - 1HR",
+      "time_spent": 2.0,
+      "created_at": "2025-09-10 13:31:14"
+    },
+    {
+      "id": 24,
+      "date": "2025-09-10",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 0,
+      "notes": "worked on QIA spec and QIA PT",
+      "time_spent": 7.0,
+      "created_at": "2025-09-10 13:43:32"
+    },
+    {
+      "id": 25,
+      "date": "2025-09-11",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "DSR - 1.5 hrs",
+      "time_spent": 1.5,
+      "created_at": "2025-09-11 06:13:46"
+    },
+    {
+      "id": 26,
+      "date": "2025-09-11",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 0,
+      "notes": "worked on 5 spec QIA points",
+      "time_spent": 6.5,
+      "created_at": "2025-09-12 05:54:36"
+    },
+    {
+      "id": 27,
+      "date": "2025-09-12",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 0,
+      "notes": "Generated all check files, cleared all errors and sent task for FR",
+      "time_spent": 8.0,
+      "created_at": "2025-09-12 05:55:11"
+    },
+    {
+      "id": 28,
+      "date": "2025-09-15",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 12,
+      "notes": "Worked on 12 sheets",
+      "time_spent": 4.0,
+      "created_at": "2025-09-15 12:30:34"
+    },
+    {
+      "id": 29,
+      "date": "2025-09-15",
+      "task_id": "SIN_00123\nSIN_00124",
+      "work_done": 35,
+      "notes": "Woking on FR completed 35 sheets",
+      "time_spent": 4.0,
+      "created_at": "2025-09-16 09:39:30"
+    },
+    {
+      "id": 30,
+      "date": "2025-09-16",
+      "task_id": "SIN_00123\nSIN_00124",
+      "work_done": 35,
+      "notes": "Woking on FR completed 35 sheets",
+      "time_spent": 4.0,
+      "created_at": "2025-09-16 09:39:43"
+    },
+    {
+      "id": 31,
+      "date": "2025-09-16",
+      "task_id": "SIN_00123\nSIN_00124",
+      "work_done": 30,
+      "notes": "",
+      "time_spent": 4.0,
+      "created_at": "2025-09-16 11:26:21"
+    },
+    {
+      "id": 33,
+      "date": "2025-09-17",
+      "task_id": "SIN_00123\nSIN_00124",
+      "work_done": 40,
+      "notes": "completed 40 for FR sheets",
+      "time_spent": 4.0,
+      "created_at": "2025-09-17 12:34:51"
+    },
+    {
+      "id": 34,
+      "date": "2025-09-17",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "2 hr's for Communication Excellence Program (3PM to 5PM)\n1 hr for DSR (5PM to 6:20)",
+      "time_spent": 3.0,
+      "created_at": "2025-09-17 12:41:14"
+    },
+    {
+      "id": 35,
+      "date": "2025-09-17",
+      "task_id": "Task_0001",
+      "work_done": 0,
+      "notes": "Prepared a PPT for client meeting for VSM + AI + CYBORG",
+      "time_spent": 1.0,
+      "created_at": "2025-09-17 12:43:31"
+    },
+    {
+      "id": 36,
+      "date": "2025-09-18",
+      "task_id": "Task_0001",
+      "work_done": 0,
+      "notes": "JLR client demo preparation and presentation",
+      "time_spent": 2.0,
+      "created_at": "2025-09-18 08:58:43"
+    },
+    {
+      "id": 37,
+      "date": "2025-09-18",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "CEP Meeting - 2hrs ( 2PM to 4 PM )\nDSR Meeting - 1hrs ( 5PM to 6 PM )",
+      "time_spent": 3.0,
+      "created_at": "2025-09-18 09:00:09"
+    },
+    {
+      "id": 39,
+      "date": "2025-09-22",
+      "task_id": "SIN_00123\nSIN_00124",
+      "work_done": 65,
+      "notes": "working on FR for the NTW task 74 sheets are completed,",
+      "time_spent": 5.0,
+      "created_at": "2025-09-22 10:23:41"
+    },
+    {
+      "id": 40,
+      "date": "2025-09-22",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "CEP - 2 hr's ( 2 PM to 4 PM ) \nDSR - 1Hr ( 5PM to 6 PM )",
+      "time_spent": 3.0,
+      "created_at": "2025-09-22 10:24:22"
+    },
+    {
+      "id": 41,
+      "date": "2025-09-19",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "CEP - 2 hr's ( 2 PM to 4 PM ) \nDSR - 1Hr ( 5PM to 6 PM )",
+      "time_spent": 3.0,
+      "created_at": "2025-09-22 10:24:44"
+    },
+    {
+      "id": 42,
+      "date": "2025-09-19",
+      "task_id": "SIN_00123\nSIN_00124",
+      "work_done": 0,
+      "notes": "Completed FR 60 sheets",
+      "time_spent": 5.0,
+      "created_at": "2025-09-22 10:25:19"
+    },
+    {
+      "id": 43,
+      "date": "2025-09-24",
+      "task_id": "SPA_00191\nSPA_00192\nSPA_00193\nSPA_00194\nSPA_00195\nSPA_00196",
+      "work_done": 0,
+      "notes": "generated all check files with latest macro and cleared all errors and updated the QIA PT with latest comments",
+      "time_spent": 5.0,
+      "created_at": "2025-09-25 03:39:25"
+    },
+    {
+      "id": 44,
+      "date": "2025-09-24",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "CEP - 2hrs \nDSR - 1hr",
+      "time_spent": 3.0,
+      "created_at": "2025-09-25 03:39:42"
+    },
+    {
+      "id": 45,
+      "date": "2025-10-06",
+      "task_id": "SPA_00269",
+      "work_done": 2,
+      "notes": "Created 2 new sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-10-06 08:27:20"
+    },
+    {
+      "id": 46,
+      "date": "2025-10-07",
+      "task_id": "SPA_00269",
+      "work_done": 10,
+      "notes": "completed 10 sheets ,",
+      "time_spent": 6.0,
+      "created_at": "2025-10-07 12:27:20"
+    },
+    {
+      "id": 47,
+      "date": "2025-10-07",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "",
+      "time_spent": 2.0,
+      "created_at": "2025-10-07 12:27:29"
+    },
+    {
+      "id": 48,
+      "date": "2025-10-09",
+      "task_id": "SPA_00269",
+      "work_done": 0,
+      "notes": "Completed 20 QIA PT points pending 30",
+      "time_spent": 5.0,
+      "created_at": "2025-10-10 04:17:57"
+    },
+    {
+      "id": 49,
+      "date": "2025-10-09",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "Worked on PUCSM and REPAS_SC FTR points",
+      "time_spent": 2.0,
+      "created_at": "2025-10-10 04:18:45"
+    },
+    {
+      "id": 50,
+      "date": "2025-10-09",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "Expleon Experience- REWIND 2025",
+      "time_spent": 1.0,
+      "created_at": "2025-10-10 04:19:31"
+    },
+    {
+      "id": 51,
+      "date": "2025-10-13",
+      "task_id": "SPA_00269",
+      "work_done": 3,
+      "notes": "worked on 3 sheets",
+      "time_spent": 5.0,
+      "created_at": "2025-10-14 03:55:40"
+    },
+    {
+      "id": 52,
+      "date": "2025-10-13",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "worked on the CLIM FTR point and worked on JCG block mail",
+      "time_spent": 3.0,
+      "created_at": "2025-10-14 03:56:13"
+    },
+    {
+      "id": 53,
+      "date": "2025-10-15",
+      "task_id": "SPA_00271",
+      "work_done": 23,
+      "notes": "completed 23 sheets",
+      "time_spent": 4.0,
+      "created_at": "2025-10-21 08:39:58"
+    },
+    {
+      "id": 54,
+      "date": "2025-10-15",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "FSEE_CONFORT_THERMIQUE - SPA_00283, SPA_00315 - task analysed and blocked the task",
+      "time_spent": 4.0,
+      "created_at": "2025-10-21 08:41:04"
+    },
+    {
+      "id": 55,
+      "date": "2025-10-16",
+      "task_id": "SPA_00271",
+      "work_done": 50,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-10-21 08:41:22"
+    },
+    {
+      "id": 56,
+      "date": "2025-10-17",
+      "task_id": "SPA_00269",
+      "work_done": 10,
+      "notes": "Worked on FR points all points completed, impacted 10 sheets for check list error",
+      "time_spent": 8.0,
+      "created_at": "2025-10-21 08:42:30"
+    },
+    {
+      "id": 58,
+      "date": "2025-10-21",
+      "task_id": "SPA_00271",
+      "work_done": 50,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-10-21 08:44:36"
+    },
+    {
+      "id": 59,
+      "date": "2025-10-27",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 10,
+      "notes": "",
+      "time_spent": 4.0,
+      "created_at": "2025-10-28 03:19:00"
+    },
+    {
+      "id": 61,
+      "date": "2025-10-27",
+      "task_id": "SPA_00238",
+      "work_done": 6,
+      "notes": "virified all check files and QIA files, test plan",
+      "time_spent": 4.0,
+      "created_at": "2025-10-28 03:22:37"
+    },
+    {
+      "id": 64,
+      "date": "2025-10-23",
+      "task_id": "SPA_00269",
+      "work_done": 0,
+      "notes": "Completed all QG points, generate all check fiels with latest macro sent final delivary mail. Started FSEE_OTA_UPDATE task analysis",
+      "time_spent": 8.0,
+      "created_at": "2025-10-28 03:26:12"
+    },
+    {
+      "id": 65,
+      "date": "2025-10-24",
+      "task_id": "SPA_00271",
+      "work_done": 0,
+      "notes": "worked on  ACTIVE_BRAKE FR points Rewired and settled, impacted 5 sheets for OTA_UPDATE",
+      "time_spent": 4.0,
+      "created_at": "2025-10-28 03:26:32"
+    },
+    {
+      "id": 66,
+      "date": "2025-10-24",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 5,
+      "notes": "worked on  ACTIVE_BRAKE FR points Rewired and settled, impacted 5 sheets for OTA_UPDATE",
+      "time_spent": 4.0,
+      "created_at": "2025-10-28 03:26:39"
+    },
+    {
+      "id": 67,
+      "date": "2025-10-28",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-10-28 12:30:06"
+    },
+    {
+      "id": 68,
+      "date": "2025-10-29",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-10-30 03:55:38"
+    },
+    {
+      "id": 69,
+      "date": "2025-10-31",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "Impacted 15 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-11-03 04:23:02"
+    },
+    {
+      "id": 70,
+      "date": "2025-11-04",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 10,
+      "notes": "",
+      "time_spent": 6.0,
+      "created_at": "2025-11-04 09:52:27"
+    },
+    {
+      "id": 71,
+      "date": "2025-11-04",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "Laptop repair",
+      "time_spent": 2.0,
+      "created_at": "2025-11-04 09:52:46"
+    },
+    {
+      "id": 72,
+      "date": "2025-11-03",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "Laptop repair",
+      "time_spent": 8.0,
+      "created_at": "2025-11-04 09:59:15"
+    },
+    {
+      "id": 73,
+      "date": "2025-11-05",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 10,
+      "notes": "",
+      "time_spent": 7.0,
+      "created_at": "2025-11-06 06:51:49"
+    },
+    {
+      "id": 74,
+      "date": "2025-11-05",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "meeting on the AI Tool technical discussions",
+      "time_spent": 1.0,
+      "created_at": "2025-11-06 06:52:25"
+    },
+    {
+      "id": 75,
+      "date": "2025-11-06",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 7.0,
+      "created_at": "2025-11-06 06:52:38"
+    },
+    {
+      "id": 76,
+      "date": "2025-11-06",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "Attended meeting for SCPB FTR points with PBO",
+      "time_spent": 1.0,
+      "created_at": "2025-11-06 06:53:21"
+    },
+    {
+      "id": 77,
+      "date": "2025-11-10",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 7.0,
+      "created_at": "2025-11-10 08:32:38"
+    },
+    {
+      "id": 79,
+      "date": "2025-11-10",
+      "task_id": "TASK_0002",
+      "work_done": 0,
+      "notes": "DAGMP meeting with cristi from 2:30 to 3:30",
+      "time_spent": 1.0,
+      "created_at": "2025-11-10 08:33:18"
+    },
+    {
+      "id": 80,
+      "date": "2025-11-11",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-11-12 02:47:19"
+    },
+    {
+      "id": 82,
+      "date": "2025-11-13",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-11-13 12:11:10"
+    },
+    {
+      "id": 83,
+      "date": "2025-11-12",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-11-13 12:11:13"
+    },
+    {
+      "id": 84,
+      "date": "2025-11-14",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-11-17 04:37:27"
+    },
+    {
+      "id": 85,
+      "date": "2025-11-17",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-11-17 04:37:42"
+    },
+    {
+      "id": 86,
+      "date": "2025-11-18",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 15,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2025-11-21 03:19:30"
+    },
+    {
+      "id": 88,
+      "date": "2025-11-19",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 7,
+      "notes": "Creating new sheets and every sheet having the 20+ requirements",
+      "time_spent": 8.0,
+      "created_at": "2025-11-21 03:20:29"
+    },
+    {
+      "id": 89,
+      "date": "2025-11-20",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 7,
+      "notes": "Creating new sheets and every sheet having the 20+ requirements",
+      "time_spent": 8.0,
+      "created_at": "2025-11-21 03:20:43"
+    },
+    {
+      "id": 90,
+      "date": "2025-11-24",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 8,
+      "notes": "Created 15 sheets and worked on QIA PT points total 7 completed",
+      "time_spent": 15.0,
+      "created_at": "2025-11-26 07:56:08"
+    },
+    {
+      "id": 91,
+      "date": "2025-11-25",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 8,
+      "notes": "Impacted 41 sheets and worked on QIA SS points total 10 completed",
+      "time_spent": 41.0,
+      "created_at": "2025-11-26 07:56:27"
+    },
+    {
+      "id": 92,
+      "date": "2025-11-26",
+      "task_id": "SPA_00272\nSPA_00273\nSPA_00316\nSPA_00319\nSPA_00325\nSPA_00337",
+      "work_done": 8,
+      "notes": "",
+      "time_spent": 80.0,
+      "created_at": "2025-11-26 08:00:49"
+    },
+    {
+      "id": 93,
+      "date": "2025-11-27",
+      "task_id": "SPA_00272\nSPA_00273\nSPA_00316\nSPA_00319\nSPA_00325\nSPA_00337",
+      "work_done": 97,
+      "notes": "worked on QG reivew and verifing the comments sent OK mail for QG",
+      "time_spent": 6.0,
+      "created_at": "2025-11-28 04:28:32"
+    },
+    {
+      "id": 94,
+      "date": "2025-11-27",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 0,
+      "notes": "worked on check files generation and fixing the comments from FR completed all FR points task in QG",
+      "time_spent": 2.0,
+      "created_at": "2025-11-28 04:29:52"
+    },
+    {
+      "id": 96,
+      "date": "2025-11-28",
+      "task_id": "SPA_00284\nSPA_00269\nSPA_00270",
+      "work_done": 0,
+      "notes": "QG completed and task delivered , time spent on generating files",
+      "time_spent": 8.0,
+      "created_at": "2025-11-28 12:29:02"
+    },
+    {
+      "id": 97,
+      "date": "2025-12-03",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 2,
+      "notes": "Impacted 2 sheets and Blocked the FEPS_143028 with 4 Evolved requirements and 1 new requirement with the reducing the impact of 13 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-12-08 04:09:29"
+    },
+    {
+      "id": 98,
+      "date": "2025-12-04",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 7,
+      "notes": "Impacted 5 sheets and created 2 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-12-08 04:09:51"
+    },
+    {
+      "id": 99,
+      "date": "2025-12-05",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "team Outing at RR Retreat \u2013 5th Dec 2025",
+      "time_spent": 8.0,
+      "created_at": "2025-12-08 04:10:09"
+    },
+    {
+      "id": 100,
+      "date": "2025-12-16",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 5,
+      "notes": "created 5 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-12-17 11:51:10"
+    },
+    {
+      "id": 101,
+      "date": "2025-12-17",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 5,
+      "notes": "created 5 sheets with 5 new requirements",
+      "time_spent": 8.0,
+      "created_at": "2025-12-17 11:51:40"
+    },
+    {
+      "id": 102,
+      "date": "2025-12-09",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 7,
+      "notes": "impacted 7 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-12-17 11:53:56"
+    },
+    {
+      "id": 103,
+      "date": "2025-12-10",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 8,
+      "notes": "impacted 8 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-12-17 11:54:59"
+    },
+    {
+      "id": 104,
+      "date": "2025-12-08",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 15,
+      "notes": "impacted 5 sheets and created 10 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-12-17 11:55:27"
+    },
+    {
+      "id": 105,
+      "date": "2025-12-15",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 0,
+      "notes": "Requirment analysis for new FEPS",
+      "time_spent": 8.0,
+      "created_at": "2025-12-17 11:56:12"
+    },
+    {
+      "id": 106,
+      "date": "2025-12-18",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 5,
+      "notes": "Created 5 sheets with the treat of the 4 requirements",
+      "time_spent": 8.0,
+      "created_at": "2025-12-18 12:28:54"
+    },
+    {
+      "id": 107,
+      "date": "2025-12-19",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 4,
+      "notes": "treated 4 new requirements with the impact of the 4 sheets",
+      "time_spent": 8.0,
+      "created_at": "2025-12-22 04:31:08"
+    },
+    {
+      "id": 108,
+      "date": "2025-12-22",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 0,
+      "notes": "worked on FEPS reverification",
+      "time_spent": 8.0,
+      "created_at": "2025-12-23 03:55:13"
+    },
+    {
+      "id": 109,
+      "date": "2025-12-24",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 0,
+      "notes": "working on new requirements",
+      "time_spent": 8.0,
+      "created_at": "2026-01-02 04:14:50"
+    },
+    {
+      "id": 110,
+      "date": "2025-12-26",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 0,
+      "notes": "working on new requirements and QIA PT",
+      "time_spent": 8.0,
+      "created_at": "2026-01-02 04:15:15"
+    },
+    {
+      "id": 111,
+      "date": "2025-12-29",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 0,
+      "notes": "working on merge PT's and QIA PT",
+      "time_spent": 8.0,
+      "created_at": "2026-01-02 04:16:14"
+    },
+    {
+      "id": 112,
+      "date": "2025-12-30",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 0,
+      "notes": "working on generating the check files and solving the errors",
+      "time_spent": 8.0,
+      "created_at": "2026-01-02 04:17:06"
+    },
+    {
+      "id": 113,
+      "date": "2025-12-31",
+      "task_id": "SPA_00204\nSPA_00205\nSPA_00206\nSPA_00207\nSPA_00208\nSPA_00209",
+      "work_done": 0,
+      "notes": "check files generation and task delivared",
+      "time_spent": 8.0,
+      "created_at": "2026-01-02 04:17:34"
+    },
+    {
+      "id": 114,
+      "date": "2026-01-05",
+      "task_id": "SPA_00332",
+      "work_done": 5,
+      "notes": "Impacted 5 sheets and blocked 6 requirements, reducing the sheet count from 120 to 50.",
+      "time_spent": 8.0,
+      "created_at": "2026-01-05 12:39:14"
+    },
+    {
+      "id": 115,
+      "date": "2026-01-06",
+      "task_id": "SPA_00332",
+      "work_done": 9,
+      "notes": "Impacted 9 sheets and opened QIA PT and QIA spec for the blocked requirements",
+      "time_spent": 8.0,
+      "created_at": "2026-01-06 11:45:45"
+    },
+    {
+      "id": 116,
+      "date": "2026-01-07",
+      "task_id": "SPA_00332",
+      "work_done": 14,
+      "notes": "impacted 14 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-01-07 06:49:51"
+    },
+    {
+      "id": 117,
+      "date": "2026-01-08",
+      "task_id": "SPA_00332",
+      "work_done": 0,
+      "notes": "Worked on QIA PT points and completed 15 out of 44 points.",
+      "time_spent": 8.0,
+      "created_at": "2026-01-12 04:53:22"
+    },
+    {
+      "id": 118,
+      "date": "2026-01-09",
+      "task_id": "SPA_00332",
+      "work_done": 0,
+      "notes": "Worked on QIA PT points and completed 20 out of 44 points, total 35 completed.",
+      "time_spent": 8.0,
+      "created_at": "2026-01-12 04:53:35"
+    },
+    {
+      "id": 119,
+      "date": "2026-01-12",
+      "task_id": "SIN_00242",
+      "work_done": 1,
+      "notes": "Delivered the DC reivew with green",
+      "time_spent": 4.0,
+      "created_at": "2026-01-13 04:30:17"
+    },
+    {
+      "id": 120,
+      "date": "2026-01-12",
+      "task_id": "SPA_00332",
+      "work_done": 0,
+      "notes": "Completed 9 QIA PT points, total 44 points are completed. Also worked on 40 QIA Param global points and delivered one DC review task for FSEE_PUCSM.",
+      "time_spent": 4.0,
+      "created_at": "2026-01-13 04:30:53"
+    },
+    {
+      "id": 121,
+      "date": "2026-01-14",
+      "task_id": "SPA_00332",
+      "work_done": 5,
+      "notes": "Impacted 5 sheets and worked on the check report errors pending with files generation",
+      "time_spent": 8.0,
+      "created_at": "2026-01-19 04:18:08"
+    },
+    {
+      "id": 122,
+      "date": "2026-01-16",
+      "task_id": "SPA_00332",
+      "work_done": 0,
+      "notes": "Generated all check files and sent task for FR",
+      "time_spent": 8.0,
+      "created_at": "2026-01-19 04:18:46"
+    },
+    {
+      "id": 123,
+      "date": "2026-01-20",
+      "task_id": "SPA_00332",
+      "work_done": 0,
+      "notes": "Worked on FR comments and generated all check files with the latest macro V50.5",
+      "time_spent": 8.0,
+      "created_at": "2026-01-22 04:59:31"
+    },
+    {
+      "id": 124,
+      "date": "2026-01-21",
+      "task_id": "SPA_00260",
+      "work_done": 70,
+      "notes": "FR for NTW completed 70 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-01-22 05:02:12"
+    },
+    {
+      "id": 126,
+      "date": "2026-01-23",
+      "task_id": "SPA_00260",
+      "work_done": 80,
+      "notes": "Working on the FR for NTW completed 80",
+      "time_spent": 8.0,
+      "created_at": "2026-01-28 04:40:58"
+    },
+    {
+      "id": 127,
+      "date": "2026-01-28",
+      "task_id": "SPA_00260",
+      "work_done": 200,
+      "notes": "Working on the FR for NTW completed 200",
+      "time_spent": 8.0,
+      "created_at": "2026-01-28 10:09:14"
+    },
+    {
+      "id": 128,
+      "date": "2026-01-27",
+      "task_id": "SPA_00260",
+      "work_done": 200,
+      "notes": "Working on the FR for NTW completed 200",
+      "time_spent": 8.0,
+      "created_at": "2026-01-28 10:10:04"
+    },
+    {
+      "id": 129,
+      "date": "2026-01-29",
+      "task_id": "SPA_00260",
+      "work_done": 270,
+      "notes": "",
+      "time_spent": 8.0,
+      "created_at": "2026-01-29 12:32:47"
+    },
+    {
+      "id": 130,
+      "date": "2026-01-30",
+      "task_id": "SPA_00260",
+      "work_done": 0,
+      "notes": "supported for files generation errors solve and delivered the task",
+      "time_spent": 8.0,
+      "created_at": "2026-02-02 04:50:06"
+    },
+    {
+      "id": 131,
+      "date": "2026-02-03",
+      "task_id": "Task_003",
+      "work_done": 0,
+      "notes": "Worked on FSEE_ECLI task blocekd the task",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:39:27"
+    },
+    {
+      "id": 132,
+      "date": "2026-02-04",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 10,
+      "notes": "Impacted 10 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:39:51"
+    },
+    {
+      "id": 133,
+      "date": "2026-02-05",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 10,
+      "notes": "Impacted 10 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:40:04"
+    },
+    {
+      "id": 134,
+      "date": "2026-02-06",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 6,
+      "notes": "Impacted 6 sheets",
+      "time_spent": 4.0,
+      "created_at": "2026-02-25 08:40:52"
+    },
+    {
+      "id": 135,
+      "date": "2026-02-10",
+      "task_id": "SPA_00303\nSPA_00323\nSPA_00334\nSPA_00353\nSPA_00367",
+      "work_done": 40,
+      "notes": "",
+      "time_spent": 4.0,
+      "created_at": "2026-02-25 08:43:47"
+    },
+    {
+      "id": 137,
+      "date": "2026-02-11",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 7,
+      "notes": "",
+      "time_spent": 4.0,
+      "created_at": "2026-02-25 08:44:42"
+    },
+    {
+      "id": 138,
+      "date": "2026-02-11",
+      "task_id": "SPA_00303\nSPA_00323\nSPA_00334\nSPA_00353\nSPA_00367",
+      "work_done": 30,
+      "notes": "",
+      "time_spent": 4.0,
+      "created_at": "2026-02-25 08:45:06"
+    },
+    {
+      "id": 139,
+      "date": "2026-02-12",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 0,
+      "notes": "worked on 12 QIA PT point and with the impact of 2 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:45:29"
+    },
+    {
+      "id": 140,
+      "date": "2026-02-13",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 0,
+      "notes": "Worked on 12 QIA PT points",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:45:42"
+    },
+    {
+      "id": 141,
+      "date": "2026-02-16",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 0,
+      "notes": "Worked on 4 QIA PT points and 90 QIA PG points",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:45:56"
+    },
+    {
+      "id": 142,
+      "date": "2026-02-17",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 0,
+      "notes": "85 QIA PG points and 5 QIA ss points",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:46:10"
+    },
+    {
+      "id": 143,
+      "date": "2026-02-18",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 0,
+      "notes": "Worked on check files generation with the latest macro and sent task for FR",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:46:29"
+    },
+    {
+      "id": 144,
+      "date": "2026-02-19",
+      "task_id": "SPA_00352\nAMAL_00244",
+      "work_done": 0,
+      "notes": "Worked on checklist generation",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:46:41"
+    },
+    {
+      "id": 146,
+      "date": "2026-02-20",
+      "task_id": "AMAL_0230",
+      "work_done": 1,
+      "notes": "Impacted 1 sheets and Worked on QIA PT points out of 43 completed 23 points",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:47:35"
+    },
+    {
+      "id": 147,
+      "date": "2026-02-24",
+      "task_id": "AMAL_00248\nAMAL_00233",
+      "work_done": 12,
+      "notes": "Impacted 12 sheets and delivered two tasks FSEE_CONFORT_THERMIQUE, FSEE_ACTIVE_BREAK",
+      "time_spent": 8.0,
+      "created_at": "2026-02-25 08:52:27"
+    },
+    {
+      "id": 148,
+      "date": "2026-02-06",
+      "task_id": "MPA_00004",
+      "work_done": 3,
+      "notes": "",
+      "time_spent": 4.0,
+      "created_at": "2026-02-25 09:08:42"
+    },
+    {
+      "id": 149,
+      "date": "2026-02-10",
+      "task_id": "MPA_00005",
+      "work_done": 5,
+      "notes": "",
+      "time_spent": 4.0,
+      "created_at": "2026-02-25 09:10:08"
+    },
+    {
+      "id": 150,
+      "date": "2026-03-02",
+      "task_id": "AMAL_00248\nAMAL_00233",
+      "work_done": 100,
+      "notes": "impacted 100 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-03-03 04:35:32"
+    },
+    {
+      "id": 151,
+      "date": "2026-03-03",
+      "task_id": "AMAL_00248\nAMAL_00233",
+      "work_done": 0,
+      "notes": "Working on files generation",
+      "time_spent": 8.0,
+      "created_at": "2026-03-03 04:35:50"
+    },
+    {
+      "id": 152,
+      "date": "2026-03-04",
+      "task_id": "AMAL_00248\nAMAL_00233",
+      "work_done": 15,
+      "notes": "impacted 15 sheets and generated all check fiels",
+      "time_spent": 8.0,
+      "created_at": "2026-03-05 08:29:58"
+    },
+    {
+      "id": 153,
+      "date": "2026-03-05",
+      "task_id": "AMAL_00248\nAMAL_00233",
+      "work_done": 0,
+      "notes": "Generated all check files with latest version 51.5 and delivered the task",
+      "time_spent": 8.0,
+      "created_at": "2026-03-05 08:30:38"
+    },
+    {
+      "id": 154,
+      "date": "2026-03-09",
+      "task_id": "SPA_00362",
+      "work_done": 0,
+      "notes": "Completed 18 QIA PT points with no impact",
+      "time_spent": 8.0,
+      "created_at": "2026-03-11 11:36:00"
+    },
+    {
+      "id": 155,
+      "date": "2026-03-10",
+      "task_id": "SPA_00362",
+      "work_done": 12,
+      "notes": "Worked on 12 QIA PT points with the impact of 12 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-03-11 11:36:14"
+    },
+    {
+      "id": 156,
+      "date": "2026-03-11",
+      "task_id": "SPA_00362",
+      "work_done": 2,
+      "notes": "Worked on 13 QIA PT points with 2 sheets impact",
+      "time_spent": 8.0,
+      "created_at": "2026-03-11 11:36:31"
+    },
+    {
+      "id": 157,
+      "date": "2026-03-20",
+      "task_id": "SPA_00122\nSPA_00122\nSPA_00341\nSPA_00343",
+      "work_done": 15,
+      "notes": "Impacted 15 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-03-23 09:23:58"
+    },
+    {
+      "id": 158,
+      "date": "2026-03-18",
+      "task_id": "SPA_00122\nSPA_00122\nSPA_00341\nSPA_00343",
+      "work_done": 15,
+      "notes": "Impacted 15 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-03-23 09:24:15"
+    },
+    {
+      "id": 159,
+      "date": "2026-03-17",
+      "task_id": "SPA_00122\nSPA_00122\nSPA_00341\nSPA_00343",
+      "work_done": 11,
+      "notes": "Impacted 15 sheets",
+      "time_spent": 8.0,
+      "created_at": "2026-03-23 09:24:30"
+    },
+    {
+      "id": 160,
+      "date": "2026-03-16",
+      "task_id": "SPA_00122\nSPA_00122\nSPA_00341\nSPA_00343",
+      "work_done": 3,
+      "notes": "Worked on 10 QIA PT points with 3 sheets of impact",
+      "time_spent": 8.0,
+      "created_at": "2026-03-23 09:24:58"
+    },
+    {
+      "id": 161,
+      "date": "2026-03-13",
+      "task_id": "SPA_00362",
+      "work_done": 0,
+      "notes": "Worked on fiels generation check errors solve",
+      "time_spent": 8.0,
+      "created_at": "2026-03-23 09:29:16"
+    },
+    {
+      "id": 162,
+      "date": "2026-03-12",
+      "task_id": "SPA_00362",
+      "work_done": 0,
+      "notes": "Worked on 16 QIA PT points with no sheets impact",
+      "time_spent": 8.0,
+      "created_at": "2026-03-23 09:29:38"
+    }
+  ],
+  "notes": [
+    {
+      "id": 1,
+      "date": "2025-08-28",
+      "comment": "Accenture - 7903121253 (Rohan Raj)\nhttps://mycareer.accenture.com?source=agency_referral&CID=C17617569\nMail : juturutharun6@gmail.com\nP: Bujji$manu123\nJD : infotainment, Telematics\n\n10/09/2025 \ngiot mail for interview dates\n01/09/2025 - got call from Accenture  for verification\n09880544052 - Shanthi F",
+      "status": "Completed",
+      "created_at": "2025-08-28 12:06:38"
+    },
+    {
+      "id": 2,
+      "date": "2025-08-22",
+      "comment": "Marelli - 06362438014\nJD : HIL (BCM)",
+      "status": "Completed",
+      "created_at": "2025-08-28 12:07:37"
+    },
+    {
+      "id": 3,
+      "date": "2025-08-02",
+      "comment": "2025-08-02 \nMaxwellenergy \n9847492118 - Muhammed Rahman\nFace to Face interview on Sep 06 at 11:45am - 12:30pm\nInterview attended waiting for result\ngot result not selected",
+      "status": "Completed",
+      "created_at": "2025-09-03 04:49:34"
+    }
+  ],
+  "task_types": [
+    {
+      "id": 1,
+      "name": "Development"
+    },
+    {
+      "id": 2,
+      "name": "Testing"
+    },
+    {
+      "id": 3,
+      "name": "Review"
+    },
+    {
+      "id": 4,
+      "name": "Documentation"
+    },
+    {
+      "id": 5,
+      "name": "Analysis"
+    },
+    {
+      "id": 6,
+      "name": "Meeting"
+    },
+    {
+      "id": 7,
+      "name": "Others"
+    },
+    {
+      "id": 8,
+      "name": "PT_Update"
+    },
+    {
+      "id": 9,
+      "name": "Update_BRANCH_PT"
+    },
+    {
+      "id": 10,
+      "name": "PC_Validation"
+    },
+    {
+      "id": 11,
+      "name": "DC_review"
+    },
+    {
+      "id": 12,
+      "name": "FR"
+    },
+    {
+      "id": 13,
+      "name": "QG"
+    }
+  ],
+  "task_statuses": [
+    {
+      "id": 1,
+      "name": "In Progress"
+    },
+    {
+      "id": 2,
+      "name": "Yet To Start"
+    },
+    {
+      "id": 3,
+      "name": "Training"
+    },
+    {
+      "id": 4,
+      "name": "Stand-by"
+    },
+    {
+      "id": 5,
+      "name": "FR"
+    },
+    {
+      "id": 6,
+      "name": "QG"
+    },
+    {
+      "id": 7,
+      "name": "Blocked"
+    },
+    {
+      "id": 8,
+      "name": "Delivered"
+    },
+    {
+      "id": 9,
+      "name": "Initial"
+    },
+    {
+      "id": 10,
+      "name": "Not Started"
+    },
+    {
+      "id": 11,
+      "name": "Under Review"
+    },
+    {
+      "id": 12,
+      "name": "Testing"
+    },
+    {
+      "id": 13,
+      "name": "On Hold"
+    },
+    {
+      "id": 14,
+      "name": "Completed"
+    }
+  ],
+  "holidays": [
+    {
+      "id": 2,
+      "date": "2025-08-27",
+      "name": "Ganesh Chaturthi"
+    },
+    {
+      "id": 3,
+      "date": "2025-10-01",
+      "name": "Ayudha Pooja"
+    },
+    {
+      "id": 4,
+      "date": "2025-10-02",
+      "name": "Gandhi Jayanthi/Dasara"
+    },
+    {
+      "id": 5,
+      "date": "2025-10-20",
+      "name": "Diwali"
+    },
+    {
+      "id": 6,
+      "date": "2025-12-25",
+      "name": "Christmas"
+    },
+    {
+      "id": 7,
+      "date": "2026-01-01",
+      "name": "New Year"
+    },
+    {
+      "id": 9,
+      "date": "2026-01-26",
+      "name": "Republic Day"
+    },
+    {
+      "id": 10,
+      "date": "2026-03-19",
+      "name": "Gudi Padwa/Telgu New Year/ Ugadi"
+    },
+    {
+      "id": 11,
+      "date": "2026-05-01",
+      "name": "Maharashtra Day/May day"
+    },
+    {
+      "id": 12,
+      "date": "2026-01-15",
+      "name": "Pongal"
+    }
+  ]
+};

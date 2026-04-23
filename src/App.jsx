@@ -7,6 +7,8 @@ import Reviews from './pages/Reviews';
 import DSR from './pages/DSR';
 import Team from './pages/Team';
 import Archive from './pages/Archive';
+import PersonalTracker from './pages/PersonalTracker';
+import HomePortal from './pages/HomePortal';
 import { useStore } from './store/useStore';
 
 function App() {
@@ -15,15 +17,22 @@ function App() {
 
   useEffect(() => {
     loadDatabase();
-  }, []);
+
+    // Auto-sync other tabs when they regain focus
+    const handleFocus = () => loadDatabase();
+    window.addEventListener('focus', handleFocus);
+    return () => window.removeEventListener('focus', handleFocus);
+  }, [loadDatabase]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
 
-      if (e.key.toLowerCase() === 'n') navigate('/tasks'); 
-      if (e.key.toLowerCase() === 'd') navigate('/dsr');
-      if (e.key.toLowerCase() === 'r') navigate('/reviews');
+      if (e.key.toLowerCase() === 'h') navigate('/');
+      if (e.key.toLowerCase() === 'n') navigate('/hub/tasks'); 
+      if (e.key.toLowerCase() === 'd') navigate('/hub/dsr');
+      if (e.key.toLowerCase() === 'r') navigate('/hub/reviews');
+      if (e.key.toLowerCase() === 'p') navigate('/tracker');
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -32,8 +41,9 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="/dashboard" replace />} />
+      <Route path="/" element={<HomePortal />} />
+      <Route path="/hub" element={<Layout />}>
+        <Route index element={<Navigate to="/hub/dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="tasks" element={<Tasks />} />
         <Route path="reviews" element={<Reviews />} />
@@ -41,6 +51,7 @@ function App() {
         <Route path="team" element={<Team />} />
         <Route path="archive" element={<Archive />} />
       </Route>
+      <Route path="/tracker" element={<PersonalTracker />} />
     </Routes>
   );
 }

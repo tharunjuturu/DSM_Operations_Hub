@@ -23,6 +23,13 @@ const storeConfig = (set, get) => ({
   ],
   reviews: [],
 
+  // Personal Tracker Models
+  currentUserSno: 6, // Tharun Kumar Juturu
+  personalTasks: [],
+  personalLogs: [],
+  workDays: [],
+  personalNotes: [],
+
   // Actions
   addTeamMember: (member) => set((state) => {
     const nextSno = state.teamMembers.length > 0 ? Math.max(...state.teamMembers.map(m => m.sno)) + 1 : 1;
@@ -38,26 +45,23 @@ const storeConfig = (set, get) => ({
   addTask: (taskGroup) => set((state) => ({ tasks: [...state.tasks, taskGroup] })),
 
   deleteTask: (sno) => set((state) => ({
-    tasks: state.tasks.filter(t => t.sno !== sno)
+    tasks: state.tasks.filter(t => Number(t.sno) !== Number(sno))
   })),
 
   updateTask: (sno, updates) => set((state) => {
     const today = getToday();
     return {
       tasks: state.tasks.map(t => {
-        if (t.sno !== sno) return t;
-        
+        if (Number(t.sno) !== Number(sno)) return t;
+
         const merged = { ...t, ...updates };
-        
+
         if (updates.owners) {
-           merged.totalFT = merged.owners.reduce((sum, o) => sum + Number(o.totalFT || 0), 0);
-           merged.completedFT = merged.owners.reduce((sum, o) => sum + Number(o.completedFT || 0), 0);
-           merged.progress = merged.totalFT > 0 ? (merged.completedFT / merged.totalFT) : 0;
-           
-           const allDone = merged.owners.length > 0 && merged.owners.every(o => Number(o.totalFT) > 0 && Number(o.completedFT) >= Number(o.totalFT));
-           if (allDone && merged.status !== 'Archive') {
-              merged.deliveredDate = today;
-           }
+          merged.totalFT = merged.owners.reduce((sum, o) => sum + Number(o.totalFT || 0), 0);
+          merged.completedFT = merged.owners.reduce((sum, o) => sum + Number(o.completedFT || 0), 0);
+          merged.progress = merged.totalFT > 0 ? (merged.completedFT / merged.totalFT) : 0;
+
+          const allDone = merged.owners.length > 0 && merged.owners.every(o => Number(o.totalFT) > 0 && Number(o.completedFT) >= Number(o.totalFT));
         }
 
         return { ...merged, last_updated: today };
@@ -70,11 +74,14 @@ const storeConfig = (set, get) => ({
   updateReviewStatus: (sno, review_status) => set((state) => ({
     reviews: state.reviews.map(r => r.sno === sno ? { ...r, review_status } : r)
   })),
+  updateReviewer: (sno, reviewer) => set((state) => ({
+    reviews: state.reviews.map(r => r.sno === sno ? { ...r, reviewer } : r)
+  })),
 
   setTeamMode: (name, date, data) => set((state) => {
     const existing = state.teamModes.find(m => m.name === name && m.date === date);
     const payload = typeof data === 'string' ? { mode: data } : data;
-    
+
     if (existing) {
       if (payload.mode === 'EMPTY') return { teamModes: state.teamModes.filter(m => !(m.name === name && m.date === date)) };
       return { teamModes: state.teamModes.map(m => (m.name === name && m.date === date) ? { ...m, ...payload } : m) };
@@ -85,34 +92,72 @@ const storeConfig = (set, get) => ({
 
   addLeave: (leave) => set((state) => ({ leaveData: [...state.leaveData, leave] })),
   removeLeave: (name, date) => set((state) => ({ leaveData: state.leaveData.filter(l => !(l.name === name && l.date === date)) })),
-  
+
   addHoliday: (holiday) => set((state) => {
     const isDup = state.holidays.some(h => h.date === holiday.date && h.scope === holiday.scope);
     if (isDup) return state;
     return { holidays: [...state.holidays, holiday] };
   }),
-  updateHoliday: (oldDate, oldName, updated) => set((state) => ({ 
-    holidays: state.holidays.map(h => (h.date === oldDate && h.name === oldName) ? updated : h) 
+  updateHoliday: (oldDate, oldName, updated) => set((state) => ({
+    holidays: state.holidays.map(h => (h.date === oldDate && h.name === oldName) ? updated : h)
   })),
-  removeHoliday: (date, name) => set((state) => ({ 
-    holidays: state.holidays.filter(h => !(h.date === date && h.name === name)) 
+  removeHoliday: (date, name) => set((state) => ({
+    holidays: state.holidays.filter(h => !(h.date === date && h.name === name))
   })),
 
   archiveTask: (sno) => set((state) => ({
-     tasks: state.tasks.map(t => t.sno === sno ? { ...t, status: 'Archive', last_updated: getToday() } : t)
+    tasks: state.tasks.map(t => t.sno === sno ? { ...t, status: 'Archive', last_updated: getToday() } : t)
   })),
 
+  // --- Personal Tracker Actions ---
+  addPersonalTask: (task) => set((state) => ({ personalTasks: [...state.personalTasks, { ...task, created_at: getToday() }] })),
+  updatePersonalTask: (task_id, updates) => set((state) => ({
+    personalTasks: state.personalTasks.map(t => t.task_id === task_id ? { ...t, ...updates, last_updated: getToday() } : t)
+  })),
+  deletePersonalTask: (task_id) => set((state) => ({
+    personalTasks: state.personalTasks.filter(t => t.task_id !== task_id)
+  })),
+
+  addPersonalLog: (log) => set((state) => ({
+    personalLogs: [...state.personalLogs, { id: Date.now(), ...log }]
+  })),
+  deletePersonalLog: (logId) => set((state) => ({
+    personalLogs: state.personalLogs.filter(l => l.id !== logId)
+  })),
+
+  upsertWorkDay: (date, data) => set((state) => {
+    const existing = state.workDays.find(w => w.date === date);
+    if (existing) {
+      return { workDays: state.workDays.map(w => w.date === date ? { ...w, ...data } : w) };
+    }
+    return { workDays: [...state.workDays, { date, ...data }] };
+  }),
+
+  upsertPersonalNote: (date, noteObj) => set((state) => {
+    const existing = state.personalNotes.find(n => n.date === date);
+    if (existing) {
+      return { personalNotes: state.personalNotes.map(n => n.date === date ? { ...n, ...noteObj } : n) };
+    }
+    return { personalNotes: [...state.personalNotes, { date, ...noteObj }] };
+  }),
+
   // Smart Selectors
-  getActiveTasks: () => get().tasks.filter(t => t.status !== 'Delivered' && t.status !== 'Archive'),
-  getReviewTasks: () => get().tasks.filter(t => t.status === 'FR' || t.status === 'QG'),
-  getDSRTasks: () => get().tasks.filter(t => t.include_in_dsr),
+  getActiveTasks: () => (get().tasks || []).filter(t => t.status !== 'Delivered' && t.status !== 'Archive'),
+  getReviewTasks: () => (get().tasks || []).filter(t => t.status === 'FR' || t.status === 'QG'),
+  getDSRTasks: () => (get().tasks || []).filter(t => t.include_in_dsr),
   getRiskTasks: () => {
-     const active = get().getActiveTasks();
-     return active.filter(t => {
-        try {
-           return differenceInDays(parseISO(t.endDate), new Date()) < 3 && t.progress < 0.7;
-        } catch(e) { return false; }
-     });
+    const active = get().getActiveTasks();
+    return active.filter(t => {
+      try {
+        return differenceInDays(parseISO(t.endDate), new Date()) < 3 && t.progress < 0.7;
+      } catch (e) { return false; }
+    });
+  },
+
+  // --- Personal Tracker Selectors ---
+  getMyTasks: () => {
+    const sno = get().currentUserSno;
+    return (get().tasks || []).filter(t => t.owners && t.owners.some(o => Number(o.sno) === sno));
   }
 });
 
@@ -136,15 +181,15 @@ export const useStore = create((set, get) => {
     loadDatabase: async () => {
       try {
         isHydrating = true;
-        const res = await fetch(`/db`);
+        const res = await fetch(`/db?t=${new Date().getTime()}`, { cache: 'no-store' });
         if (res.ok) {
-           const dbState = await res.json();
-           if (Object.keys(dbState).length > 0) {
-             set(dbState);
-           } else {
-             // Create db.json for the first time with base structure
-             interceptSet(get());
-           }
+          const dbState = await res.json();
+          if (Object.keys(dbState).length > 0) {
+            set(dbState);
+          } else {
+            // Create db.json for the first time with base structure
+            interceptSet(get());
+          }
         }
         isHydrating = false;
       } catch (e) {

@@ -63,7 +63,7 @@ const Dashboard = () => {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'var(--space-lg)' }}>
-        <div className="card">
+        <div className="card hover-lift">
           <h3 style={{ marginBottom: 'var(--space-md)', fontWeight: '600' }}>Team Availability</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '12px', background: 'var(--bg)', borderRadius: 'var(--radius-sm)' }}>
@@ -81,7 +81,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card hover-lift">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-md)' }}>
             <h3 style={{ margin: 0, fontWeight: '600' }}>AI Summary & Risks</h3>
             <button 
@@ -136,7 +136,7 @@ const Dashboard = () => {
 };
 
 const StatCard = ({ title, value, icon }) => (
-  <div className="card" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+  <div className="card hover-lift" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
     <div style={{ padding: '12px', background: 'var(--bg)', borderRadius: '12px' }}>
       {icon}
     </div>

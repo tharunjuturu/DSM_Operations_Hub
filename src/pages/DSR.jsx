@@ -160,9 +160,9 @@ const DSR = () => {
     }
 
     let html = `
-      <div style="font-family: Calibri, Arial, sans-serif; font-size: 14px; color: black;">
-        <p>Hello Team,</p>
-        <p>Please Find Today's DSM-MOM</p>
+      <div style="font-family: Calibri, Arial, sans-serif; font-size: 16px; color: black;">
+        <p><b>Hello Team,</b></p>
+        <p><b>Please Find Today's DSM-MOM</b></p>
         <p><b>IN PROGRESS ACTIVITY</b></p>
         <hr style="border: 0; border-top: 1px solid #ccc; margin-bottom: 20px;" />
         <p style="text-align: center; font-weight: bold; font-family: Calibri, Arial, sans-serif;">
@@ -298,7 +298,7 @@ const DSR = () => {
       const blob = new Blob([html], { type });
       const data = [new ClipboardItem({ [type]: blob })];
       await navigator.clipboard.write(data);
-      alert('Email MOM successfully formatted and copied to your clipboard!\\n\\Open Outlook and press Ctrl+V to paste the styled table exactly as requested!');
+      alert('Email MOM successfully formatted and copied to your clipboard!\n\nOpen Outlook and press Ctrl+V to paste the styled table exactly as requested!');
     } catch (err) {
       console.error('Failed to copy html: ', err);
       alert('Clipboard Access Denied. Make sure you are accessing the site over localhost or HTTPS.');
@@ -556,12 +556,12 @@ const DSR = () => {
                               style={{ width: '100%', height: '100%', minHeight: '35px', border: 'none', padding: '4px', resize: 'vertical', background: 'transparent', outline: 'none', fontSize: '0.75rem', fontFamily: 'inherit', paddingRight: '28px' }}
                             />
                             <button
-                               onClick={() => handleImproveDailyRemark(t.sno, o.id, dailyRemark)}
-                               disabled={isImprovingRemark === `${t.sno}-${o.id}`}
-                               title="AI Improve Comment"
-                               style={{ position: 'absolute', top: '4px', right: '4px', background: 'var(--purple-bg)', color: 'var(--purple)', border: 'none', borderRadius: '4px', padding: '2px', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+                              onClick={() => handleImproveDailyRemark(t.sno, o.id, dailyRemark)}
+                              disabled={isImprovingRemark === `${t.sno}-${o.id}`}
+                              title="AI Improve Comment"
+                              style={{ position: 'absolute', top: '4px', right: '4px', background: 'var(--purple-bg)', color: 'var(--purple)', border: 'none', borderRadius: '4px', padding: '2px', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
                             >
-                               {isImprovingRemark === `${t.sno}-${o.id}` ? <span style={{fontSize:'8px', fontWeight:'bold'}}>...</span> : <Sparkles size={12} />}
+                              {isImprovingRemark === `${t.sno}-${o.id}` ? <span style={{ fontSize: '8px', fontWeight: 'bold' }}>...</span> : <Sparkles size={12} />}
                             </button>
                           </div>
                         ) : (
