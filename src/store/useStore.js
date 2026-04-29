@@ -6,6 +6,7 @@ const getToday = () => new Date().toISOString().split('T')[0];
 const storeConfig = (set, get) => ({
   // Initialization Models
   tasks: [],
+  taskDailyLogs: [],
   logs: [],
   teamModes: [],
   teamMembers: [
@@ -70,6 +71,15 @@ const storeConfig = (set, get) => ({
   }),
 
   appendTaskLog: (log) => set((state) => ({ logs: [...state.logs, log] })),
+  upsertTaskDailyLog: (taskSno, ownerName, date, updates) => set((state) => {
+    const existingIdx = (state.taskDailyLogs || []).findIndex(l => l.taskSno === taskSno && l.ownerName === ownerName && l.date === date);
+    if (existingIdx >= 0) {
+      const newLogs = [...(state.taskDailyLogs || [])];
+      newLogs[existingIdx] = { ...newLogs[existingIdx], ...updates };
+      return { taskDailyLogs: newLogs };
+    }
+    return { taskDailyLogs: [...(state.taskDailyLogs || []), { taskSno, ownerName, date, ...updates }] };
+  }),
   assignReviewer: (review) => set((state) => ({ reviews: [...state.reviews, review] })),
   updateReviewStatus: (sno, review_status) => set((state) => ({
     reviews: state.reviews.map(r => r.sno === sno ? { ...r, review_status } : r)
@@ -164,16 +174,49 @@ const storeConfig = (set, get) => ({
 // Build Store Appended with Intercept-Save API Server logic
 export const useStore = create((set, get) => {
   let isHydrating = false;
+  let saveQueue = Promise.resolve();
 
   const interceptSet = (...args) => {
+    const updateFnOrObj = args[0];
+    const replace = args[1];
+
+    // 1. Optimistic UI update
     set(...args);
     if (isHydrating) return; // Prevent loop during initial download
 
-    fetch(`/db`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(get())
-    }).catch(err => console.error("Database Save Failed - Is the Node Server Running?", err));
+    // 2. Queue the save operations to prevent concurrent race conditions
+    saveQueue = saveQueue.then(async () => {
+      try {
+        const res = await fetch(`/db?t=${new Date().getTime()}`, { cache: 'no-store' });
+        if (!res.ok) throw new Error("Failed to fetch latest DB");
+        
+        let serverState = await res.json();
+        if (Object.keys(serverState).length === 0) serverState = get(); // fallback if DB empty
+        
+        // 3. Re-apply the same update on the server state
+        let updatedServerState;
+        if (typeof updateFnOrObj === 'function') {
+          const partialUpdate = updateFnOrObj(serverState);
+          updatedServerState = replace ? partialUpdate : { ...serverState, ...partialUpdate };
+        } else {
+          updatedServerState = replace ? updateFnOrObj : { ...serverState, ...updateFnOrObj };
+        }
+
+        // 4. Save the merged state back to server
+        await fetch(`/db`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(updatedServerState)
+        });
+        
+        // 5. Sync local state with the newly merged server state silently
+        isHydrating = true;
+        set(updatedServerState);
+        isHydrating = false;
+      } catch (err) {
+        console.error("Database Save Failed - Is the Node Server Running?", err);
+      }
+    });
   };
 
   return {
@@ -188,7 +231,9 @@ export const useStore = create((set, get) => {
             set(dbState);
           } else {
             // Create db.json for the first time with base structure
+            isHydrating = false;
             interceptSet(get());
+            isHydrating = true;
           }
         }
         isHydrating = false;

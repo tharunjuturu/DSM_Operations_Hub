@@ -1,8 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+// Import our new modular backend architecture
+import { config } from './backend/config/index.js';
+import routes from './backend/routes/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,35 +16,8 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 
-const dbPath = path.resolve('database.json');
-
-// Get Entire Database
-app.get('/db', async (req, res) => {
-  try {
-    const data = await fs.readFile(dbPath, 'utf8');
-    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-    res.setHeader('Pragma', 'no-cache');
-    res.setHeader('Expires', '0');
-    res.setHeader('Surrogate-Control', 'no-store');
-    res.json(JSON.parse(data));
-  } catch (err) {
-    if (err.code === 'ENOENT') {
-      res.json({}); 
-    } else {
-      res.status(500).json({ error: 'Failed to read database.json' });
-    }
-  }
-});
-
-// Overwrite Entire Database
-app.post('/db', async (req, res) => {
-  try {
-    await fs.writeFile(dbPath, JSON.stringify(req.body, null, 2), 'utf8');
-    res.json({ success: true });
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to write to database.json' });
-  }
-});
+// Mount all backend API routes
+app.use(config.apiPrefix, routes);
 
 // Serve Frontend in Production
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -53,8 +29,8 @@ app.use((req, res) => {
 });
 
 // Start Server
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`\n✅ DSM Ops Hub Backend Server running on port ${PORT}`);
-  console.log(`💾 Database synced to: ${dbPath}\n`);
+app.listen(config.port, () => {
+  console.log(`\n✅ DSM Ops Hub Backend Server running on port ${config.port}`);
+  console.log(`💾 Database mapped to: ${config.dbPath}\n`);
+  console.log(`🏗️  Modular Architecture Pattern Active 🚀\n`);
 });

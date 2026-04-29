@@ -319,9 +319,9 @@
       "completedFT": 302,
       "progress": 0.8273972602739726,
       "include_in_dsr": false,
-      "last_updated": "2026-04-16",
+      "last_updated": "2026-04-24",
       "deliveredDate": "2026-03-31",
-      "ftrOtd": ""
+      "ftrOtd": "NOK FTR"
     },
     {
       "sno": 6,
@@ -415,7 +415,7 @@
         {
           "id": "usr_390",
           "name": "Hepsiba Pilli",
-          "totalFT": 10,
+          "totalFT": 11,
           "completedFT": 11,
           "startDate": "2026-03-23",
           "endDate": "2026-04-17",
@@ -453,7 +453,7 @@
         {
           "id": "usr_154",
           "name": "Sri Suriya Prakash",
-          "totalFT": 10,
+          "totalFT": 11,
           "completedFT": 11,
           "startDate": "2026-03-23",
           "endDate": "2026-04-17",
@@ -477,13 +477,13 @@
           }
         }
       ],
-      "totalFT": 130,
+      "totalFT": 132,
       "completedFT": 93,
-      "progress": 0.7153846153846154,
+      "progress": 0.7045454545454546,
       "include_in_dsr": false,
-      "last_updated": "2026-04-21",
+      "last_updated": "2026-04-23",
       "deliveredDate": "2026-03-23",
-      "ftrOtd": ""
+      "ftrOtd": "NOK FTR"
     },
     {
       "sno": 7,
@@ -526,9 +526,9 @@
       "completedFT": 110,
       "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-04-16",
+      "last_updated": "2026-04-24",
       "deliveredDate": "2026-04-16",
-      "ftrOtd": ""
+      "ftrOtd": "NOK FTR"
     },
     {
       "sno": 8,
@@ -573,7 +573,11 @@
             "2026-04-17": "5 feedback I have completed",
             "2026-04-20": "5 feedbacks completed",
             "2026-04-21": "8 DC analysis and worked on DRE analysis file",
-            "2026-04-22": "40 DC refview points completed"
+            "2026-04-22": "40 DC refview points completed",
+            "2026-04-24": "35 DC review points",
+            "2026-04-23": "Worked on DC review points",
+            "2026-04-27": "FR for OTA update completed 30 sheets ",
+            "2026-04-28": "FR for FSEE_OTA_UPDATE test plan completed pending with check files review"
           },
           "todayFTs": {
             "2026-03-24": 1,
@@ -599,7 +603,7 @@
       "completedFT": 29,
       "progress": 1,
       "include_in_dsr": true,
-      "last_updated": "2026-04-22",
+      "last_updated": "2026-04-28",
       "deliveredDate": "2026-04-17"
     },
     {
@@ -641,7 +645,11 @@
             "2026-04-16": "IA for ACTIVE_BRAKE",
             "2026-04-20": "IA- for 2 tasks and 20 DC review analysis",
             "2026-04-21": "20 DC review points",
-            "2026-04-22": "IA for 3 tasks and 20 DC review points"
+            "2026-04-22": "IA for 3 tasks and 20 DC review points",
+            "2026-04-24": "IA for LIGHTING and PCGA, here PCGA is blocked",
+            "2026-04-23": "IA for 3 tasks",
+            "2026-04-27": "IA for 2 (PCGA, LIGHTING)",
+            "2026-04-28": "IA for PCGA and EPB"
           }
         }
       ],
@@ -649,7 +657,7 @@
       "completedFT": 0,
       "progress": 0,
       "include_in_dsr": true,
-      "last_updated": "2026-04-22"
+      "last_updated": "2026-04-28"
     },
     {
       "sno": 10,
@@ -700,9 +708,9 @@
       "completedFT": 28,
       "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-04-16",
+      "last_updated": "2026-04-24",
       "deliveredDate": "2026-04-16",
-      "ftrOtd": ""
+      "ftrOtd": "NOK FTR"
     },
     {
       "sno": 11,
@@ -832,7 +840,7 @@
           "id": "usr_243",
           "name": "Sri Suriya Prakash",
           "totalFT": 221,
-          "completedFT": 8,
+          "completedFT": 25,
           "startDate": "2026-03-30",
           "endDate": "2026-05-06",
           "remarks": "",
@@ -847,36 +855,51 @@
             "2026-04-08": "Worked on PARAM task FR",
             "2026-04-09": "Worked on FR for FSEE_PARAM",
             "2026-04-21": "Worked on PICC FR point and FR points review for PARAM. For REPAS SC, some requirements are unclear. Checking with the spec owner.",
-            "2026-04-22": "Impacted 2 sheets and verified PARAM FR points"
+            "2026-04-22": "Impacted 2 sheets and verified PARAM FR points",
+            "2026-04-24": "Impacted 5 sheets",
+            "2026-04-23": "Impacted 3 sheets",
+            "2026-04-27": "Impacted 4 sheets",
+            "2026-04-28": "Impacted 5 sheets"
           },
           "todayFTs": {
             "2026-04-01": 1,
             "2026-04-02": 5,
-            "2026-04-22": 2
+            "2026-04-22": 2,
+            "2026-04-24": 5,
+            "2026-04-23": 3,
+            "2026-04-27": 4,
+            "2026-04-28": 5
           }
         },
         {
           "id": "usr_786",
           "name": "Megadesh S",
           "totalFT": 50,
-          "completedFT": 2,
+          "completedFT": 12,
           "startDate": "2026-04-21",
           "endDate": "2026-05-06",
           "remarks": "",
           "dailyRemarks": {
             "2026-04-21": "Worked on LIGHTING PBO points and validation points",
-            "2026-04-22": "Worked on LIGHTING points and impacted 2 sheets"
+            "2026-04-22": "Worked on LIGHTING points and impacted 2 sheets",
+            "2026-04-24": "Impacted 4 sheets",
+            "2026-04-23": "Impacted 4 sheets and worked for LIGHTING PBO point",
+            "2026-04-27": "Worked on ACT TC FTR points, completed 7 points 3 are pending",
+            "2026-04-28": "Worked on ACT_TC PBO points and impacted 2 sheets for REPAS SC"
           },
           "todayFTs": {
-            "2026-04-22": 2
+            "2026-04-22": 2,
+            "2026-04-24": 4,
+            "2026-04-23": 4,
+            "2026-04-28": 2
           }
         }
       ],
       "totalFT": 271,
-      "completedFT": 10,
-      "progress": 0.03690036900369004,
+      "completedFT": 37,
+      "progress": 0.13653136531365315,
       "include_in_dsr": true,
-      "last_updated": "2026-04-22",
+      "last_updated": "2026-04-28",
       "deliveredDate": "",
       "ftrOtd": ""
     },
@@ -933,7 +956,7 @@
       ],
       "startDate": "2026-04-02",
       "endDate": "2026-04-03",
-      "status": "FR",
+      "status": "Delivered",
       "remarks": "",
       "owners": [
         {
@@ -955,7 +978,11 @@
             "2026-04-10": "Worked on FR & QG fro FSEE_ACT_TC",
             "2026-04-17": "Worked on OLD DC review and FR points validation for PARAM",
             "2026-04-21": "Worked on FR review points for PARAM",
-            "2026-04-22": "Worked on check files regeneration with the latest macros"
+            "2026-04-22": "Worked on check files regeneration with the latest macros",
+            "2026-04-24": "Worked on ECLI PBO point analysis done and sent mail",
+            "2026-04-23": "Task Delivered",
+            "2026-04-27": "ECLI FTR analysis and work on new task analysis ",
+            "2026-04-28": "Analysis for the CT , 15 sheet is the total impact"
           },
           "todayFTs": {
             "2026-04-02": 4,
@@ -966,8 +993,8 @@
       "totalFT": 8,
       "completedFT": 8,
       "progress": 1,
-      "include_in_dsr": true,
-      "last_updated": "2026-04-22",
+      "include_in_dsr": false,
+      "last_updated": "2026-04-28",
       "deliveredDate": "2026-04-17",
       "ftrOtd": ""
     },
@@ -990,7 +1017,7 @@
           "id": "usr_642",
           "name": "Divya Patil",
           "totalFT": 240,
-          "completedFT": 127,
+          "completedFT": 172,
           "startDate": "2026-04-07",
           "endDate": "2026-04-28",
           "remarks": "",
@@ -1004,7 +1031,11 @@
             "2026-04-17": 12,
             "2026-04-20": 14,
             "2026-04-21": 15,
-            "2026-04-22": 15
+            "2026-04-22": 15,
+            "2026-04-24": 16,
+            "2026-04-23": 15,
+            "2026-04-27": 14,
+            "2026-04-28": 15
           },
           "dailyRemarks": {
             "2026-04-07": "10 sheets impacted",
@@ -1018,15 +1049,19 @@
             "2026-04-17": "Impacted 12 sheets",
             "2026-04-20": "Impacted 14 sheets ",
             "2026-04-21": "Impacted 15 sheets",
-            "2026-04-22": "impacted 15 sheets"
+            "2026-04-22": "impacted 15 sheets",
+            "2026-04-24": "Impacted 16 sheets",
+            "2026-04-23": "Impacted 15 sheets",
+            "2026-04-27": "Impacted 14 sheets",
+            "2026-04-28": "Impacted 15 shets"
           }
         }
       ],
       "totalFT": 240,
-      "completedFT": 127,
-      "progress": 0.5291666666666667,
+      "completedFT": 172,
+      "progress": 0.7166666666666667,
       "include_in_dsr": true,
-      "last_updated": "2026-04-22",
+      "last_updated": "2026-04-28",
       "deliveredDate": "",
       "ftrOtd": ""
     },
@@ -1041,7 +1076,7 @@
       ],
       "startDate": "2026-04-15",
       "endDate": "2026-04-28",
-      "status": "In Progress",
+      "status": "Stand-by",
       "remarks": "",
       "owners": [
         {
@@ -1059,7 +1094,9 @@
             "2026-04-17": "Impacted 15 sheets",
             "2026-04-20": "Impacted 15 sheets",
             "2026-04-21": "Worked on PCGA FTR points analysis and impacted 2 sheets",
-            "2026-04-22": "Completed PCGA FTR analysis, and 3 sheets impacted"
+            "2026-04-22": "Completed PCGA FTR analysis, and 3 sheets impacted",
+            "2026-04-23": "Worked on new task analysis ",
+            "2026-04-24": ""
           },
           "todayFTs": {
             "2026-04-15": 10,
@@ -1074,8 +1111,8 @@
       "totalFT": 188,
       "completedFT": 60,
       "progress": 0.3191489361702128,
-      "include_in_dsr": true,
-      "last_updated": "2026-04-22",
+      "include_in_dsr": false,
+      "last_updated": "2026-04-27",
       "deliveredDate": "",
       "ftrOtd": ""
     },
@@ -1088,7 +1125,7 @@
       ],
       "startDate": "2026-04-17",
       "endDate": "2026-04-30",
-      "status": "In Progress",
+      "status": "FR",
       "remarks": "FEPS Impact is 66 sheets and QIA PT has 12 points with an impact of 2 sheets.\nTotal impact is 68.\n\n generated check report, impacted 8 FTs, increasing the total count from 68 to 76.",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -1111,7 +1148,11 @@
             "2026-04-17": "Impacted 20 sheets",
             "2026-04-20": "Impacted 20 sheets",
             "2026-04-21": "Impacted 20 sheets",
-            "2026-04-22": "Worked on 8 sheets for FEPS impact and generated check report, impacted 8 FTs, increasing the total count from 68 to 76."
+            "2026-04-22": "Worked on 8 sheets for FEPS impact and generated check report, impacted 8 FTs, increasing the total count from 68 to 76.",
+            "2026-04-24": "Worked on the Check files generation and solved all check errors pending with the Delivery mail and Check list",
+            "2026-04-23": "Completed 8 QIA PT points",
+            "2026-04-27": "Working on NC file",
+            "2026-04-28": "Worked on FR points and NC file"
           }
         }
       ],
@@ -1119,7 +1160,7 @@
       "completedFT": 76,
       "progress": 1,
       "include_in_dsr": true,
-      "last_updated": "2026-04-22"
+      "last_updated": "2026-04-28"
     },
     {
       "sno": 19,
@@ -1128,9 +1169,9 @@
       "taskIds": [
         "AMAL_00294"
       ],
-      "startDate": "2026-04-16",
+      "startDate": "2026-04-29",
       "endDate": "2026-05-08",
-      "status": "In Progress",
+      "status": "Initial",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -1140,7 +1181,7 @@
           "name": "Kimaya Patil",
           "totalFT": 249,
           "completedFT": 0,
-          "startDate": "2026-04-16",
+          "startDate": "2026-04-29",
           "endDate": "2026-05-08",
           "remarks": "",
           "dailyRemarks": {
@@ -1152,7 +1193,7 @@
       "completedFT": 0,
       "progress": 0,
       "include_in_dsr": false,
-      "last_updated": "2026-04-17"
+      "last_updated": "2026-04-29"
     },
     {
       "sno": 20,
@@ -1161,7 +1202,7 @@
       "taskIds": [
         "AMAL_00292"
       ],
-      "startDate": "2026-04-17",
+      "startDate": "2026-04-29",
       "endDate": "2026-04-30",
       "status": "Initial",
       "remarks": "",
@@ -1171,18 +1212,21 @@
         {
           "id": "usr_875",
           "name": "Kavipriya Balasubramani ",
-          "totalFT": 1,
+          "totalFT": 15,
           "completedFT": 0,
-          "startDate": "2026-04-17",
+          "startDate": "2026-04-29",
           "endDate": "2026-04-30",
-          "remarks": ""
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-04-28": "Analysis for the new task the total impact is 15 sheets"
+          }
         }
       ],
-      "totalFT": 1,
+      "totalFT": 15,
       "completedFT": 0,
       "progress": 0,
-      "include_in_dsr": false,
-      "last_updated": "2026-04-17"
+      "include_in_dsr": true,
+      "last_updated": "2026-04-29"
     },
     {
       "sno": 21,
@@ -1202,7 +1246,7 @@
           "id": "usr_953",
           "name": "Isha Rai",
           "totalFT": 136,
-          "completedFT": 10,
+          "completedFT": 23,
           "startDate": "2026-04-17",
           "endDate": "2026-04-30",
           "remarks": "",
@@ -1210,19 +1254,25 @@
             "2026-04-17": "Worked on new task analysis and total 136 need to impact , Impacted 5 sheets",
             "2026-04-20": "Created 2 sheets and impacted 3 sheets",
             "2026-04-21": "50 DC review points",
-            "2026-04-22": "50 DC review points completed "
+            "2026-04-22": "50 DC review points completed ",
+            "2026-04-24": "25 DC review points",
+            "2026-04-23": "Worked on DC review points",
+            "2026-04-27": "Impacted 7 sheets",
+            "2026-04-28": "Impacted 6 sheets"
           },
           "todayFTs": {
             "2026-04-17": 5,
-            "2026-04-20": 5
+            "2026-04-20": 5,
+            "2026-04-27": 7,
+            "2026-04-28": 6
           }
         }
       ],
       "totalFT": 136,
-      "completedFT": 10,
-      "progress": 0.07352941176470588,
+      "completedFT": 23,
+      "progress": 0.16911764705882354,
       "include_in_dsr": true,
-      "last_updated": "2026-04-22"
+      "last_updated": "2026-04-28"
     },
     {
       "sno": 22,
@@ -1235,9 +1285,9 @@
         "AMAL_00299",
         "AMAL_00308"
       ],
-      "startDate": "2026-04-20",
+      "startDate": "2026-04-29",
       "endDate": "2026-04-30",
-      "status": "Initial",
+      "status": "Blocked",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -1247,14 +1297,18 @@
           "name": "Kimaya Patil",
           "totalFT": 11,
           "completedFT": 0,
-          "startDate": "2026-04-20",
+          "startDate": "2026-04-29",
           "endDate": "2026-04-30",
           "remarks": "",
           "dailyRemarks": {
             "2026-04-17": "Worked on PHAB FTR and sent mail",
             "2026-04-20": "Worked on the task analysis, the total task impact is 11 sheets",
             "2026-04-21": "25 DC review points",
-            "2026-04-22": "28 DC review points completed"
+            "2026-04-22": "28 DC review points completed",
+            "2026-04-24": "30 DC review points",
+            "2026-04-23": "Worked on DC review points",
+            "2026-04-27": "Worked on 10 DC review points, and analysed the requirements for VLV ",
+            "2026-04-28": "analyzed the requirements and sent an email to the specifier. For one requirement, I analyzed and raised a QIA SPEC."
           }
         }
       ],
@@ -1262,7 +1316,7 @@
       "completedFT": 0,
       "progress": 0,
       "include_in_dsr": true,
-      "last_updated": "2026-04-22"
+      "last_updated": "2026-04-29"
     },
     {
       "sno": 23,
@@ -1273,7 +1327,7 @@
       ],
       "startDate": "2026-04-23",
       "endDate": "2026-05-07",
-      "status": "Initial",
+      "status": "In Progress",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -1281,18 +1335,72 @@
         {
           "id": "usr_638",
           "name": "Sampath Akula",
-          "totalFT": 1,
-          "completedFT": 0,
+          "totalFT": 31,
+          "completedFT": 16,
           "startDate": "2026-04-23",
           "endDate": "2026-05-07",
-          "remarks": ""
+          "remarks": "",
+          "todayFTs": {
+            "2026-04-24": 5,
+            "2026-04-23": 2,
+            "2026-04-27": 5,
+            "2026-04-28": 4
+          },
+          "dailyRemarks": {
+            "2026-04-24": "Impacted 5 sheets",
+            "2026-04-23": "Impacted 2 sheets",
+            "2026-04-27": "Impacted 5 sheets",
+            "2026-04-28": "Impacted 4 sheets and for new FEPS need to impact 11 more sheets"
+          }
         }
       ],
-      "totalFT": 1,
-      "completedFT": 0,
-      "progress": 0,
-      "include_in_dsr": false,
-      "last_updated": "2026-04-22"
+      "totalFT": 31,
+      "completedFT": 16,
+      "progress": 0.5161290322580645,
+      "include_in_dsr": true,
+      "last_updated": "2026-04-28"
+    },
+    {
+      "sno": 24,
+      "function": "FSEE_PUCSM",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00289",
+        "AMAL_00309",
+        "AMAL_00313"
+      ],
+      "startDate": "2026-04-24",
+      "endDate": "2026-04-30",
+      "status": "In Progress",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_127",
+          "name": "Hepsiba Pilli",
+          "totalFT": 28,
+          "completedFT": 19,
+          "startDate": "2026-04-24",
+          "endDate": "2026-04-30",
+          "remarks": "",
+          "todayFTs": {
+            "2026-04-24": 6,
+            "2026-04-27": 7,
+            "2026-04-28": 6
+          },
+          "dailyRemarks": {
+            "2026-04-24": " Impacted 6 sheets",
+            "2026-04-27": "Impacted 7 sheets",
+            "2026-04-28": "Impacted 6 sheets"
+          }
+        }
+      ],
+      "totalFT": 28,
+      "completedFT": 19,
+      "progress": 0.6785714285714286,
+      "include_in_dsr": true,
+      "last_updated": "2026-04-28"
     }
   ],
   "logs": [],
@@ -4284,6 +4392,410 @@
       "date": "2026-04-22",
       "mode": "WFO",
       "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-04-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-04-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-04-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-04-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-04-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-04-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-04-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-04-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-04-23",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-04-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-04-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-04-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-04-23",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-04-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-04-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-04-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-04-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-04-27",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-04-27",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-04-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-04-28",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-04-28",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-04-28",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-04-28",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-04-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-04-29",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-04-29",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Megadesh S",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-04-30",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-04-29",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-04-30",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Sandeep P",
+      "date": "2026-04-30",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Minal hage",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-04-29",
+      "mode": "WFO",
+      "half": null
     }
   ],
   "teamMembers": [
@@ -4321,7 +4833,8 @@
       "sno": 6,
       "name": "Sandeep P",
       "location": "Bangalore",
-      "perimeter": "VSM QG"
+      "perimeter": "VSM QG",
+      "status": "Inactive"
     },
     {
       "sno": 7,
@@ -4417,6 +4930,12 @@
       "reviewer": "Megadesh S",
       "review_status": "Pending",
       "assigned_date": "2026-04-20T04:39:12.466Z"
+    },
+    {
+      "sno": 18,
+      "reviewer": "Minal hage",
+      "review_status": "Pending",
+      "assigned_date": "2026-04-24T06:00:44.031Z"
     }
   ],
   "currentUserSno": 6,
@@ -6485,5 +7004,312 @@
     }
   ],
   "workDays": [],
-  "personalNotes": []
+  "personalNotes": [],
+  "customDashboards": [
+    {
+      "dashboardId": "dash_test",
+      "userId": "Kavipriya Balasubramani ",
+      "name": "Test Dash",
+      "layout": [
+        {
+          "config": {
+            "metric": "total_tasks"
+          },
+          "position": {
+            "y": 0,
+            "w": 1,
+            "h": 1,
+            "x": 0
+          },
+          "widgetId": "wid_1",
+          "type": "card"
+        },
+        {
+          "widgetId": "wid_1776932938514_z1gi1",
+          "type": "card",
+          "config": {
+            "metric": "completed_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776932938940_p0zt1",
+          "type": "card",
+          "config": {
+            "metric": "completion_rate"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776932939483_5013u",
+          "type": "chart",
+          "config": {
+            "metric": "monthly_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        }
+      ],
+      "createdAt": "2026-04-23T07:31:16.293Z",
+      "updatedAt": "2026-04-23T08:29:00.896Z"
+    },
+    {
+      "dashboardId": "dash_1776929485876",
+      "userId": "Kavipriya Balasubramani ",
+      "name": "My Custom Dashboard",
+      "layout": [
+        {
+          "widgetId": "wid_1776928255950_lg8j7",
+          "type": "card",
+          "config": {
+            "metric": "total_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776928256294_e93wf",
+          "type": "card",
+          "config": {
+            "metric": "completed_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776928256692_e9lim",
+          "type": "card",
+          "config": {
+            "metric": "completion_rate"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776928257112_6kd3b",
+          "type": "chart",
+          "config": {
+            "metric": "monthly_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        }
+      ],
+      "createdAt": "2026-04-23T07:31:25.887Z",
+      "updatedAt": "2026-04-23T07:31:28.838Z"
+    },
+    {
+      "dashboardId": "dash_1776929499465",
+      "userId": "Tharun Kumar",
+      "name": "My Custom Dashboard",
+      "layout": [
+        {
+          "widgetId": "wid_1776929495888_xr4aj",
+          "type": "chart",
+          "config": {
+            "metric": "monthly_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776929497162_mxyzy",
+          "type": "card",
+          "config": {
+            "metric": "completion_rate"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776929497756_ppn8f",
+          "type": "card",
+          "config": {
+            "metric": "completed_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776929498213_43lu8",
+          "type": "card",
+          "config": {
+            "metric": "total_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        }
+      ],
+      "createdAt": "2026-04-23T07:31:39.472Z",
+      "updatedAt": "2026-04-23T08:29:12.499Z"
+    },
+    {
+      "dashboardId": "dash_1776934415325",
+      "userId": "Kavipriya Balasubramani ",
+      "name": "My Custom Dashboard",
+      "layout": [
+        {
+          "widgetId": "wid_1776934413263_nc9cf",
+          "type": "card",
+          "config": {
+            "metric": "total_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776934413615_emw2l",
+          "type": "card",
+          "config": {
+            "metric": "completed_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776934414030_tbzzc",
+          "type": "card",
+          "config": {
+            "metric": "completion_rate"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776934414380_rgep9",
+          "type": "chart",
+          "config": {
+            "metric": "monthly_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        }
+      ],
+      "createdAt": "2026-04-23T08:53:35.362Z",
+      "updatedAt": "2026-04-23T08:53:35.362Z"
+    },
+    {
+      "dashboardId": "dash_1776935848975",
+      "userId": "Sampath Akula",
+      "name": "My Custom Dashboard",
+      "layout": [
+        {
+          "widgetId": "wid_1776935846993_usr7x",
+          "type": "card",
+          "config": {
+            "metric": "total_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776935847354_gib6w",
+          "type": "card",
+          "config": {
+            "metric": "completed_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776935847670_71v6y",
+          "type": "card",
+          "config": {
+            "metric": "completion_rate"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        },
+        {
+          "widgetId": "wid_1776935848089_q43rr",
+          "type": "chart",
+          "config": {
+            "metric": "monthly_tasks"
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 1
+          }
+        }
+      ],
+      "createdAt": "2026-04-23T09:17:28.980Z",
+      "updatedAt": "2026-04-23T09:17:28.980Z"
+    }
+  ]
 }

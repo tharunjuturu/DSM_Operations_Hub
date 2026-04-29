@@ -78,7 +78,8 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
          id: `usr_${Math.floor(Math.random() * 1000)}`, 
          name: '', 
          totalFT: 0, 
-         completedFT: 0, 
+         completedFT: 0,
+         plannedFTPerDay: 0, 
          startDate: prev.startDate, 
          endDate: prev.endDate, 
          remarks: '' 
@@ -267,7 +268,7 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                      <select value={owner.name} onChange={e => handleOwnerChange(idx, 'name', e.target.value)} style={{ padding: '6px', borderRadius: '4px', border: '1px solid var(--border)', flex: 1, marginRight: '16px' }}>
                        <option value="">Select Name...</option>
-                       {teamMembers && teamMembers.map(m => (
+                       {teamMembers && teamMembers.filter(m => (m.status || 'Active') !== 'Inactive' || m.name === owner.name).map(m => (
                          <option key={m.sno || m.name} value={m.name}>{m.name}</option>
                        ))}
                      </select>
@@ -276,7 +277,7 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
                      </button>
                   </div>
                   
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px' }}>
                     <div>
                        <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Total FT</span>
                        <input type="number" value={owner.totalFT} onChange={e => handleOwnerChange(idx, 'totalFT', Number(e.target.value))} style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)' }} />
@@ -284,6 +285,10 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
                     <div>
                        <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Done FT</span>
                        <input type="number" value={owner.completedFT} onChange={e => handleOwnerChange(idx, 'completedFT', Number(e.target.value))} style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+                    </div>
+                    <div>
+                       <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Plan FT/Day</span>
+                       <input type="number" step="0.1" value={owner.plannedFTPerDay || 0} onChange={e => handleOwnerChange(idx, 'plannedFTPerDay', Number(e.target.value))} style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)' }} />
                     </div>
                     <div>
                        <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Owner Start</span>

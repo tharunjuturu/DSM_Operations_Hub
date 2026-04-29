@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '../store/useStore';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, X, Download } from 'lucide-react';
 import { improveComment } from '../utils/mockAI';
+import ExcelJS from 'exceljs';
+import { saveAs } from 'file-saver';
+import { eachDayOfInterval, format, startOfMonth } from 'date-fns';
 
 const DSR = () => {
-  const { updateTask, teamModes, getDSRTasks } = useStore();
+  const { updateTask, teamModes, getDSRTasks, setTeamMode } = useStore();
   const dsrTasks = getDSRTasks();
 
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
@@ -13,6 +16,11 @@ const DSR = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [localEdits, setLocalEdits] = useState({});
   const [isImprovingRemark, setIsImprovingRemark] = useState(null);
+
+  // Export Modal State
+  const [exportModal, setExportModal] = useState(false);
+  const [exportStart, setExportStart] = useState(format(startOfMonth(new Date()), 'yyyy-MM-dd'));
+  const [exportEnd, setExportEnd] = useState(format(new Date(), 'yyyy-MM-dd'));
 
   const handleImproveDailyRemark = async (t_sno, o_id, currentText) => {
     const key = `${t_sno}-${o_id}`;
@@ -24,6 +32,7 @@ const DSR = () => {
 
   useEffect(() => {
     setLocalEdits({});
+    setLeaveTypes({});
     setIsEditMode(false);
   }, [selectedDate]);
 
@@ -73,7 +82,7 @@ const DSR = () => {
   };
 
   const handleSave = () => {
-    if (Object.keys(localEdits).length === 0) {
+    if (Object.keys(localEdits).length === 0 && Object.keys(leaveTypes).length === 0) {
       setIsEditMode(false);
       return;
     }
@@ -129,15 +138,21 @@ const DSR = () => {
       updateTask(t_sno, { owners: newOwners });
     });
 
+    Object.keys(leaveTypes).forEach(name => {
+      setTeamMode(name, selectedDate, { leaveType: leaveTypes[name] });
+    });
+
     setLocalEdits({});
+    setLeaveTypes({});
     setIsEditMode(false);
     alert(`Success: DSR Data safely committed to the database!`);
   };
 
   const handleRestore = () => {
-    if (Object.keys(localEdits).length > 0) {
+    if (Object.keys(localEdits).length > 0 || Object.keys(leaveTypes).length > 0) {
       if (window.confirm("Are you sure you want to discard your unsaved changes and restore from the database?")) {
         setLocalEdits({});
+        setLeaveTypes({});
         setIsEditMode(false);
       }
     } else {
@@ -263,7 +278,7 @@ const DSR = () => {
 
     const WFH_DOM = wfhList.map(m => `<tr><td style="border: 1px solid black; padding: 6px; text-align: center;">${m.name}</td></tr>`).join('') || `<tr><td style="border: 1px solid black; padding: 6px; height: 24px;"></td></tr>`;
     const LEAVE_DOM = totalLeaveList.map(m => {
-      const lType = leaveTypes[`${selectedDate}-${m.name}`] || '';
+      const lType = leaveTypes[m.name] !== undefined ? leaveTypes[m.name] : (m.leaveType || '');
       return `<tr><td style="border: 1px solid black; padding: 6px; text-align: center;">${m.name}</td><td style="border: 1px solid black; padding: 6px; text-align: center; background: #0ea5e9; color: black;">${lType}</td></tr>`;
     }).join('') || `<tr><td style="border: 1px solid black; padding: 6px; height: 24px;"></td><td style="border: 1px solid black; padding: 6px; background: #0ea5e9;"></td></tr>`;
 
@@ -303,6 +318,196 @@ const DSR = () => {
       console.error('Failed to copy html: ', err);
       alert('Clipboard Access Denied. Make sure you are accessing the site over localhost or HTTPS.');
     }
+  };
+
+  const handleExportExcel = async () => {
+    if (!exportStart || !exportEnd) {
+      alert("Please select both start and end dates for export.");
+      return;
+    }
+    
+    const dates = eachDayOfInterval({ start: new Date(exportStart), end: new Date(exportEnd) });
+    const wb = new ExcelJS.Workbook();
+
+    // Helper for styling headers
+    const applyHeaderStyle = (row) => {
+      row.eachCell(cell => {
+        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } };
+        cell.font = { color: { argb: 'FFFFFFFF' }, bold: true };
+        cell.alignment = { horizontal: 'center', vertical: 'middle' };
+        cell.border = { top: {style:'thin'}, left: {style:'thin'}, bottom: {style:'thin'}, right: {style:'thin'} };
+      });
+    };
+
+    // Helper for styling cells
+    const applyCellStyle = (cell) => {
+      cell.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
+      cell.border = { top: {style:'thin'}, left: {style:'thin'}, bottom: {style:'thin'}, right: {style:'thin'} };
+    };
+
+    // Helper for task status color
+    const getStatusColor = (status) => {
+      switch (status) {
+        case 'In Progress': return 'FFBBF7D0'; // bg-green-200
+        case 'Delivered': return 'FFBAE6FD'; // bg-blue-200
+        case 'Yet To Start': return 'FFE2E8F0'; // bg-slate-200
+        case 'Blocked': return 'FFFCA5A5'; // bg-red-300
+        case 'FR': case 'QG': case 'Stand-by': return 'FFFEF08A'; // bg-yellow-200
+        case 'Training': return 'FFBAE6FD';
+        case 'Initial': return 'FFE2E8F0';
+        default: return 'FFFFFFFF';
+      }
+    };
+
+    // SHEET 1: DSR format day-by-day
+    const ws1 = wb.addWorksheet("DSR Daily");
+    ws1.columns = [
+      { width: 8 }, { width: 15 }, { width: 20 }, { width: 15 }, { width: 20 },
+      { width: 12 }, { width: 15 }, { width: 15 }, { width: 15 }, { width: 12 }, { width: 12 }, { width: 30 }
+    ];
+
+    dates.forEach(d => {
+      const dateStr = format(d, 'yyyy-MM-dd');
+      
+      const titleRow = ws1.addRow([`DSM MOM for ${format(d, 'dd-MM-yyyy')}`]);
+      ws1.mergeCells(titleRow.number, 1, titleRow.number, 12);
+      titleRow.getCell(1).font = { bold: true, size: 14, color: { argb: 'FF0F172A' } };
+      titleRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE2E8F0' } };
+      titleRow.getCell(1).alignment = { horizontal: 'center' };
+
+      const headerRow = ws1.addRow([
+        'S.no', 'Task ID', 'Function Name', 'Task Type', 'Collab Responsible',
+        'Total FT', 'Completed FT', "Today FT's Count",
+        'Task Status', 'Start Date', 'Delivery Date', 'Remarks/Comments'
+      ]);
+      applyHeaderStyle(headerRow);
+      
+      let serialExp = 1;
+      dsrTasks.forEach(t => {
+        if (!t.owners || t.owners.length === 0) {
+          const row = ws1.addRow([
+            serialExp++, (t.taskIds || []).join('\n'), t.function || '--', t.taskType || '--',
+            'Unassigned', t.totalFT || 0, t.completedFT || 0, '--', t.status,
+            t.startDate || 'TBD', t.endDate || 'TBD', t.remarks || ''
+          ]);
+          row.eachCell(c => applyCellStyle(c));
+          return;
+        }
+        
+        const sNoValue = serialExp++;
+        const startRowIdx = ws1.rowCount + 1;
+        
+        t.owners.forEach((o, oIndex) => {
+          const todayVal = o.todayFTs?.[dateStr] !== undefined ? o.todayFTs[dateStr] : '';
+          const compVal = o.completedFT || 0; 
+          const dailyRemark = o.dailyRemarks?.[dateStr] || '';
+          
+          const row = ws1.addRow([
+            sNoValue,
+            (t.taskIds || []).join('\n'),
+            t.function || '--',
+            t.taskType || '--',
+            o.name,
+            t.totalFT || 0,
+            compVal,
+            todayVal !== '' ? todayVal : '--',
+            t.status,
+            o.startDate || 'TBD',
+            o.endDate || 'TBD',
+            dailyRemark
+          ]);
+          row.eachCell(c => applyCellStyle(c));
+          
+          row.getCell(9).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: getStatusColor(t.status) } };
+          row.getCell(8).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFDBEAFE' } };
+          row.getCell(7).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFDCFCE7' } };
+        });
+
+        const endRowIdx = ws1.rowCount;
+        if (endRowIdx > startRowIdx) {
+          [1, 2, 3, 4, 6, 9].forEach(col => {
+            ws1.mergeCells(startRowIdx, col, endRowIdx, col);
+          });
+        }
+      });
+      ws1.addRow([]); 
+      ws1.addRow([]); 
+    });
+
+    // SHEET 2: All Tasks
+    const ws2 = wb.addWorksheet("All Tasks");
+    ws2.columns = [
+      { width: 8 }, { width: 15 }, { width: 20 }, { width: 15 }, { width: 30 },
+      { width: 12 }, { width: 12 }, { width: 15 }, { width: 12 }, { width: 12 }, { width: 30 }
+    ];
+    const headerRow2 = ws2.addRow(['S.no', 'Task IDs', 'Function Name', 'Task Type', 'Owners', 'Total FT', 'Completed FT', 'Status', 'Start Date', 'End Date', 'Remarks']);
+    applyHeaderStyle(headerRow2);
+    
+    dsrTasks.forEach(t => {
+      const row = ws2.addRow([
+        t.sno, (t.taskIds || []).join(', '), t.function || '--', t.taskType || '--',
+        (t.owners || []).map(o => o.name).join(', '), t.totalFT || 0, t.completedFT || 0,
+        t.status, t.startDate || '', t.endDate || '', t.remarks || ''
+      ]);
+      row.eachCell(c => applyCellStyle(c));
+      row.getCell(8).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: getStatusColor(t.status) } };
+    });
+
+    // SHEET 3...N: Per Person
+    const ownerNames = new Set();
+    dsrTasks.forEach(t => {
+      (t.owners || []).forEach(o => ownerNames.add(o.name));
+    });
+
+    ownerNames.forEach(name => {
+      const safeSheetName = name.substring(0, 31).replace(/[\\/?*[\]]/g, '');
+      const ws = wb.addWorksheet(safeSheetName);
+      ws.columns = [
+        { width: 15 }, { width: 20 }, { width: 15 }, { width: 10 }, { width: 15 }, { width: 10 }, { width: 15 }, { width: 30 }
+      ];
+      
+      const titleRow = ws.addRow([`Task Report for ${name}`]);
+      ws.mergeCells(titleRow.number, 1, titleRow.number, 8);
+      titleRow.getCell(1).font = { bold: true, size: 14 };
+      ws.addRow([]);
+      
+      dates.forEach(d => {
+        const dateStr = format(d, 'yyyy-MM-dd');
+        const dateRow = ws.addRow([`Date: ${format(d, 'dd-MM-yyyy')}`]);
+        ws.mergeCells(dateRow.number, 1, dateRow.number, 8);
+        dateRow.getCell(1).font = { bold: true };
+        dateRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE2E8F0' } };
+        
+        const hRow = ws.addRow(['Task ID', 'Function Name', 'Task Type', 'Total FT', 'Completed FT', 'Today FT', 'Task Status', 'Remarks/Comments']);
+        applyHeaderStyle(hRow);
+        
+        let hasTasks = false;
+        dsrTasks.forEach(t => {
+          const o = (t.owners || []).find(ow => ow.name === name);
+          if (o) {
+            const todayVal = o.todayFTs?.[dateStr] !== undefined ? o.todayFTs[dateStr] : '';
+            const dailyRemark = o.dailyRemarks?.[dateStr] || '';
+            
+            hasTasks = true;
+            const r = ws.addRow([
+              (t.taskIds || []).join(', '), t.function || '--', t.taskType || '--',
+              t.totalFT || 0, o.completedFT || 0, todayVal !== '' ? todayVal : '0', t.status, dailyRemark
+            ]);
+            r.eachCell(c => applyCellStyle(c));
+            r.getCell(7).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: getStatusColor(t.status) } };
+          }
+        });
+        if (!hasTasks) {
+           const emptyRow = ws.addRow(['No assigned tasks for this day.']);
+           ws.mergeCells(emptyRow.number, 1, emptyRow.number, 8);
+        }
+        ws.addRow([]);
+      });
+    });
+
+    const buffer = await wb.xlsx.writeBuffer();
+    saveAs(new Blob([buffer]), `DSR_Export_${exportStart}_to_${exportEnd}.xlsx`);
+    setExportModal(false);
   };
 
   const cellStyle = {
@@ -370,10 +575,39 @@ const DSR = () => {
           </div>
         </div>
         <div style={{ display: 'flex', gap: 'var(--space-sm)' }}>
-          <button className="btn btn-secondary">Export Excel</button>
+          <button className="btn btn-secondary" onClick={() => setExportModal(true)}>Export Excel</button>
           <button className="btn btn-primary" onClick={handleCopyEmail}>Copy DSM-MOM to Outlook</button>
         </div>
       </div>
+
+      {/* EXPORT MODAL */}
+      {exportModal && (
+        <>
+          <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 999 }} onClick={() => setExportModal(false)} />
+          <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '24px', borderRadius: '8px', zIndex: 1000, minWidth: '400px', boxShadow: '0 4px 20px rgba(0,0,0,0.15)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+              <h3 style={{ margin: 0, fontSize: '1.2rem', color: 'var(--primary)' }}>Export DSR to Excel</h3>
+              <button onClick={() => setExportModal(false)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}><X size={20} color="var(--text-muted)" /></button>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div>
+                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>Start Date</label>
+                <input type="date" value={exportStart} onChange={e => setExportStart(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', marginBottom: '8px', fontWeight: 600, fontSize: '0.9rem' }}>End Date</label>
+                <input type="date" value={exportEnd} onChange={e => setExportEnd(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+              </div>
+            </div>
+            <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
+              <button className="btn btn-secondary" onClick={() => setExportModal(false)}>Cancel</button>
+              <button className="btn btn-primary" onClick={handleExportExcel} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Download size={16} /> Generate Excel
+              </button>
+            </div>
+          </div>
+        </>
+      )}
 
 
 
@@ -616,15 +850,15 @@ const DSR = () => {
             </thead>
             <tbody>
               {totalLeaveList.map(m => {
-                const key = `${selectedDate}-${m.name}`;
+                const currentLeaveType = leaveTypes[m.name] !== undefined ? leaveTypes[m.name] : (m.leaveType || '');
                 return (
-                  <tr key={key}>
+                  <tr key={m.name}>
                     <td style={{ padding: '6px 12px', border: '1px solid black', background: 'white', textAlign: 'center' }}>{m.name}</td>
                     <td style={{ padding: 0, border: '1px solid black', background: '#0ea5e9' }}>
                       {isEditMode ? (
                         <select
-                          value={leaveTypes[key] || ''}
-                          onChange={e => setLeaveTypes({ ...leaveTypes, [key]: e.target.value })}
+                          value={currentLeaveType}
+                          onChange={e => setLeaveTypes({ ...leaveTypes, [m.name]: e.target.value })}
                           style={{ width: '100%', height: '100%', minHeight: '30px', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', color: 'black', cursor: 'pointer', fontSize: '0.875rem' }}
                         >
                           <option value="" disabled>Select Leave Type</option>
@@ -635,7 +869,7 @@ const DSR = () => {
                         </select>
                       ) : (
                         <div style={{ width: '100%', minHeight: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black', fontSize: '0.875rem' }}>
-                          {leaveTypes[key] || '--'}
+                          {currentLeaveType || '--'}
                         </div>
                       )}
                     </td>

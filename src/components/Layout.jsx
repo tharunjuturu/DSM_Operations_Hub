@@ -4,7 +4,7 @@ import { useStore } from '../store/useStore';
 import { differenceInDays, parseISO } from 'date-fns';
 import {
   LayoutDashboard, CheckSquare, ClipboardCheck, FileText,
-  Users, Archive, Bot, X, Sparkles, AlertTriangle, ArrowLeft
+  Users, Archive, Bot, X, Sparkles, AlertTriangle, ArrowLeft, BarChart2
 } from 'lucide-react';
 
 const Layout = () => {
@@ -46,12 +46,14 @@ const Layout = () => {
         </div>
 
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '0 var(--space-md)' }}>
-          <NavItem to="/hub/dashboard" icon={<LayoutDashboard size={20} />} label="Dashboard" />
+          <NavItem to="/hub/dashboard" icon={<LayoutDashboard size={20} />} label="Overview" />
+          <NavItem to="/hub/analytics-dashboard" icon={<BarChart2 size={20} />} label="Analytics Dashboard" />
           <NavItem to="/hub/tasks" icon={<CheckSquare size={20} />} label="Task Info" />
           <NavItem to="/hub/reviews" icon={<ClipboardCheck size={20} />} label="Task Review" />
           <NavItem to="/hub/dsr" icon={<FileText size={20} />} label="DSR Generator" />
           <NavItem to="/hub/team" icon={<Users size={20} />} label="Team Data Hub" />
           <NavItem to="/hub/archive" icon={<Archive size={20} />} label="Archive" />
+          <NavItem to="/hub/burndown" icon={<CheckSquare size={20} />} label="Burndown Matrix" />
           
           <div style={{ marginTop: 'auto', paddingTop: '24px' }}>
             <NavLink to="/" className="nav-item" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 16px', borderRadius: '8px', color: 'var(--text-muted)', fontWeight: '500' }}>

@@ -7,8 +7,10 @@ import Reviews from './pages/Reviews';
 import DSR from './pages/DSR';
 import Team from './pages/Team';
 import Archive from './pages/Archive';
+import AnalyticsDashboard from './pages/AnalyticsDashboard';
 import PersonalTracker from './pages/PersonalTracker';
 import HomePortal from './pages/HomePortal';
+import Burndown from './pages/Burndown';
 import { useStore } from './store/useStore';
 
 function App() {
@@ -45,11 +47,13 @@ function App() {
       <Route path="/hub" element={<Layout />}>
         <Route index element={<Navigate to="/hub/dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="analytics-dashboard" element={<AnalyticsDashboard />} />
         <Route path="tasks" element={<Tasks />} />
         <Route path="reviews" element={<Reviews />} />
         <Route path="dsr" element={<DSR />} />
         <Route path="team" element={<Team />} />
         <Route path="archive" element={<Archive />} />
+        <Route path="burndown" element={<Burndown />} />
       </Route>
       <Route path="/tracker" element={<PersonalTracker />} />
     </Routes>
