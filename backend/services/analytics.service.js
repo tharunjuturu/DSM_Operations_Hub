@@ -1,6 +1,6 @@
 import { getEntireDatabase } from './db.service.js';
 
-export const getUserStats = async (userId, filters = {}) => {
+export const getFilteredUserTasks = async (userId, filters = {}) => {
   const db = await getEntireDatabase();
   const allTasks = db.tasks || [];
 
@@ -16,22 +16,21 @@ export const getUserStats = async (userId, filters = {}) => {
     return isAssigned || isOwner;
   });
 
-  // 2. Date Filter Logic (Use correct date field based on status)
+  // 2. Date Filter Logic
   const { startDate, endDate } = filters;
   
   if (startDate || endDate) {
     userTasks = userTasks.filter(task => {
       const isCompleted = task.status === 'Delivered' || task.status === 'Completed';
       
-      // Proper fallback rule: completed metrics use completedAt/deliveredDate, total/pending use createdAt/startDate
       const dateString = isCompleted 
         ? (task.completedAt || task.deliveredDate)
         : (task.createdAt || task.startDate);
         
-      if (!dateString) return true; // If no date exists, decide whether to include. Usually include.
+      if (!dateString) return true; 
       
       const taskDate = new Date(dateString);
-      if (isNaN(taskDate.getTime())) return true; // Invalid dates bypass filter
+      if (isNaN(taskDate.getTime())) return true; 
       
       if (startDate && endDate) {
         return taskDate >= new Date(startDate) && taskDate <= new Date(endDate);
@@ -43,6 +42,12 @@ export const getUserStats = async (userId, filters = {}) => {
       return true;
     });
   }
+
+  return userTasks;
+};
+
+export const getUserStats = async (userId, filters = {}) => {
+  const userTasks = await getFilteredUserTasks(userId, filters);
 
   let total = userTasks.length;
   let completed = 0;
@@ -75,6 +80,10 @@ export const getUserStats = async (userId, filters = {}) => {
     completed,
     pending,
     completionRate: parseFloat(completionRate),
-    monthly // Return object directly {"2026-04": 5}
+    monthly 
   };
+};
+
+export const getUserTasks = async (userId, filters = {}) => {
+  return await getFilteredUserTasks(userId, filters);
 };

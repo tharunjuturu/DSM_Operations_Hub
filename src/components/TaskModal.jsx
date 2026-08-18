@@ -2,6 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { X, Plus, Trash2, Sparkles } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { improveComment } from '../utils/mockAI';
+const calculatePlannedFT = (totalFTVal, startVal, endVal, bufferDaysVal) => {
+  const t = Number(totalFTVal) || 0;
+  const buffer = Number(bufferDaysVal) || 0;
+  if (t <= 0 || !startVal || !endVal) return 0;
+  try {
+    const s = new Date(startVal);
+    const e = new Date(endVal);
+    if (s > e) return 0;
+    let count = 0;
+    let cur = new Date(s);
+    while (cur <= e) {
+      const day = cur.getDay();
+      if (day !== 0 && day !== 6) { // exclude Sunday (0) and Saturday (6)
+        count++;
+      }
+      cur.setDate(cur.getDate() + 1);
+    }
+    const workingDays = count || 1;
+    const duration = Math.max(1, workingDays - buffer);
+    return parseFloat(Math.max(1, t / duration).toFixed(2));
+  } catch (err) {
+    return 0;
+  }
+};
 
 const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
   const tasks = useStore(state => state.tasks);
@@ -44,30 +68,32 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
   };
 
   useEffect(() => {
-    if (existingTask) {
-      setFormData({
-         ...existingTask,
-         taskIds: existingTask.taskIds ? existingTask.taskIds.join(', ') : '',
-         deliveredDate: existingTask.deliveredDate || '',
-         ftrOtd: existingTask.ftrOtd || ''
-      });
-    } else {
-      const nextSno = tasks.length > 0 ? Math.max(...tasks.map(t => t.sno)) + 1 : 1;
-      setFormData({
-        sno: nextSno,
-        function: '',
-        taskType: '',
-        taskIds: '',
-        startDate: '',
-        endDate: '',
-        status: 'Initial',
-        remarks: '',
-        deliveredDate: '',
-        ftrOtd: '',
-        owners: []
-      });
+    if (isOpen) {
+      if (existingTask) {
+        setFormData({
+           ...existingTask,
+           taskIds: existingTask.taskIds ? existingTask.taskIds.join(', ') : '',
+           deliveredDate: existingTask.deliveredDate || '',
+           ftrOtd: existingTask.ftrOtd || ''
+        });
+      } else {
+        const nextSno = tasks.length > 0 ? Math.max(...tasks.map(t => t.sno)) + 1 : 1;
+        setFormData({
+          sno: nextSno,
+          function: '',
+          taskType: '',
+          taskIds: '',
+          startDate: '',
+          endDate: '',
+          status: 'Initial',
+          remarks: '',
+          deliveredDate: '',
+          ftrOtd: '',
+          owners: []
+        });
+      }
     }
-  }, [existingTask, isOpen, tasks]);
+  }, [existingTask, isOpen]); // Removed tasks dependency to prevent resetting when background sync occurs
 
   if (!isOpen) return null;
 
@@ -79,6 +105,7 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
          name: '', 
          totalFT: 0, 
          completedFT: 0,
+         bufferDays: 0,
          plannedFTPerDay: 0, 
          startDate: prev.startDate, 
          endDate: prev.endDate, 
@@ -96,6 +123,13 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
   const handleOwnerChange = (index, field, value) => {
     const newOwners = [...formData.owners];
     newOwners[index][field] = value;
+    
+    // Auto-calculate plannedFTPerDay when totalFT, dates, or bufferDays change
+    if (field === 'totalFT' || field === 'startDate' || field === 'endDate' || field === 'bufferDays') {
+      const owner = newOwners[index];
+      owner.plannedFTPerDay = calculatePlannedFT(owner.totalFT, owner.startDate, owner.endDate, owner.bufferDays);
+    }
+    
     setFormData(prev => ({ ...prev, owners: newOwners }));
   };
 
@@ -192,7 +226,14 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>Task Type *</label>
-              <input type="text" value={formData.taskType} onChange={e => setFormData({...formData, taskType: e.target.value})} placeholder="e.g. Update_BRANCH_PT" style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+              <select value={formData.taskType} onChange={e => setFormData({...formData, taskType: e.target.value})} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)', background: 'white' }}>
+                <option value="">- Select Task Type -</option>
+                <option value="Update_BRANCH_PT">Update_BRANCH_PT</option>
+                <option value="Update_PT">Update_PT</option>
+                <option value="IA">IA</option>
+                <option value="DC_Review">DC_Review</option>
+                <option value="QG">QG</option>
+              </select>
             </div>
           </div>
 
@@ -277,7 +318,7 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
                      </button>
                   </div>
                   
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '8px' }}>
                     <div>
                        <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Total FT</span>
                        <input type="number" value={owner.totalFT} onChange={e => handleOwnerChange(idx, 'totalFT', Number(e.target.value))} style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)' }} />
@@ -287,8 +328,12 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
                        <input type="number" value={owner.completedFT} onChange={e => handleOwnerChange(idx, 'completedFT', Number(e.target.value))} style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)' }} />
                     </div>
                     <div>
+                       <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Buffer Days</span>
+                       <input type="number" min="0" value={owner.bufferDays || 0} onChange={e => handleOwnerChange(idx, 'bufferDays', Number(e.target.value))} style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+                    </div>
+                    <div>
                        <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Plan FT/Day</span>
-                       <input type="number" step="0.1" value={owner.plannedFTPerDay || 0} onChange={e => handleOwnerChange(idx, 'plannedFTPerDay', Number(e.target.value))} style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+                       <input type="number" step="0.1" value={owner.plannedFTPerDay || 0} readOnly style={{ width: '100%', padding: '6px', borderRadius: '4px', border: '1px solid var(--border)', background: 'var(--bg)', color: 'var(--text-muted)', cursor: 'not-allowed' }} />
                     </div>
                     <div>
                        <span style={{ fontSize: '10px', color: 'gray', display: 'block' }}>Owner Start</span>

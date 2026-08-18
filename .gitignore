@@ -13,3 +13,13 @@ dist-ssr
 
 # Portable Node
 node/
+
+# GitHub Sync
+.github_sync_config.json
+.github_sync_metadata.json
+backups/
+
+# Local databases
+database_*.json
+database_vsm_pt_corrupted.json
+test_upload.js

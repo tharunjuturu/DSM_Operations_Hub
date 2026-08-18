@@ -1,7 +1,7 @@
 {
   "name": "dsm-operations-hub",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -17,10 +17,12 @@
     "express": "^5.2.1",
     "file-saver": "^2.0.5",
     "lucide-react": "^0.378.0",
+    "multer": "^2.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",
     "recharts": "^3.8.1",
+    "xlsx": "^0.18.5",
     "zustand": "^4.5.2"
   },
   "devDependencies": {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useStore } from '../store/useStore';
 import { differenceInDays, parseISO } from 'date-fns';
 import EmptyState from '../components/EmptyState';
@@ -11,6 +11,7 @@ const Reviews = () => {
   const updateReviewStatus = useStore(state => state.updateReviewStatus);
 
   const reviewTasks = tasks.filter(t => t.status === 'FR' || t.status === 'QG');
+  const [isCompact, setIsCompact] = useState(false);
 
   const handleApprove = (sno) => {
     updateReviewStatus(sno, 'Approved');
@@ -24,8 +25,16 @@ const Reviews = () => {
 
   return (
     <div>
-      <h1 className="title">Task Reviews</h1>
-      <p className="subtitle" style={{ marginBottom: 'var(--space-lg)' }}>Action pending FR and QG items.</p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-lg)' }}>
+        <div>
+          <h1 className="title">Task Reviews</h1>
+          <p className="subtitle">Action pending FR and QG items.</p>
+        </div>
+        <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', fontWeight: 600, color: '#475569', cursor: 'pointer' }}>
+          <input type="checkbox" checked={isCompact} onChange={e => setIsCompact(e.target.checked)} style={{ cursor: 'pointer', accentColor: 'var(--primary)' }} />
+          Compact Density
+        </label>
+      </div>
       
       {reviewTasks.length === 0 ? (
         <EmptyState 
@@ -36,7 +45,7 @@ const Reviews = () => {
       ) : (
         <div className="card" style={{ padding: 0 }}>
           <div className="table-container">
-            <table>
+            <table className={isCompact ? 'table-compact' : ''}>
               <thead>
                 <tr>
                   <th>Task ID</th>

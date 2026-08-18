@@ -12,6 +12,18 @@ const DSR = () => {
 
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
   const [leaveTypes, setLeaveTypes] = useState({});
+  const [syncInfo, setSyncInfo] = useState({ status: 'Disconnected', user: '' });
+
+  useEffect(() => {
+    fetch('/api/sync/status')
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          setSyncInfo({ status: data.status, user: data.user });
+        }
+      })
+      .catch(e => console.error('Failed to load sync status in DSR:', e));
+  }, []);
 
   const [isEditMode, setIsEditMode] = useState(false);
   const [localEdits, setLocalEdits] = useState({});
@@ -325,7 +337,7 @@ const DSR = () => {
       alert("Please select both start and end dates for export.");
       return;
     }
-    
+
     const dates = eachDayOfInterval({ start: new Date(exportStart), end: new Date(exportEnd) });
     const wb = new ExcelJS.Workbook();
 
@@ -335,14 +347,14 @@ const DSR = () => {
         cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E293B' } };
         cell.font = { color: { argb: 'FFFFFFFF' }, bold: true };
         cell.alignment = { horizontal: 'center', vertical: 'middle' };
-        cell.border = { top: {style:'thin'}, left: {style:'thin'}, bottom: {style:'thin'}, right: {style:'thin'} };
+        cell.border = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } };
       });
     };
 
     // Helper for styling cells
     const applyCellStyle = (cell) => {
       cell.alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
-      cell.border = { top: {style:'thin'}, left: {style:'thin'}, bottom: {style:'thin'}, right: {style:'thin'} };
+      cell.border = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } };
     };
 
     // Helper for task status color
@@ -368,7 +380,7 @@ const DSR = () => {
 
     dates.forEach(d => {
       const dateStr = format(d, 'yyyy-MM-dd');
-      
+
       const titleRow = ws1.addRow([`DSM MOM for ${format(d, 'dd-MM-yyyy')}`]);
       ws1.mergeCells(titleRow.number, 1, titleRow.number, 12);
       titleRow.getCell(1).font = { bold: true, size: 14, color: { argb: 'FF0F172A' } };
@@ -381,7 +393,7 @@ const DSR = () => {
         'Task Status', 'Start Date', 'Delivery Date', 'Remarks/Comments'
       ]);
       applyHeaderStyle(headerRow);
-      
+
       let serialExp = 1;
       dsrTasks.forEach(t => {
         if (!t.owners || t.owners.length === 0) {
@@ -393,15 +405,15 @@ const DSR = () => {
           row.eachCell(c => applyCellStyle(c));
           return;
         }
-        
+
         const sNoValue = serialExp++;
         const startRowIdx = ws1.rowCount + 1;
-        
+
         t.owners.forEach((o, oIndex) => {
           const todayVal = o.todayFTs?.[dateStr] !== undefined ? o.todayFTs[dateStr] : '';
-          const compVal = o.completedFT || 0; 
+          const compVal = o.completedFT || 0;
           const dailyRemark = o.dailyRemarks?.[dateStr] || '';
-          
+
           const row = ws1.addRow([
             sNoValue,
             (t.taskIds || []).join('\n'),
@@ -417,7 +429,7 @@ const DSR = () => {
             dailyRemark
           ]);
           row.eachCell(c => applyCellStyle(c));
-          
+
           row.getCell(9).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: getStatusColor(t.status) } };
           row.getCell(8).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFDBEAFE' } };
           row.getCell(7).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFDCFCE7' } };
@@ -430,8 +442,8 @@ const DSR = () => {
           });
         }
       });
-      ws1.addRow([]); 
-      ws1.addRow([]); 
+      ws1.addRow([]);
+      ws1.addRow([]);
     });
 
     // SHEET 2: All Tasks
@@ -442,7 +454,7 @@ const DSR = () => {
     ];
     const headerRow2 = ws2.addRow(['S.no', 'Task IDs', 'Function Name', 'Task Type', 'Owners', 'Total FT', 'Completed FT', 'Status', 'Start Date', 'End Date', 'Remarks']);
     applyHeaderStyle(headerRow2);
-    
+
     dsrTasks.forEach(t => {
       const row = ws2.addRow([
         t.sno, (t.taskIds || []).join(', '), t.function || '--', t.taskType || '--',
@@ -465,29 +477,29 @@ const DSR = () => {
       ws.columns = [
         { width: 15 }, { width: 20 }, { width: 15 }, { width: 10 }, { width: 15 }, { width: 10 }, { width: 15 }, { width: 30 }
       ];
-      
+
       const titleRow = ws.addRow([`Task Report for ${name}`]);
       ws.mergeCells(titleRow.number, 1, titleRow.number, 8);
       titleRow.getCell(1).font = { bold: true, size: 14 };
       ws.addRow([]);
-      
+
       dates.forEach(d => {
         const dateStr = format(d, 'yyyy-MM-dd');
         const dateRow = ws.addRow([`Date: ${format(d, 'dd-MM-yyyy')}`]);
         ws.mergeCells(dateRow.number, 1, dateRow.number, 8);
         dateRow.getCell(1).font = { bold: true };
         dateRow.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE2E8F0' } };
-        
+
         const hRow = ws.addRow(['Task ID', 'Function Name', 'Task Type', 'Total FT', 'Completed FT', 'Today FT', 'Task Status', 'Remarks/Comments']);
         applyHeaderStyle(hRow);
-        
+
         let hasTasks = false;
         dsrTasks.forEach(t => {
           const o = (t.owners || []).find(ow => ow.name === name);
           if (o) {
             const todayVal = o.todayFTs?.[dateStr] !== undefined ? o.todayFTs[dateStr] : '';
             const dailyRemark = o.dailyRemarks?.[dateStr] || '';
-            
+
             hasTasks = true;
             const r = ws.addRow([
               (t.taskIds || []).join(', '), t.function || '--', t.taskType || '--',
@@ -498,8 +510,8 @@ const DSR = () => {
           }
         });
         if (!hasTasks) {
-           const emptyRow = ws.addRow(['No assigned tasks for this day.']);
-           ws.mergeCells(emptyRow.number, 1, emptyRow.number, 8);
+          const emptyRow = ws.addRow(['No assigned tasks for this day.']);
+          ws.mergeCells(emptyRow.number, 1, emptyRow.number, 8);
         }
         ws.addRow([]);
       });
@@ -541,9 +553,38 @@ const DSR = () => {
       {/* HEADER SECTION */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-lg)' }}>
         <div>
-          <h1 className="title" style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <h1 className="title" style={{ margin: 0, display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
             Daily Status Report
             {isEditMode && <span className="badge badge-warning" style={{ fontSize: '0.75rem', fontWeight: 'bold' }}>EDIT MODE ACTIVE</span>}
+            
+            {(() => {
+              const getSyncPill = (status) => {
+                switch (status) {
+                  case 'Synced': return { label: 'Synced', color: '#16a34a', bg: '#dcfce7' };
+                  case 'Local Changes': return { label: 'Local Changes', color: '#d97706', bg: '#fef3c7' };
+                  case 'GitHub Changes Available': return { label: 'Remote Changes', color: '#2563eb', bg: '#eff6ff' };
+                  case 'Conflict': return { label: 'Conflict', color: '#dc2626', bg: '#fef2f2' };
+                  case 'Disconnected': return { label: 'Disconnected', color: '#64748b', bg: '#f1f5f9' };
+                  default: return { label: 'Sync Error', color: '#dc2626', bg: '#fef2f2' };
+                }
+              };
+              const pill = getSyncPill(syncInfo.status);
+              return (
+                <span style={{ 
+                  fontSize: '0.72rem', 
+                  fontWeight: 'bold', 
+                  color: pill.color, 
+                  background: pill.bg, 
+                  padding: '3px 10px', 
+                  borderRadius: '20px', 
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  border: `1px solid ${pill.color}22` 
+                }}>
+                  GitHub: {pill.label} {syncInfo.user ? `(${syncInfo.user})` : ''}
+                </span>
+              );
+            })()}
           </h1>
           <p className="subtitle" style={{ marginBottom: '12px' }}>Export or email the current DSR sheet.</p>
 

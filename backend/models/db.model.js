@@ -8,8 +8,7 @@ export const getDefaultSchema = () => {
     customDashboards: [],
     taskGroups: [],
     reviews: [],
-    archives: [],
-    tracker_data: {}
+    archives: []
   };
 };
 

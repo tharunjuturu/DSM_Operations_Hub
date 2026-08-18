@@ -1,4 +1,4 @@
-import { createDashboard, getDashboardById, getDashboardData, getDashboardsByUser } from '../services/dashboard.service.js';
+import { createDashboard, getDashboardById, getDashboardData, getDashboardsByUser, updateDashboard, deleteDashboard } from '../services/dashboard.service.js';
 import { handleError } from '../utils/errorHandler.js';
 
 export const handleCreateDashboard = async (req, res) => {
@@ -53,14 +53,19 @@ export const handleUpdateDashboard = async (req, res) => {
       payload.dashboardId = id;
     }
     
-    // Import updateDashboard dynamically or expect it from service
-    // We need to add updateDashboard to the imports at top
-    // For now we'll update the top imports in another step.
-    const { updateDashboard } = await import('../services/dashboard.service.js');
     const result = await updateDashboard(id, payload);
-    
     res.json({ success: true, data: result });
   } catch (err) {
     handleError(res, err, 'Failed to update dashboard');
+  }
+};
+
+export const handleDeleteDashboard = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await deleteDashboard(id);
+    res.json({ success: true, message: 'Dashboard deleted successfully' });
+  } catch (err) {
+    handleError(res, err, 'Failed to delete dashboard');
   }
 };

@@ -4,8 +4,8 @@ import { getDefaultSchema, validateDatabaseSchema } from '../models/db.model.js'
 /**
  * Service to fetch the full database, supplying defaults if it doesn't exist
  */
-export const getEntireDatabase = async () => {
-  const data = await readDatabase();
+export const getEntireDatabase = async (variantOverride) => {
+  const data = await readDatabase(variantOverride);
   if (!data) {
     return getDefaultSchema();
   }
@@ -15,12 +15,12 @@ export const getEntireDatabase = async () => {
 /**
  * Service to overwrite the flat database safely with schema validation
  */
-export const updateEntireDatabase = async (payload) => {
+export const updateEntireDatabase = async (payload, variantOverride) => {
   // Pass through model layer validation
   validateDatabaseSchema(payload);
   
   // Write to DB layer
-  await writeDatabase(payload);
+  await writeDatabase(payload, variantOverride);
   
   return { success: true };
 };

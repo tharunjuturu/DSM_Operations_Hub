@@ -10,12 +10,12 @@ const storeConfig = (set, get) => ({
   logs: [],
   teamModes: [],
   teamMembers: [
-    { sno: 1, name: 'Divya', location: 'Bangalore', perimeter: 'VSM' },
-    { sno: 2, name: 'Srivijay', location: 'Bangalore', perimeter: 'VSM' },
-    { sno: 3, name: 'Rahul', location: 'Pune', perimeter: 'FSEE' },
-    { sno: 4, name: 'Anita', location: 'Pune', perimeter: 'FSEE' },
-    { sno: 5, name: 'Kimaya Patil', location: 'Pune', perimeter: 'FSEE' },
-    { sno: 6, name: 'Tharun Kumar Juturu', location: 'Bangalore', perimeter: 'VSM' }
+    { sno: 1, name: 'Divya', location: 'Bangalore', perimeter: 'VSM PT' },
+    { sno: 2, name: 'Srivijay', location: 'Bangalore', perimeter: 'VSM PT' },
+    { sno: 3, name: 'Rahul', location: 'Pune', perimeter: 'VSM PT' },
+    { sno: 4, name: 'Anita', location: 'Pune', perimeter: 'VSM PT' },
+    { sno: 5, name: 'Kimaya Patil', location: 'Pune', perimeter: 'VSM PT' },
+    { sno: 6, name: 'Tharun Kumar Juturu', location: 'Bangalore', perimeter: 'VSM PT' }
   ],
   leaveData: [],
   holidays: [
@@ -23,13 +23,24 @@ const storeConfig = (set, get) => ({
     { date: "2026-05-01", name: "Labour Day", scope: "ALL", locations: [] },
   ],
   reviews: [],
+  excelTasks: [],
+  layouts: [],
 
   // Personal Tracker Models
-  currentUserSno: 6, // Tharun Kumar Juturu
-  personalTasks: [],
-  personalLogs: [],
-  workDays: [],
-  personalNotes: [],
+  currentVariant: 'vsm_pt',
+  setCurrentVariant: (variant) => set({ currentVariant: variant }),
+  systemInfo: null,
+  loadSystemInfo: async () => {
+    try {
+      const res = await fetch('/api/system-info');
+      if (res.ok) {
+        const data = await res.json();
+        set({ systemInfo: data });
+      }
+    } catch (e) {
+      console.error('Failed to load system info', e);
+    }
+  },
 
   // Actions
   addTeamMember: (member) => set((state) => {
@@ -119,37 +130,16 @@ const storeConfig = (set, get) => ({
     tasks: state.tasks.map(t => t.sno === sno ? { ...t, status: 'Archive', last_updated: getToday() } : t)
   })),
 
-  // --- Personal Tracker Actions ---
-  addPersonalTask: (task) => set((state) => ({ personalTasks: [...state.personalTasks, { ...task, created_at: getToday() }] })),
-  updatePersonalTask: (task_id, updates) => set((state) => ({
-    personalTasks: state.personalTasks.map(t => t.task_id === task_id ? { ...t, ...updates, last_updated: getToday() } : t)
-  })),
-  deletePersonalTask: (task_id) => set((state) => ({
-    personalTasks: state.personalTasks.filter(t => t.task_id !== task_id)
-  })),
-
-  addPersonalLog: (log) => set((state) => ({
-    personalLogs: [...state.personalLogs, { id: Date.now(), ...log }]
-  })),
-  deletePersonalLog: (logId) => set((state) => ({
-    personalLogs: state.personalLogs.filter(l => l.id !== logId)
-  })),
-
-  upsertWorkDay: (date, data) => set((state) => {
-    const existing = state.workDays.find(w => w.date === date);
-    if (existing) {
-      return { workDays: state.workDays.map(w => w.date === date ? { ...w, ...data } : w) };
-    }
-    return { workDays: [...state.workDays, { date, ...data }] };
+  addLayout: (layout) => set((state) => {
+    const nextId = 'lay_' + Date.now();
+    return { layouts: [...(state.layouts || []), { id: nextId, ...layout }] };
   }),
-
-  upsertPersonalNote: (date, noteObj) => set((state) => {
-    const existing = state.personalNotes.find(n => n.date === date);
-    if (existing) {
-      return { personalNotes: state.personalNotes.map(n => n.date === date ? { ...n, ...noteObj } : n) };
-    }
-    return { personalNotes: [...state.personalNotes, { date, ...noteObj }] };
-  }),
+  updateLayout: (id, updates) => set((state) => ({
+    layouts: (state.layouts || []).map(l => l.id === id ? { ...l, ...updates } : l)
+  })),
+  deleteLayout: (id) => set((state) => ({
+    layouts: (state.layouts || []).filter(l => l.id !== id)
+  })),
 
   // Smart Selectors
   getActiveTasks: () => (get().tasks || []).filter(t => t.status !== 'Delivered' && t.status !== 'Archive'),
@@ -162,12 +152,6 @@ const storeConfig = (set, get) => ({
         return differenceInDays(parseISO(t.endDate), new Date()) < 3 && t.progress < 0.7;
       } catch (e) { return false; }
     });
-  },
-
-  // --- Personal Tracker Selectors ---
-  getMyTasks: () => {
-    const sno = get().currentUserSno;
-    return (get().tasks || []).filter(t => t.owners && t.owners.some(o => Number(o.sno) === sno));
   }
 });
 
@@ -184,10 +168,18 @@ export const useStore = create((set, get) => {
     set(...args);
     if (isHydrating) return; // Prevent loop during initial download
 
+    // Check if this update is purely transient UI state (e.g., currentVariant, systemInfo)
+    const partialState = typeof updateFnOrObj === 'function' ? updateFnOrObj(get()) : updateFnOrObj;
+    const isTransient = partialState && Object.keys(partialState).every(k => k === 'currentVariant' || k === 'systemInfo');
+    if (isTransient) return;
+
     // 2. Queue the save operations to prevent concurrent race conditions
     saveQueue = saveQueue.then(async () => {
       try {
-        const res = await fetch(`/db?t=${new Date().getTime()}`, { cache: 'no-store' });
+        const res = await fetch(`/db?t=${new Date().getTime()}`, {
+          headers: { 'x-variant': get().currentVariant || 'vsm_pt' },
+          cache: 'no-store'
+        });
         if (!res.ok) throw new Error("Failed to fetch latest DB");
         
         let serverState = await res.json();
@@ -205,7 +197,10 @@ export const useStore = create((set, get) => {
         // 4. Save the merged state back to server
         await fetch(`/db`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-variant': get().currentVariant || 'vsm_pt'
+          },
           body: JSON.stringify(updatedServerState)
         });
         
@@ -224,10 +219,48 @@ export const useStore = create((set, get) => {
     loadDatabase: async () => {
       try {
         isHydrating = true;
-        const res = await fetch(`/db?t=${new Date().getTime()}`, { cache: 'no-store' });
+        const res = await fetch(`/db?t=${new Date().getTime()}`, {
+          headers: { 'x-variant': get().currentVariant || 'vsm_pt' },
+          cache: 'no-store'
+        });
         if (res.ok) {
           const dbState = await res.json();
           if (Object.keys(dbState).length > 0) {
+            // Automatically calculate plannedFTPerDay for any old task owners if missing
+            if (dbState.tasks) {
+              dbState.tasks = dbState.tasks.map(t => {
+                let updated = false;
+                const newOwners = t.owners?.map(o => {
+                  if (o.plannedFTPerDay === undefined || o.plannedFTPerDay === null || Number(o.plannedFTPerDay) === 0) {
+                    const tFT = Number(o.totalFT) || 0;
+                    if (tFT > 0) {
+                      const start = o.startDate || t.startDate;
+                      const end = o.endDate || t.endDate;
+                      if (start && end) {
+                        try {
+                          const s = new Date(start);
+                          const e = new Date(end);
+                          if (s <= e) {
+                            let count = 0;
+                            let cur = new Date(s);
+                            while (cur <= e) {
+                              const day = cur.getDay();
+                              if (day !== 0 && day !== 6) count++;
+                              cur.setDate(cur.getDate() + 1);
+                            }
+                            const duration = count || 1;
+                            o.plannedFTPerDay = parseFloat(Math.max(1, tFT / duration).toFixed(2));
+                            updated = true;
+                          }
+                        } catch (err) {}
+                      }
+                    }
+                  }
+                  return o;
+                });
+                return updated ? { ...t, owners: newOwners } : t;
+              });
+            }
             set(dbState);
           } else {
             // Create db.json for the first time with base structure

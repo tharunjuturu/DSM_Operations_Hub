@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useParams } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isWeekend, addMonths, subMonths, isSameDay } from 'date-fns';
 import { ChevronLeft, ChevronRight, Settings, Edit2, Trash2, X, Calendar as CalendarIcon, Users, Globe, MapPin, Search, FilterX, Sparkles, Download } from 'lucide-react';
@@ -7,6 +8,73 @@ import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 
 const Team = () => {
+  const { variant } = useParams();
+  const [transferForm, setTransferForm] = useState({ sourceVariant: '', memberName: '', action: 'move' });
+  const [sourceMembers, setSourceMembers] = useState([]);
+  const [transferLoading, setTransferLoading] = useState(false);
+
+  const handleSelectSourceVariant = async (src) => {
+    setTransferForm({ ...transferForm, sourceVariant: src, memberName: '' });
+    if (!src) {
+      setSourceMembers([]);
+      return;
+    }
+    try {
+      const res = await fetch(`/db?t=${Date.now()}`, {
+        headers: { 'x-variant': src }
+      });
+      const data = await res.json();
+      if (data.teamMembers) {
+        // filter out members that are already active in the current variant
+        const currentNames = teamMembers.map(m => m.name.toLowerCase());
+        const filtered = data.teamMembers.filter(m => !currentNames.includes(m.name.toLowerCase()));
+        setSourceMembers(filtered);
+      } else {
+        setSourceMembers([]);
+      }
+    } catch (e) {
+      console.error(e);
+      setSourceMembers([]);
+    }
+  };
+
+  const handleExecuteTransfer = async () => {
+    if (!transferForm.sourceVariant || !transferForm.memberName) return;
+    setTransferLoading(true);
+    try {
+      const res = await fetch('/api/team/transfer', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-variant': variant
+        },
+        body: JSON.stringify({
+          sourceVariant: transferForm.sourceVariant,
+          targetVariant: variant,
+          memberName: transferForm.memberName,
+          action: transferForm.action
+        })
+      });
+      
+      const resJson = await res.json();
+      if (!resJson.success) {
+        throw new Error(resJson.error || 'Transfer failed');
+      }
+      
+      alert(resJson.message);
+      setTransferForm({ sourceVariant: '', memberName: '', action: 'move' });
+      setSourceMembers([]);
+      
+      // Reload database to refresh team roster!
+      const loadDatabase = useStore.getState().loadDatabase;
+      await loadDatabase();
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setTransferLoading(false);
+    }
+  };
+
   const { 
     tasks, teamMembers, addTeamMember, updateTeamMember, deleteTeamMember,
     teamModes, setTeamMode, leaveData, holidays, addHoliday, updateHoliday, removeHoliday 
@@ -26,7 +94,8 @@ const Team = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [drawerTab, setDrawerTab] = useState('team');
   const [holiForm, setHoliForm] = useState({ oldDate: null, oldName: null, date: '', name: '', scope: 'ALL', locations: [] });
-  const [teamForm, setTeamForm] = useState({ sno: null, name: '', location: '', perimeter: '', status: 'Active' });
+  const defaultPerimeter = variant ? variant.toUpperCase().replace('_', ' ') : 'VSM PT';
+  const [teamForm, setTeamForm] = useState({ sno: null, name: '', location: '', perimeter: defaultPerimeter, status: 'Active' });
 
   // Export Modal State
   const [exportModal, setExportModal] = useState(false);
@@ -39,6 +108,7 @@ const Team = () => {
 
   const [selectedRow, setSelectedRow] = useState(null);
   const [filters, setFilters] = useState({ location: '', perimeter: '', employee: '', status: 'Active' });
+  const [isCompact, setIsCompact] = useState(false);
 
   const monthStart = startOfMonth(currentMonth);
   const monthEnd = endOfMonth(currentMonth);
@@ -142,9 +212,10 @@ const Team = () => {
 
   const handleSaveTeamMember = () => {
     if (!teamForm.name) return;
-    if (teamForm.sno) updateTeamMember(teamForm.sno, { name: teamForm.name, location: teamForm.location, perimeter: teamForm.perimeter, status: teamForm.status || 'Active' });
-    else addTeamMember({ name: teamForm.name, location: teamForm.location, perimeter: teamForm.perimeter, status: teamForm.status || 'Active' });
-    setTeamForm({ sno: null, name: '', location: '', perimeter: '', status: 'Active' });
+    const activePerimeter = teamForm.perimeter || defaultPerimeter;
+    if (teamForm.sno) updateTeamMember(teamForm.sno, { name: teamForm.name, location: teamForm.location, perimeter: activePerimeter, status: teamForm.status || 'Active' });
+    else addTeamMember({ name: teamForm.name, location: teamForm.location, perimeter: activePerimeter, status: teamForm.status || 'Active' });
+    setTeamForm({ sno: null, name: '', location: '', perimeter: defaultPerimeter, status: 'Active' });
   };
 
   const handleEditMember = (m) => {
@@ -360,6 +431,10 @@ const Team = () => {
           <p className="subtitle">Modern dashboard for accurate attendance tracking.</p>
         </div>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', fontWeight: 600, color: '#475569', cursor: 'pointer' }}>
+            <input type="checkbox" checked={isCompact} onChange={e => setIsCompact(e.target.checked)} style={{ cursor: 'pointer', accentColor: 'var(--primary)' }} />
+            Compact Density
+          </label>
           <button 
             className="btn btn-primary"
             onClick={() => setExportModal(true)}
@@ -470,7 +545,7 @@ const Team = () => {
       {/* MATRIX TABLE */}
       <div className="card" style={{ flex: 1, padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
         <div className="table-container" style={{ flex: 1, paddingBottom: '20px' }}>
-          <table style={{ borderCollapse: 'separate', borderSpacing: 0, minWidth: 'max-content', fontSize: '0.75rem', width: '100%' }}>
+          <table className={isCompact ? 'table-compact' : ''} style={{ borderCollapse: 'separate', borderSpacing: 0, minWidth: 'max-content', fontSize: '0.75rem', width: '100%' }}>
             
             <thead style={{ position: 'sticky', top: 0, zIndex: 10, background: 'var(--bg)', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
               <tr>
@@ -631,17 +706,103 @@ const Team = () => {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       <input type="text" placeholder="Name" value={teamForm.name} onChange={e => setTeamForm({...teamForm, name: e.target.value})} style={{ padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
                       <input type="text" placeholder="Location" value={teamForm.location} onChange={e => setTeamForm({...teamForm, location: e.target.value})} style={{ padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
-                      <input type="text" placeholder="Perimeter" value={teamForm.perimeter} onChange={e => setTeamForm({...teamForm, perimeter: e.target.value})} style={{ padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+                      <select 
+                        value={teamForm.perimeter || defaultPerimeter} 
+                        onChange={e => setTeamForm({...teamForm, perimeter: e.target.value})} 
+                        style={{ padding: '8px', borderRadius: '4px', border: '1px solid var(--border)', background: 'white' }}
+                      >
+                        <option value="VSM PT">VSM PT</option>
+                        <option value="VSM PC">VSM PC</option>
+                        <option value="BSI PT">BSI PT</option>
+                        <option value="BSI PC">BSI PC</option>
+                        <option value="BSI AUTO">BSI AUTO</option>
+                      </select>
                       <select value={teamForm.status || 'Active'} onChange={e => setTeamForm({...teamForm, status: e.target.value})} style={{ padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }}>
                         <option value="Active">Active</option>
                         <option value="Inactive">Inactive</option>
                       </select>
                       <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end' }}>
                         {teamForm.sno && (
-                          <button className="btn btn-secondary" onClick={() => setTeamForm({ sno: null, name: '', location: '', perimeter: '', status: 'Active' })}>Cancel</button>
+                          <button className="btn btn-secondary" onClick={() => setTeamForm({ sno: null, name: '', location: '', perimeter: defaultPerimeter, status: 'Active' })}>Cancel</button>
                         )}
                         <button className="btn btn-primary" onClick={handleSaveTeamMember}>{teamForm.sno ? 'Update' : 'Add User'}</button>
                       </div>
+                    </div>
+                  </div>
+
+                  <div style={{ background: '#f8fafc', padding: '16px', borderRadius: 'var(--radius-md)', marginBottom: '20px', border: '1px solid var(--border)', boxShadow: '0 2px 4px rgba(0,0,0,0.02)' }}>
+                    <h3 style={{ margin: '0 0 12px 0', fontSize: '1.05rem', color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Globe size={18} /> Cross-Variant Transfer
+                    </h3>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      <div>
+                        <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>Source Variant</label>
+                        <select 
+                          value={transferForm.sourceVariant} 
+                          onChange={e => handleSelectSourceVariant(e.target.value)} 
+                          style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }}
+                        >
+                          <option value="">Select Source...</option>
+                          <option value="vsm_pt">VSM PT</option>
+                          <option value="vsm_pc">VSM PC</option>
+                          <option value="bsi_pt">BSI PT</option>
+                          <option value="bsi_pc">BSI PC</option>
+                          <option value="bsi_auto">BSI AUTO</option>
+                        </select>
+                      </div>
+
+                      {transferForm.sourceVariant && (
+                        <div>
+                          <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>Select Team Member</label>
+                          <select 
+                            value={transferForm.memberName} 
+                            onChange={e => setTransferForm({...transferForm, memberName: e.target.value})} 
+                            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }}
+                          >
+                            <option value="">Select Member...</option>
+                            {sourceMembers.map(m => (
+                              <option key={m.name} value={m.name}>{m.name} ({m.perimeter})</option>
+                            ))}
+                          </select>
+                        </div>
+                      )}
+
+                      {transferForm.memberName && (
+                        <div>
+                          <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>Transfer Type</label>
+                          <div style={{ display: 'flex', gap: '16px' }}>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', cursor: 'pointer', color: 'var(--text)' }}>
+                              <input 
+                                type="radio" 
+                                name="transferAction" 
+                                value="move" 
+                                checked={transferForm.action === 'move'} 
+                                onChange={() => setTransferForm({...transferForm, action: 'move'})} 
+                              />
+                              Move (Deactivate in Source)
+                            </label>
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.85rem', cursor: 'pointer', color: 'var(--text)' }}>
+                              <input 
+                                type="radio" 
+                                name="transferAction" 
+                                value="copy" 
+                                checked={transferForm.action === 'copy'} 
+                                onChange={() => setTransferForm({...transferForm, action: 'copy'})} 
+                              />
+                              Copy (Keep active in both)
+                            </label>
+                          </div>
+                        </div>
+                      )}
+
+                      <button 
+                        className="btn btn-primary" 
+                        onClick={handleExecuteTransfer}
+                        disabled={!transferForm.sourceVariant || !transferForm.memberName || transferLoading}
+                        style={{ marginTop: '4px', justifyContent: 'center' }}
+                      >
+                        {transferLoading ? 'Transferring...' : 'Execute Transfer'}
+                      </button>
                     </div>
                   </div>
 
