@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import fs from 'fs/promises';
 import { requestContext } from '../utils/context.js';
 import { getDbPath, readDatabase, writeDatabase } from '../database/connection.js';
 import * as syncManager from '../github_sync/sync_manager.js';
@@ -123,7 +124,11 @@ router.post('/upload', async (req, res) => {
     try {
       localContent = await fs.readFile(localDbPath, 'utf8');
     } catch (e) {
-      return res.status(400).json({ success: false, error: 'Local database file is missing. Try fetching from GitHub first.' });
+      console.error(`[Upload] Failed to read database at ${localDbPath}:`, e);
+      return res.status(400).json({ 
+        success: false, 
+        error: `Local database file is missing or unreadable: ${e.message} (Path: ${localDbPath})` 
+      });
     }
 
     // Parse and validate local content before upload
