@@ -35,9 +35,28 @@ export const getFileContent = async (owner, repo, filePath, branch, token) => {
     throw new Error(`Target path '${filePath}' is not a file (type: ${data.type})`);
   }
 
-  // Handle line breaks in base64 content
-  const contentBase64 = data.content.replace(/\r?\n|\r/g, '');
-  const content = Buffer.from(contentBase64, 'base64').toString('utf8');
+  let content = '';
+  // If the file is smaller than 1MB, GitHub returns it in data.content
+  if (data.content) {
+    const contentBase64 = data.content.replace(/\r?\n|\r/g, '');
+    content = Buffer.from(contentBase64, 'base64').toString('utf8');
+  } else {
+    // If the file is larger than 1MB, fetch raw content directly using raw media type
+    const rawHeaders = { 'User-Agent': 'DSM-Operations-Hub-Sync' };
+    if (token) {
+      rawHeaders['Authorization'] = `token ${token}`;
+    }
+    const rawRes = await fetch(url, {
+      headers: {
+        ...rawHeaders,
+        'Accept': 'application/vnd.github.v3.raw'
+      }
+    });
+    if (!rawRes.ok) {
+      throw new Error(`Failed to retrieve large database contents from GitHub (status ${rawRes.status})`);
+    }
+    content = await rawRes.text();
+  }
   
   return {
     content,
