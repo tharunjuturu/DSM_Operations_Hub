@@ -69,13 +69,27 @@ export const loadConfig = async () => {
     const raw = await fs.readFile(paths.config, 'utf8');
     return JSON.parse(raw);
   } catch (err) {
-    return {
-      owner: '',
-      repo: '',
-      branch: 'main',
-      filePath: `data/${paths.variant.toUpperCase()}/database_${paths.variant}.json`,
-      token: ''
-    };
+    // Try to inherit default Repository Owner, Name, and PAT securely from the git-ignored base config
+    try {
+      const baseRaw = await fs.readFile(path.resolve('.github_sync_config.json'), 'utf8');
+      const baseConfig = JSON.parse(baseRaw);
+      return {
+        owner: baseConfig.owner || '',
+        repo: baseConfig.repo || '',
+        branch: baseConfig.branch || 'main',
+        filePath: `data/${paths.variant.toUpperCase()}/database_${paths.variant}.json`,
+        token: baseConfig.token || ''
+      };
+    } catch (e) {
+      // Fallback defaults if no base config is found
+      return {
+        owner: '',
+        repo: '',
+        branch: 'main',
+        filePath: `data/${paths.variant.toUpperCase()}/database_${paths.variant}.json`,
+        token: ''
+      };
+    }
   }
 };
 
