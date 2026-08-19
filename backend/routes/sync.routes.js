@@ -162,11 +162,21 @@ router.post('/upload', async (req, res) => {
 
     // Push Protection: Block if remote has changed since last sync
     if (remote.exists && remote.sha !== metadata.lastSyncedSha) {
-      return res.status(409).json({
-        success: false,
-        conflict: true,
-        error: 'Upload Rejected: GitHub contains newer changes. Please pull or compare changes first.'
-      });
+      let remoteIsValid = false;
+      try {
+        validateSyncDatabase(remote.content);
+        remoteIsValid = true;
+      } catch (e) {
+        remoteIsValid = false;
+      }
+
+      if (remoteIsValid) {
+        return res.status(409).json({
+          success: false,
+          conflict: true,
+          error: 'Upload Rejected: GitHub contains newer changes. Please pull or compare changes first.'
+        });
+      }
     }
 
     // Formulate commit message
@@ -352,7 +362,8 @@ router.post('/compare', async (req, res) => {
     try {
       remoteData = validateSyncDatabase(remote.content);
     } catch (e) {
-      return res.status(400).json({ success: false, error: `GitHub database file is corrupted: ${e.message}` });
+      console.warn(`[Compare] Remote database content is empty/corrupt, falling back to empty model: ${e.message}`);
+      remoteData = { tasks: [], collections: [] };
     }
 
     // Generate read-only diff report
