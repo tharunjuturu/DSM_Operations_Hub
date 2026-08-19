@@ -124,7 +124,9 @@ export default function SyncPage() {
     setActionRunning(true);
     setActionMessage('Testing connection to GitHub repository...');
     try {
-      const res = await fetch('/api/sync/test-connection');
+      const res = await fetch('/api/sync/test-connection', {
+        method: 'POST'
+      });
       const data = await res.json();
       if (data.success) {
         alert(`Connection successful! File exists on GitHub: ${data.fileExists ? 'Yes' : 'No'}`);
