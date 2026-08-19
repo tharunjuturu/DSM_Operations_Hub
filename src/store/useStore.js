@@ -156,15 +156,25 @@ const storeConfig = (set, get) => ({
 });
 
 // Build Store Appended with Intercept-Save API Server logic
+let saveTimeout = null;
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('beforeunload', (e) => {
+    if (saveTimeout) {
+      e.preventDefault();
+      e.returnValue = '';
+    }
+  });
+}
+
 export const useStore = create((set, get) => {
   let isHydrating = false;
-  let saveQueue = Promise.resolve();
 
   const interceptSet = (...args) => {
     const updateFnOrObj = args[0];
     const replace = args[1];
 
-    // 1. Optimistic UI update
+    // 1. Optimistic UI update (instantly displays the selection change)
     set(...args);
     if (isHydrating) return; // Prevent loop during initial download
 
@@ -173,45 +183,25 @@ export const useStore = create((set, get) => {
     const isTransient = partialState && Object.keys(partialState).every(k => k === 'currentVariant' || k === 'systemInfo');
     if (isTransient) return;
 
-    // 2. Queue the save operations to prevent concurrent race conditions
-    saveQueue = saveQueue.then(async () => {
+    // 2. Debounce database updates to prevent redundant large JSON file writes on every cell click
+    if (saveTimeout) clearTimeout(saveTimeout);
+    
+    saveTimeout = setTimeout(async () => {
       try {
-        const res = await fetch(`/db?t=${new Date().getTime()}`, {
-          headers: { 'x-variant': get().currentVariant || 'vsm_pt' },
-          cache: 'no-store'
-        });
-        if (!res.ok) throw new Error("Failed to fetch latest DB");
-        
-        let serverState = await res.json();
-        if (Object.keys(serverState).length === 0) serverState = get(); // fallback if DB empty
-        
-        // 3. Re-apply the same update on the server state
-        let updatedServerState;
-        if (typeof updateFnOrObj === 'function') {
-          const partialUpdate = updateFnOrObj(serverState);
-          updatedServerState = replace ? partialUpdate : { ...serverState, ...partialUpdate };
-        } else {
-          updatedServerState = replace ? updateFnOrObj : { ...serverState, ...updateFnOrObj };
-        }
-
-        // 4. Save the merged state back to server
+        const currentState = get();
         await fetch(`/db`, {
           method: 'POST',
           headers: { 
             'Content-Type': 'application/json',
-            'x-variant': get().currentVariant || 'vsm_pt'
+            'x-variant': currentState.currentVariant || 'vsm_pt'
           },
-          body: JSON.stringify(updatedServerState)
+          body: JSON.stringify(currentState)
         });
-        
-        // 5. Sync local state with the newly merged server state silently
-        isHydrating = true;
-        set(updatedServerState);
-        isHydrating = false;
+        saveTimeout = null;
       } catch (err) {
         console.error("Database Save Failed - Is the Node Server Running?", err);
       }
-    });
+    }, 400); // 400ms debounce groups quick successive cell modifications
   };
 
   return {
