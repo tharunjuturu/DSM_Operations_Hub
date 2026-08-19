@@ -53,6 +53,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePortal />} />
+      <Route path="/sync" element={<SyncPage />} />
       <Route path="/hub" element={<Navigate to="/hub/vsm_pt/dashboard" replace />} />
       <Route path="/hub/:variant" element={<Layout />}>
         <Route index element={<Navigate to="dashboard" replace />} />
@@ -62,7 +63,6 @@ function App() {
         <Route path="reviews" element={<Reviews />} />
         <Route path="dsr" element={<DSR />} />
         <Route path="layouts" element={<LayoutsPage />} />
-        <Route path="sync" element={<SyncPage />} />
         <Route path="team" element={<Team />} />
         <Route path="manager-hub" element={<ManagerHub />} />
         <Route path="archive" element={<Archive />} />

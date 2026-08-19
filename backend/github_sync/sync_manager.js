@@ -2,14 +2,26 @@ import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
 import crypto from 'crypto';
+import { requestContext } from '../utils/context.js';
 import { getDbPath, readDatabase, writeDatabase } from '../database/connection.js';
 import * as gitClient from './github_client.js';
 import { validateSyncDatabase } from './validator.js';
 import { createBackup } from './backup_manager.js';
 import { logSyncOperation } from './sync_history.js';
 
-const configPath = path.resolve('.github_sync_config.json');
-const metadataPath = path.resolve('.github_sync_metadata.json');
+/**
+ * Returns dynamic configuration and metadata file paths based on request context variant
+ */
+const getPaths = () => {
+  const store = requestContext.getStore();
+  const variant = store?.variant || 'vsm_pt';
+  const cleanVariant = variant.toLowerCase().replace(/\s+/g, '_');
+  return {
+    config: path.resolve(`.github_sync_config_${cleanVariant}.json`),
+    metadata: path.resolve(`.github_sync_metadata_${cleanVariant}.json`),
+    variant: cleanVariant
+  };
+};
 
 /**
  * Resolves the dynamic system / Windows username.
@@ -52,15 +64,16 @@ export const maskToken = (token) => {
  * Loads current local GitHub Sync configuration.
  */
 export const loadConfig = async () => {
+  const paths = getPaths();
   try {
-    const raw = await fs.readFile(configPath, 'utf8');
+    const raw = await fs.readFile(paths.config, 'utf8');
     return JSON.parse(raw);
   } catch (err) {
     return {
       owner: '',
       repo: '',
       branch: 'main',
-      filePath: 'data/VSM/database_vsm_pt.json',
+      filePath: `data/${paths.variant.toUpperCase()}/database_${paths.variant}.json`,
       token: ''
     };
   }
@@ -71,9 +84,10 @@ export const loadConfig = async () => {
  */
 export const saveConfig = async (newConfig) => {
   const oldConfig = await loadConfig();
+  const paths = getPaths();
   
   // Save credentials to git-ignored config file
-  await fs.writeFile(configPath, JSON.stringify(newConfig, null, 2), 'utf8');
+  await fs.writeFile(paths.config, JSON.stringify(newConfig, null, 2), 'utf8');
   
   // Reset metadata if path, repo, or branch changes to avoid stale SHA checks
   const isChanged = 
@@ -100,15 +114,16 @@ export const saveConfig = async (newConfig) => {
  * Loads metadata tracking file.
  */
 export const loadMetadata = async () => {
+  const paths = getPaths();
   try {
-    const raw = await fs.readFile(metadataPath, 'utf8');
+    const raw = await fs.readFile(paths.metadata, 'utf8');
     return JSON.parse(raw);
   } catch (err) {
     const config = await loadConfig();
     return {
       repository: config.owner ? `${config.owner}/${config.repo}` : '',
       branch: config.branch || 'main',
-      filePath: config.filePath || 'data/VSM/database_vsm_pt.json',
+      filePath: config.filePath || `data/${paths.variant.toUpperCase()}/database_${paths.variant}.json`,
       lastSyncedSha: null,
       lastSyncedLocalHash: null,
       lastSyncTime: null,
@@ -122,7 +137,8 @@ export const loadMetadata = async () => {
  * Saves metadata tracking file.
  */
 export const saveMetadata = async (metadata) => {
-  await fs.writeFile(metadataPath, JSON.stringify(metadata, null, 2), 'utf8');
+  const paths = getPaths();
+  await fs.writeFile(paths.metadata, JSON.stringify(metadata, null, 2), 'utf8');
 };
 
 /**

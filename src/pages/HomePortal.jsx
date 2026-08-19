@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import {
   Activity, Layers, Zap, BarChart2, Cpu,
-  AppWindow, ChevronRight, LayoutGrid, Bell
+  AppWindow, ChevronRight, LayoutGrid, Bell, Github
 } from 'lucide-react';
 
 // Centralized CSS Animations Block
@@ -728,6 +728,35 @@ export default function HomePortal() {
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          {/* GitHub Database Sync Settings Button */}
+          <button
+            onClick={(e) => {
+              handleRippleClick(e);
+              setTimeout(() => {
+                navigate('/sync');
+              }, 120);
+            }}
+            style={{
+              background: 'rgba(255,255,255,0.03)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              width: '40px',
+              height: '40px',
+              borderRadius: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              color: '#94a3b8',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'all 0.3s cubic-bezier(0.22, 1, 0.36, 1)'
+            }}
+            className="smoothTransition glowHover rotateHover"
+            title="GitHub Database Sync Settings"
+          >
+            <Github size={18} />
+          </button>
+
           {/* Notifications Button */}
           <button
             onClick={handleRippleClick}

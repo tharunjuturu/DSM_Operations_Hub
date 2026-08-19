@@ -65,7 +65,6 @@ const Layout = () => {
           <NavItem to={`/hub/${variant}/reviews`} icon={<ClipboardCheck size={20} />} label="Task Review" />
           <NavItem to={`/hub/${variant}/dsr`} icon={<FileText size={20} />} label="DSR Generator" />
           <NavItem to={`/hub/${variant}/layouts`} icon={<Sliders size={20} />} label="Custom Layouts" />
-          <NavItem to={`/hub/${variant}/sync`} icon={<RefreshCw size={20} />} label="GitHub Sync" />
           <NavItem to={`/hub/${variant}/team`} icon={<Users size={20} />} label="Team Data Hub" />
           <NavItem to={`/hub/${variant}/manager-hub`} icon={<ShieldCheck size={20} />} label="Manager Hub" />
           <NavItem to={`/hub/${variant}/archive`} icon={<Archive size={20} />} label="Archive" />

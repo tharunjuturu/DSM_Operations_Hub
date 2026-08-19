@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { 
   RefreshCw, Github, CloudUpload, CloudDownload, GitCommit, GitBranch, 
   User, CheckCircle, AlertTriangle, AlertCircle, Clock, ShieldCheck, 
-  Settings, History, ChevronRight, X, Layers, Play, Search
+  Settings, History, ChevronRight, X, Layers, Play, Search, ArrowLeft
 } from 'lucide-react';
 import { useStore } from '../store/useStore';
 
 export default function SyncPage() {
-  const { variant } = useParams();
+  const navigate = useNavigate();
   const loadDatabase = useStore(state => state.loadDatabase);
 
-  // Connection and Status State
+  // Connection and Status State (Defaulting to vsm_pt)
+  const [variant, setVariant] = useState('vsm_pt');
   const [syncStatus, setSyncStatus] = useState('Disconnected');
   const [username, setUsername] = useState('System User');
   const [metadata, setMetadata] = useState(null);
@@ -67,7 +68,9 @@ export default function SyncPage() {
   const fetchConfig = async () => {
     setConfigLoading(true);
     try {
-      const res = await fetch('/api/sync/config');
+      const res = await fetch('/api/sync/config', {
+        headers: { 'x-variant': variant }
+      });
       if (res.ok) {
         const data = await res.json();
         if (data.success) {
@@ -75,7 +78,7 @@ export default function SyncPage() {
             owner: data.owner || '',
             repo: data.repo || '',
             branch: data.branch || 'main',
-            filePath: data.filePath || `data/VSM/database_${variant}.json`,
+            filePath: data.filePath || `data/${variant.toUpperCase()}/database_${variant}.json`,
             token: data.token || ''
           });
         }
@@ -103,7 +106,10 @@ export default function SyncPage() {
     try {
       const res = await fetch('/api/sync/config', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'x-variant': variant
+        },
         body: JSON.stringify(config)
       });
       const data = await res.json();
@@ -125,7 +131,10 @@ export default function SyncPage() {
     setActionMessage('Testing connection to GitHub repository...');
     try {
       const res = await fetch('/api/sync/test-connection', {
-        method: 'POST'
+        method: 'POST',
+        headers: {
+          'x-variant': variant
+        }
       });
       const data = await res.json();
       if (data.success) {
@@ -362,12 +371,49 @@ export default function SyncPage() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', paddingBottom: '40px', maxWidth: '1200px', margin: '0 auto' }}>
       
-      {/* Page Title */}
+      {/* Back to Portal button */}
       <div>
-        <h1 className="title" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <Github size={28} color="var(--primary)" /> GitHub Synchronization Hub
-        </h1>
-        <p className="subtitle">Securely version control, backup, and pull database files directly from private repositories.</p>
+        <button 
+          className="btn btn-secondary smoothTransition" 
+          onClick={() => navigate('/')}
+          style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '6px 12px', fontSize: '0.825rem', borderRadius: '8px', border: '1px solid var(--border)' }}
+        >
+          <ArrowLeft size={14} /> Back to Main Portal
+        </button>
+      </div>
+
+      {/* Page Title & Variant Dropdown Selector */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+        <div>
+          <h1 className="title" style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: 0 }}>
+            <Github size={28} color="var(--primary)" /> GitHub Synchronization Hub
+          </h1>
+          <p className="subtitle" style={{ margin: '4px 0 0 0' }}>Securely version control, backup, and pull database files directly from private repositories.</p>
+        </div>
+        
+        {/* Dynamic Database Variant Selector */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: 'white', padding: '8px 16px', borderRadius: '12px', border: '1px solid var(--border)', boxShadow: '0 2px 8px rgba(0,0,0,0.05)' }}>
+          <span style={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-muted)' }}>Target Database:</span>
+          <select 
+            value={variant}
+            onChange={(e) => setVariant(e.target.value)}
+            style={{ 
+              fontWeight: 800, 
+              color: 'var(--primary)', 
+              border: 'none', 
+              outline: 'none', 
+              fontSize: '0.90rem', 
+              cursor: 'pointer',
+              background: 'transparent'
+            }}
+          >
+            <option value="vsm_pt">VSM PT (Timesheet)</option>
+            <option value="vsm_pc">VSM PC (Manual Val)</option>
+            <option value="bsi_pt">BSI PT (Test Plan)</option>
+            <option value="bsi_pc">BSI PC (Validation)</option>
+            <option value="bsi_auto">BSI AUTO (Automation)</option>
+          </select>
+        </div>
       </div>
 
       {/* Action running loader block */}
