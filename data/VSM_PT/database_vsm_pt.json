@@ -3199,7 +3199,8 @@
             "2026-08-12": "Worked on IA completed PICC and SUPERVISION here SUPERVISION is blocked",
             "2026-08-14": "Leave",
             "2026-08-17": "Worked on IA for VLV and block task analysis for PCGA - IA is in progress, delivered DC reviews PUCSM, ACT_TC, CVMODE, DAGMP",
-            "2026-08-19": "Worked on FR and QG for ACTIVE_BRAKE"
+            "2026-08-19": "Worked on FR and QG for ACTIVE_BRAKE",
+            "2026-08-21": "Worked on PHAB and VLV FR and QG"
           },
           "todayFTs": {
             "2026-06-30": "",
@@ -3216,7 +3217,7 @@
       "completedFT": 63,
       "progress": 0.525,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 47,
@@ -3655,7 +3656,7 @@
       ],
       "startDate": "2026-07-30",
       "endDate": "2026-08-19",
-      "status": "In Progress",
+      "status": "FR",
       "remarks": "FEPS  -> 3 sheets",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -3692,7 +3693,8 @@
             "2026-08-13": "Worked on 9 QIA PT points, created 2 sheets and deleted one sheet",
             "2026-08-14": "Worked on 4 QIA points and deleted 2 sheets",
             "2026-08-17": "Leave",
-            "2026-08-19": "Worked on QIA PT analysis points and check files generation "
+            "2026-08-19": "Worked on QIA PT analysis points and check files generation ",
+            "2026-08-21": "Leave"
           },
           "todayFTs": {
             "2026-08-05": 4,
@@ -3707,7 +3709,7 @@
       "completedFT": 20,
       "progress": 0.4444444444444444,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 55,
@@ -3762,7 +3764,8 @@
             "2026-08-13": "Worked on 9 QIA PT points impacted 4 sheets",
             "2026-08-14": "Impacted 4 sheets and analysis for 7 QIA PT points",
             "2026-08-17": "Leave",
-            "2026-08-19": "Worked on PT merging and worked on 12 QIA PT points with impact 4 sheets, for some QIA PT points sent mails to spec owners and CVD's"
+            "2026-08-19": "Worked on PT merging and worked on 12 QIA PT points with impact 4 sheets, for some QIA PT points sent mails to spec owners and CVD's",
+            "2026-08-21": "Worked on check file generation and errors solving"
           }
         },
         {
@@ -3786,7 +3789,8 @@
             "2026-08-13": "Worked on one general QIA PT point impact 20 sheets",
             "2026-08-14": "Impacted 8 sheets and working on DC review for ACT_TC(MPA_00068)",
             "2026-08-17": "Delivered 2 DC reviews (MPA_00068, MPA_00069)",
-            "2026-08-19": ""
+            "2026-08-19": "",
+            "2026-08-21": ""
           },
           "todayFTs": {
             "2026-08-07": 2,
@@ -3803,7 +3807,7 @@
       "completedFT": 88,
       "progress": 0.3271375464684015,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 56,
@@ -3975,7 +3979,8 @@
             "2026-08-13": "Worked on 7 QIA PT points without impact and sent mail for FEPS 0% coverage",
             "2026-08-14": "Impacted 7 sheets and analysis for 2 QIA points",
             "2026-08-17": "Leave",
-            "2026-08-19": "Worked on check files generation and FR and QG points, task delivered, worked on DC review (MPA_00072)"
+            "2026-08-19": "Worked on check files generation and FR and QG points, task delivered, worked on DC review (MPA_00072)",
+            "2026-08-21": "Worked on GIH review, completed all checks "
           }
         }
       ],
@@ -3983,7 +3988,7 @@
       "completedFT": 14,
       "progress": 1,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 60,
@@ -3995,7 +4000,7 @@
       ],
       "startDate": "2026-07-21",
       "endDate": "2026-08-18",
-      "status": "In Progress",
+      "status": "FR",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4041,7 +4046,8 @@
             "2026-08-13": "Worked on 6 QIA PT points impacted 2 sheets",
             "2026-08-14": "Leave",
             "2026-08-17": "Created 3 sheets and impacted 1 sheet",
-            "2026-08-19": "Created 3 sheets and impacted 2 sheets"
+            "2026-08-19": "Created 3 sheets and impacted 2 sheets",
+            "2026-08-21": "VM issue "
           }
         },
         {
@@ -4057,7 +4063,8 @@
           "dailyRemarks": {
             "2026-08-17": "Delivered DC review (MPA_00071) and worked on 11 QIA PT points without impact",
             "2026-08-18": "Worked on 15 QIA PT in analysis points",
-            "2026-08-19": "Worked on 21 QIA PT in analysis points"
+            "2026-08-19": "Worked on 21 QIA PT in analysis points",
+            "2026-08-21": "Worked on PUCSM review and check files generation"
           }
         }
       ],
@@ -4065,7 +4072,7 @@
       "completedFT": 46,
       "progress": 0.9387755102040817,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 61,
@@ -4077,7 +4084,7 @@
       ],
       "startDate": "2026-07-24",
       "endDate": "2026-08-17",
-      "status": "In Progress",
+      "status": "FR",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4110,7 +4117,8 @@
             "2026-08-13": "Impacted 8 sheets",
             "2026-08-14": "Impacted 7 sheets for 2 QIA points",
             "2026-08-17": "Created 5 sheets ",
-            "2026-08-19": "Worked on PT merge and check files generation "
+            "2026-08-19": "Worked on PT merge and check files generation ",
+            "2026-08-21": "Leave"
           },
           "todayFTs": {
             "2026-07-28": 2,
@@ -4133,7 +4141,7 @@
       "completedFT": 95,
       "progress": 1,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 62,
@@ -4251,7 +4259,7 @@
       ],
       "startDate": "2026-08-03",
       "endDate": "2026-08-14",
-      "status": "FR",
+      "status": "Delivered",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4285,7 +4293,8 @@
             "2026-08-13": "Worked on Check files generation",
             "2026-08-14": "Generated reports and mail sent for FR",
             "2026-08-17": "Leave",
-            "2026-08-19": "Worked on  CLIM_IHM QIA PT in analysis, completed 33 points"
+            "2026-08-19": "Worked on  CLIM_IHM QIA PT in analysis, completed 33 points",
+            "2026-08-21": "Worked on FR and QG points, check fils generation, delivered the task"
           }
         }
       ],
@@ -4293,7 +4302,7 @@
       "completedFT": 19,
       "progress": 1,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 65,
@@ -4362,7 +4371,8 @@
             "2026-08-14": "Working on DC review for DAGMP MPA_00070",
             "2026-08-17": "Delivered DC review (MPA_00070), Impacted 4 sheets",
             "2026-08-18": "Reworked on 4 sheets",
-            "2026-08-19": "Impacted 3 sheets and started working on QIA PT points "
+            "2026-08-19": "Impacted 3 sheets and started working on QIA PT points ",
+            "2026-08-21": "Worked on check files generation"
           },
           "todayFTs": {
             "2026-08-17": 4,
@@ -4374,7 +4384,7 @@
       "completedFT": 7,
       "progress": 0.5384615384615384,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 67,
@@ -4385,7 +4395,7 @@
       ],
       "startDate": "2026-08-14",
       "endDate": "2026-08-31",
-      "status": "In Progress",
+      "status": "FR",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4394,7 +4404,7 @@
           "id": "usr_596",
           "name": "Divya Patil",
           "totalFT": 13,
-          "completedFT": 4,
+          "completedFT": 5,
           "bufferDays": 2,
           "plannedFTPerDay": 3.25,
           "startDate": "2026-08-14",
@@ -4403,19 +4413,21 @@
           "dailyRemarks": {
             "2026-08-17": "Started new task analysis",
             "2026-08-18": "Completed analysis and sent analysis mail, impacted 2 sheets",
-            "2026-08-19": "Created 2 sheets and working on the 2 QIA PT points "
+            "2026-08-19": "Created 2 sheets and working on the 2 QIA PT points ",
+            "2026-08-21": "Completed all QIA PT points and worked on check report generation and solved all check reports errors"
           },
           "todayFTs": {
             "2026-08-18": 2,
-            "2026-08-19": 2
+            "2026-08-19": 2,
+            "2026-08-21": 1
           }
         }
       ],
       "totalFT": 13,
-      "completedFT": 4,
-      "progress": 0.3076923076923077,
+      "completedFT": 5,
+      "progress": 0.38461538461538464,
       "include_in_dsr": true,
-      "last_updated": "2026-08-19"
+      "last_updated": "2026-08-21"
     }
   ],
   "taskDailyLogs": [
@@ -13392,6 +13404,78 @@
       "date": "2026-08-19",
       "mode": "WFO",
       "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-21",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-21",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-21",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-21",
+      "mode": "LEAVE",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-21",
+      "mode": "WFH",
+      "half": null
     }
   ],
   "teamMembers": [
@@ -13719,6 +13803,42 @@
       "reviewer": "Tharun Kumar",
       "review_status": "Pending",
       "assigned_date": "2026-08-05T11:56:54.371Z"
+    },
+    {
+      "sno": 54,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-21T11:41:52.031Z"
+    },
+    {
+      "sno": 55,
+      "reviewer": "Divya Patil",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-21T11:41:59.665Z"
+    },
+    {
+      "sno": 60,
+      "reviewer": "Kimaya Patil",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-21T11:42:07.124Z"
+    },
+    {
+      "sno": 61,
+      "reviewer": "Hepsiba Pilli",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-21T11:42:12.743Z"
+    },
+    {
+      "sno": 67,
+      "reviewer": "Hepsiba Pilli",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-21T11:42:22.231Z"
+    },
+    {
+      "sno": 66,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-21T11:42:28.515Z"
     }
   ],
   "excelTasks": [
@@ -98421,6 +98541,9 @@
     }
   ],
   "layouts": [],
+  "dsrLocalEdits": {},
+  "dsrLeaveTypes": {},
+  "dsrIsEditMode": false,
   "currentVariant": "vsm_pt",
   "systemInfo": {
     "username": "tjuturu",
