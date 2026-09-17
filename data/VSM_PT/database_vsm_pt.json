@@ -1332,40 +1332,6 @@
       "nbRemarksReceived": null
     },
     {
-      "sno": 19,
-      "function": "FSEE_DAGMP",
-      "taskType": "Update_BRANCH_PT",
-      "taskIds": [
-        "AMAL_00294"
-      ],
-      "startDate": "2026-04-29",
-      "endDate": "2026-05-08",
-      "status": "Initial",
-      "remarks": "",
-      "deliveredDate": "",
-      "ftrOtd": "",
-      "owners": [
-        {
-          "id": "usr_226",
-          "name": "Kimaya Patil",
-          "totalFT": 249,
-          "completedFT": 0,
-          "startDate": "2026-04-29",
-          "endDate": "2026-05-08",
-          "remarks": "",
-          "dailyRemarks": {
-            "2026-04-16": "Working on PHAB FTR and worked on the new task DAGMP task analysis, FEPS impact is 1 sheet, QIA PT 22 sheets and the check report 226 total 249 sheets"
-          },
-          "plannedFTPerDay": 31.13
-        }
-      ],
-      "totalFT": 249,
-      "completedFT": 0,
-      "progress": 0,
-      "include_in_dsr": false,
-      "last_updated": "2026-04-29"
-    },
-    {
       "sno": 20,
       "function": "FSEE_CONFORT_THERMIQUE",
       "taskType": "Update_BRANCH_PT",
@@ -1865,9 +1831,9 @@
       ],
       "startDate": "2026-05-01",
       "endDate": "2026-05-31",
-      "status": "In Progress",
+      "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-09-09",
       "ftrOtd": "",
       "owners": [
         {
@@ -1910,7 +1876,7 @@
       "completedFT": 0,
       "progress": 0,
       "include_in_dsr": false,
-      "last_updated": "2026-06-08"
+      "last_updated": "2026-09-09"
     },
     {
       "sno": 28,
@@ -1921,9 +1887,9 @@
       ],
       "startDate": "2026-05-01",
       "endDate": "2026-06-30",
-      "status": "In Progress",
+      "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-09-09",
       "ftrOtd": "",
       "owners": [
         {
@@ -1974,7 +1940,7 @@
       "completedFT": 0,
       "progress": 0,
       "include_in_dsr": false,
-      "last_updated": "2026-06-29"
+      "last_updated": "2026-09-09"
     },
     {
       "sno": 29,
@@ -2811,7 +2777,7 @@
       "endDate": "2026-07-10",
       "status": "Delivered",
       "remarks": "AMAL_00336 -> FEPS_147336\n11/06 : Total 163 (FEPS + QIA PT)",
-      "deliveredDate": "",
+      "deliveredDate": "2026-07-10",
       "ftrOtd": "",
       "owners": [
         {
@@ -2871,7 +2837,7 @@
       "completedFT": 274,
       "progress": 0.7486338797814208,
       "include_in_dsr": false,
-      "last_updated": "2026-07-13"
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 42,
@@ -2963,7 +2929,7 @@
       "endDate": "2026-07-17",
       "status": "Delivered",
       "remarks": "FEPS-> 70, QIA PT -> 50+",
-      "deliveredDate": "",
+      "deliveredDate": "2026-07-23",
       "ftrOtd": "",
       "owners": [
         {
@@ -3053,7 +3019,7 @@
       "completedFT": 74,
       "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-07-24"
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 44,
@@ -3066,7 +3032,7 @@
       "endDate": "2026-07-17",
       "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-07-30",
       "ftrOtd": "",
       "owners": [
         {
@@ -3132,7 +3098,7 @@
       "completedFT": 70,
       "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-07-30"
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 45,
@@ -3152,7 +3118,7 @@
           "id": "usr_541",
           "name": "Tharun Kumar",
           "totalFT": 120,
-          "completedFT": 63,
+          "completedFT": 93,
           "plannedFTPerDay": 4.14,
           "startDate": "2026-06-22",
           "endDate": "2026-07-30",
@@ -3200,7 +3166,25 @@
             "2026-08-14": "Leave",
             "2026-08-17": "Worked on IA for VLV and block task analysis for PCGA - IA is in progress, delivered DC reviews PUCSM, ACT_TC, CVMODE, DAGMP",
             "2026-08-19": "Worked on FR and QG for ACTIVE_BRAKE",
-            "2026-08-21": "Worked on PHAB and VLV FR and QG"
+            "2026-08-21": "Worked on PHAB and VLV FR and QG",
+            "2026-08-20": "Worked on PHAB review",
+            "2026-08-24": "Worked on FR and QG for the VLV task",
+            "2026-08-25": "Leave\n",
+            "2026-08-26": "Worked on RVM FR and QG",
+            "2026-08-27": "Worked on IA for FSEE_CONFORT_THERMIQUE and RVM FR and QG",
+            "2026-08-28": "Worked on blocked task analysis and worked on FR and QG points review for RVM",
+            "2026-08-31": "Worked on the blocked task analysis",
+            "2026-09-01": "Worked on block task analysis and FTR analysis",
+            "2026-09-02": "Worked on block task analysis",
+            "2026-09-03": "Worked on Block task analysis and FTR analysis",
+            "2026-09-04": "Worked on block task analysis",
+            "2026-09-07": "Leave",
+            "2026-09-08": "Leave",
+            "2026-09-09": "Worked on ERD flows implementation analysis and started NTW review",
+            "2026-09-10": "Worked on NTW FR and QG ",
+            "2026-09-11": "Worked on NTW FR and QG and worked on block task analysis",
+            "2026-09-15": "Worked on NTW and PICC FR &QG, worked on block task analysis",
+            "2026-09-16": "Worked on PICC FR and QG, worked on Block task analysis"
           },
           "todayFTs": {
             "2026-06-30": "",
@@ -3209,15 +3193,18 @@
             "2026-07-09": 10,
             "2026-07-10": 10,
             "2026-07-13": 10,
-            "2026-07-14": 10
+            "2026-07-14": 10,
+            "2026-09-02": 22,
+            "2026-09-03": 5,
+            "2026-09-04": 3
           }
         }
       ],
       "totalFT": 120,
-      "completedFT": 63,
-      "progress": 0.525,
+      "completedFT": 93,
+      "progress": 0.775,
       "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "last_updated": "2026-09-16"
     },
     {
       "sno": 47,
@@ -3230,7 +3217,7 @@
       "endDate": "2026-07-17",
       "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-07-30",
       "ftrOtd": "",
       "owners": [
         {
@@ -3328,7 +3315,7 @@
       "completedFT": 134,
       "progress": 1.0229007633587786,
       "include_in_dsr": false,
-      "last_updated": "2026-08-03",
+      "last_updated": "2026-08-24",
       "nbRemarksInternal": 10,
       "nbRemarksQualityIND": 4,
       "nbRemarksReceived": null
@@ -3344,7 +3331,7 @@
       "endDate": "2026-07-10",
       "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-07-15",
       "ftrOtd": "",
       "owners": [
         {
@@ -3382,7 +3369,7 @@
       "completedFT": 25,
       "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-07-16"
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 49,
@@ -3395,7 +3382,7 @@
       "endDate": "2026-07-24",
       "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-07-31",
       "ftrOtd": "",
       "owners": [
         {
@@ -3443,7 +3430,7 @@
       "completedFT": 9,
       "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-08-03"
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 50,
@@ -3538,7 +3525,7 @@
       "endDate": "2026-08-10",
       "status": "Delivered",
       "remarks": " FEPS 17 sheets QIA PT 183",
-      "deliveredDate": "",
+      "deliveredDate": "2026-08-10",
       "ftrOtd": "",
       "owners": [
         {
@@ -3597,7 +3584,7 @@
       "completedFT": 209,
       "progress": 0.9631336405529954,
       "include_in_dsr": false,
-      "last_updated": "2026-08-17"
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 53,
@@ -3610,7 +3597,7 @@
       "endDate": "2026-07-24",
       "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-07-23",
       "ftrOtd": "",
       "owners": [
         {
@@ -3645,7 +3632,7 @@
       "completedFT": 4,
       "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-07-24"
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 54,
@@ -3656,7 +3643,7 @@
       ],
       "startDate": "2026-07-30",
       "endDate": "2026-08-19",
-      "status": "FR",
+      "status": "Delivered",
       "remarks": "FEPS  -> 3 sheets",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -3664,10 +3651,10 @@
         {
           "id": "usr_810",
           "name": "Sri Suriya Prakash",
-          "totalFT": 45,
-          "completedFT": 20,
+          "totalFT": 29,
+          "completedFT": 29,
           "bufferDays": 2,
-          "plannedFTPerDay": 3.46,
+          "plannedFTPerDay": 2.23,
           "startDate": "2026-07-30",
           "endDate": "2026-08-19",
           "remarks": "",
@@ -3694,22 +3681,26 @@
             "2026-08-14": "Worked on 4 QIA points and deleted 2 sheets",
             "2026-08-17": "Leave",
             "2026-08-19": "Worked on QIA PT analysis points and check files generation ",
-            "2026-08-21": "Leave"
+            "2026-08-21": "Leave",
+            "2026-08-20": "Worked on Check report errors",
+            "2026-08-24": "Impacted 9 sheets for the checklist errors",
+            "2026-08-25": "Worked on FR,QG points and reports generation"
           },
           "todayFTs": {
             "2026-08-05": 4,
             "2026-08-11": 1,
             "2026-08-12": 9,
             "2026-08-13": 3,
-            "2026-08-14": 2
+            "2026-08-14": 2,
+            "2026-08-24": 9
           }
         }
       ],
-      "totalFT": 45,
-      "completedFT": 20,
-      "progress": 0.4444444444444444,
-      "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "totalFT": 29,
+      "completedFT": 29,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-08-27"
     },
     {
       "sno": 55,
@@ -3724,7 +3715,7 @@
       ],
       "startDate": "2026-07-21",
       "endDate": "2026-09-21",
-      "status": "In Progress",
+      "status": "Delivered",
       "remarks": "Stask is on hold till 05/08/2026",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -3732,10 +3723,10 @@
         {
           "id": "usr_349",
           "name": "Isha Rai",
-          "totalFT": 169,
-          "completedFT": 26,
+          "totalFT": 35,
+          "completedFT": 35,
           "bufferDays": 3,
-          "plannedFTPerDay": 16.9,
+          "plannedFTPerDay": 3.5,
           "startDate": "2026-08-05",
           "endDate": "2026-08-21",
           "remarks": "",
@@ -3747,7 +3738,8 @@
             "2026-08-13": 4,
             "2026-08-14": 4,
             "2026-08-18": 4,
-            "2026-08-19": 4
+            "2026-08-19": 4,
+            "2026-08-20": 9
           },
           "dailyRemarks": {
             "2026-07-21": "Created 2 sheets ",
@@ -3765,16 +3757,22 @@
             "2026-08-14": "Impacted 4 sheets and analysis for 7 QIA PT points",
             "2026-08-17": "Leave",
             "2026-08-19": "Worked on PT merging and worked on 12 QIA PT points with impact 4 sheets, for some QIA PT points sent mails to spec owners and CVD's",
-            "2026-08-21": "Worked on check file generation and errors solving"
+            "2026-08-21": "Worked on check file generation and errors solving",
+            "2026-08-20": "Impacted 9 sheets",
+            "2026-08-24": "Working on the check files generation and check errors",
+            "2026-08-25": "Worked on review comments and impacted 15 sheets which are previously impacted",
+            "2026-08-26": "Worked on FR remarks and reworked on 24 sheets for sound rule",
+            "2026-08-27": " Reworked on 6 sheets and worked on check file generation",
+            "2026-08-28": "Worked on FR and QG points and generated check files with latest macros"
           }
         },
         {
           "id": "usr_165",
           "name": "Divya Patil",
-          "totalFT": 100,
+          "totalFT": 62,
           "completedFT": 62,
           "bufferDays": 2,
-          "plannedFTPerDay": 9.09,
+          "plannedFTPerDay": 5.64,
           "startDate": "2026-08-05",
           "endDate": "2026-08-21",
           "remarks": "",
@@ -3790,7 +3788,12 @@
             "2026-08-14": "Impacted 8 sheets and working on DC review for ACT_TC(MPA_00068)",
             "2026-08-17": "Delivered 2 DC reviews (MPA_00068, MPA_00069)",
             "2026-08-19": "",
-            "2026-08-21": ""
+            "2026-08-21": "",
+            "2026-08-25": "FR for PCGA completed 25 sheets",
+            "2026-08-26": "Worked on FR and QG, completed 35 sheets review ",
+            "2026-08-27": "Leave",
+            "2026-08-28": "Completed FR and QG for the PCGA, worked on ODB Blocked task analysis",
+            "2026-08-31": "Worked  PHOT block task analysis"
           },
           "todayFTs": {
             "2026-08-07": 2,
@@ -3803,11 +3806,11 @@
           }
         }
       ],
-      "totalFT": 269,
-      "completedFT": 88,
-      "progress": 0.3271375464684015,
-      "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "totalFT": 97,
+      "completedFT": 97,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-01"
     },
     {
       "sno": 56,
@@ -3935,7 +3938,7 @@
       "endDate": "2026-08-19",
       "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-08-19",
       "ftrOtd": "",
       "owners": [
         {
@@ -3980,15 +3983,16 @@
             "2026-08-14": "Impacted 7 sheets and analysis for 2 QIA points",
             "2026-08-17": "Leave",
             "2026-08-19": "Worked on check files generation and FR and QG points, task delivered, worked on DC review (MPA_00072)",
-            "2026-08-21": "Worked on GIH review, completed all checks "
+            "2026-08-21": "Worked on GIH review, completed all checks ",
+            "2026-08-20": "Delivered DC review MPA_00072, and completed 36 sheets FR for GIH."
           }
         }
       ],
       "totalFT": 14,
       "completedFT": 14,
       "progress": 1,
-      "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "include_in_dsr": false,
+      "last_updated": "2026-08-24"
     },
     {
       "sno": 60,
@@ -4000,7 +4004,7 @@
       ],
       "startDate": "2026-07-21",
       "endDate": "2026-08-18",
-      "status": "FR",
+      "status": "Delivered",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4009,7 +4013,7 @@
           "id": "usr_928",
           "name": "Mamata Patil",
           "totalFT": 48,
-          "completedFT": 46,
+          "completedFT": 48,
           "bufferDays": 0,
           "plannedFTPerDay": 2.29,
           "startDate": "2026-07-21",
@@ -4047,14 +4051,18 @@
             "2026-08-14": "Leave",
             "2026-08-17": "Created 3 sheets and impacted 1 sheet",
             "2026-08-19": "Created 3 sheets and impacted 2 sheets",
-            "2026-08-21": "VM issue "
+            "2026-08-21": "VM issue ",
+            "2026-08-20": "VM issue",
+            "2026-08-24": "VM issue",
+            "2026-08-25": "Sent final delivery mail for PUCSM",
+            "2026-08-26": "Worked on the blocked task and IA for CLIM_IHM is in progress, completed 4 points for QIA PT analysis TPMS"
           }
         },
         {
           "id": "usr_342",
           "name": "Kimaya Patil",
           "totalFT": 1,
-          "completedFT": 0,
+          "completedFT": 1,
           "bufferDays": 0,
           "plannedFTPerDay": 1,
           "startDate": "2026-08-17",
@@ -4064,15 +4072,19 @@
             "2026-08-17": "Delivered DC review (MPA_00071) and worked on 11 QIA PT points without impact",
             "2026-08-18": "Worked on 15 QIA PT in analysis points",
             "2026-08-19": "Worked on 21 QIA PT in analysis points",
-            "2026-08-21": "Worked on PUCSM review and check files generation"
+            "2026-08-21": "Worked on PUCSM review and check files generation",
+            "2026-08-20": "Worked on 18 QIA points and started PUCSM review",
+            "2026-08-24": "Working on the check files generation and check errors",
+            "2026-08-25": "\t\nWorked on review points for PUCSM and QIA PARAM global points",
+            "2026-08-26": "Worked on ESL QIA PT analysis, completed 14 points total 57 points in open state"
           }
         }
       ],
       "totalFT": 49,
-      "completedFT": 46,
-      "progress": 0.9387755102040817,
-      "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "completedFT": 49,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-08-27"
     },
     {
       "sno": 61,
@@ -4084,7 +4096,7 @@
       ],
       "startDate": "2026-07-24",
       "endDate": "2026-08-17",
-      "status": "FR",
+      "status": "Delivered",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4093,7 +4105,7 @@
           "id": "usr_761",
           "name": "Sampath Akula",
           "totalFT": 95,
-          "completedFT": 95,
+          "completedFT": 96,
           "bufferDays": 0,
           "plannedFTPerDay": 5.59,
           "startDate": "2026-07-24",
@@ -4118,7 +4130,11 @@
             "2026-08-14": "Impacted 7 sheets for 2 QIA points",
             "2026-08-17": "Created 5 sheets ",
             "2026-08-19": "Worked on PT merge and check files generation ",
-            "2026-08-21": "Leave"
+            "2026-08-21": "Leave",
+            "2026-08-20": "Generated check reports",
+            "2026-08-24": "Worked on FR and QG points completed all points",
+            "2026-08-25": "Worked on VLV FR,QG",
+            "2026-08-26": "Worked on check list errors and send final delivary mail"
           },
           "todayFTs": {
             "2026-07-28": 2,
@@ -4133,15 +4149,16 @@
             "2026-08-13": 8,
             "2026-08-14": 2,
             "2026-08-17": 5,
-            "2026-08-18": 33
+            "2026-08-18": 33,
+            "2026-08-26": 1
           }
         }
       ],
       "totalFT": 95,
-      "completedFT": 95,
-      "progress": 1,
-      "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "completedFT": 96,
+      "progress": 1.0105263157894737,
+      "include_in_dsr": false,
+      "last_updated": "2026-08-27"
     },
     {
       "sno": 62,
@@ -4160,10 +4177,10 @@
         {
           "id": "usr_30",
           "name": "Isha Rai",
-          "totalFT": 135,
+          "totalFT": 28,
           "completedFT": 28,
           "bufferDays": 0,
-          "plannedFTPerDay": 13.5,
+          "plannedFTPerDay": 2.8,
           "startDate": "2026-07-27",
           "endDate": "",
           "remarks": "",
@@ -4185,10 +4202,10 @@
         {
           "id": "usr_747",
           "name": "Divya Patil",
-          "totalFT": 100,
+          "totalFT": 74,
           "completedFT": 74,
           "bufferDays": 0,
-          "plannedFTPerDay": 10,
+          "plannedFTPerDay": 7.4,
           "startDate": "2026-07-27",
           "endDate": "",
           "remarks": "",
@@ -4209,11 +4226,11 @@
           }
         }
       ],
-      "totalFT": 235,
+      "totalFT": 102,
       "completedFT": 102,
-      "progress": 0.4340425531914894,
+      "progress": 1,
       "include_in_dsr": false,
-      "last_updated": "2026-08-05"
+      "last_updated": "2026-08-21"
     },
     {
       "sno": 63,
@@ -4261,7 +4278,7 @@
       "endDate": "2026-08-14",
       "status": "Delivered",
       "remarks": "",
-      "deliveredDate": "",
+      "deliveredDate": "2026-08-21",
       "ftrOtd": "",
       "owners": [
         {
@@ -4294,15 +4311,22 @@
             "2026-08-14": "Generated reports and mail sent for FR",
             "2026-08-17": "Leave",
             "2026-08-19": "Worked on  CLIM_IHM QIA PT in analysis, completed 33 points",
-            "2026-08-21": "Worked on FR and QG points, check fils generation, delivered the task"
+            "2026-08-21": "Worked on FR and QG points, check fils generation, delivered the task",
+            "2026-08-20": "Worked on reports generation.",
+            "2026-08-24": "Worked on ALARAM task QIA PT analysis completed 6 points",
+            "2026-08-25": "Generated reports for GIH and QIA PT analysis 4 points for ALARM",
+            "2026-08-26": "Worked on ALARAM QIA PT analysis completed 6 points",
+            "2026-08-27": "Worked on 2 QIA PT points with 6 sheets impact (ALARAM)",
+            "2026-08-28": "Worked on QIA PT analysis for ALARAM function impacted 27 sheets",
+            "2026-08-31": ""
           }
         }
       ],
       "totalFT": 19,
       "completedFT": 19,
       "progress": 1,
-      "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "include_in_dsr": false,
+      "last_updated": "2026-08-31"
     },
     {
       "sno": 65,
@@ -4350,7 +4374,7 @@
       ],
       "startDate": "2026-08-12",
       "endDate": "2026-08-31",
-      "status": "In Progress",
+      "status": "Delivered",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4358,10 +4382,10 @@
         {
           "id": "usr_277",
           "name": "Kavipriya Balasubramani ",
-          "totalFT": 13,
-          "completedFT": 7,
+          "totalFT": 9,
+          "completedFT": 9,
           "bufferDays": 0,
-          "plannedFTPerDay": 2.6,
+          "plannedFTPerDay": 1.8,
           "startDate": "2026-08-12",
           "endDate": "2026-08-18",
           "remarks": "",
@@ -4372,19 +4396,26 @@
             "2026-08-17": "Delivered DC review (MPA_00070), Impacted 4 sheets",
             "2026-08-18": "Reworked on 4 sheets",
             "2026-08-19": "Impacted 3 sheets and started working on QIA PT points ",
-            "2026-08-21": "Worked on check files generation"
+            "2026-08-21": "Worked on check files generation",
+            "2026-08-20": "Impacted 2 sheets and worked on QIA points",
+            "2026-08-24": "Working on the check files generation ,check errors and send FR mail ",
+            "2026-08-25": "Worked on FSEE_INFO QIA_PT points analysis for 6 points",
+            "2026-08-26": "Worked on INFO QIA PT analysis, completed 3 points and worked on FR and QG comments for RVM",
+            "2026-08-27": "Worked on FR and QG remarks and worked on check files generation",
+            "2026-08-28": "Worked on FR and QG points"
           },
           "todayFTs": {
             "2026-08-17": 4,
-            "2026-08-19": 3
+            "2026-08-19": 3,
+            "2026-08-24": 2
           }
         }
       ],
-      "totalFT": 13,
-      "completedFT": 7,
-      "progress": 0.5384615384615384,
-      "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "totalFT": 9,
+      "completedFT": 9,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-08-31"
     },
     {
       "sno": 67,
@@ -4395,7 +4426,7 @@
       ],
       "startDate": "2026-08-14",
       "endDate": "2026-08-31",
-      "status": "FR",
+      "status": "Delivered",
       "remarks": "",
       "deliveredDate": "",
       "ftrOtd": "",
@@ -4403,10 +4434,10 @@
         {
           "id": "usr_596",
           "name": "Divya Patil",
-          "totalFT": 13,
+          "totalFT": 5,
           "completedFT": 5,
           "bufferDays": 2,
-          "plannedFTPerDay": 3.25,
+          "plannedFTPerDay": 1.25,
           "startDate": "2026-08-14",
           "endDate": "2026-08-21",
           "remarks": "",
@@ -4414,7 +4445,9 @@
             "2026-08-17": "Started new task analysis",
             "2026-08-18": "Completed analysis and sent analysis mail, impacted 2 sheets",
             "2026-08-19": "Created 2 sheets and working on the 2 QIA PT points ",
-            "2026-08-21": "Completed all QIA PT points and worked on check report generation and solved all check reports errors"
+            "2026-08-21": "Completed all QIA PT points and worked on check report generation and solved all check reports errors",
+            "2026-08-20": "Worked on 7 QIA in analysis points, impacted 1 sheet.",
+            "2026-08-24": "Working on the check files generation and check errors"
           },
           "todayFTs": {
             "2026-08-18": 2,
@@ -4423,11 +4456,717 @@
           }
         }
       ],
-      "totalFT": 13,
+      "totalFT": 5,
       "completedFT": 5,
-      "progress": 0.38461538461538464,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-08-27"
+    },
+    {
+      "sno": 69,
+      "function": "FSEE_EEM_VLV",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00408"
+      ],
+      "startDate": "2026-08-26",
+      "endDate": "2026-08-31",
+      "status": "Blocked",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_171",
+          "name": "Sri Suriya Prakash",
+          "totalFT": 7,
+          "completedFT": 0,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1.75,
+          "startDate": "2026-08-26",
+          "endDate": "2026-08-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-08-26": "Worked on new task analysis, total impact is 7 sheets",
+            "2026-08-27": "Worked on the FEPS requirements analysis. Some blockers are there, so prepared task blocker mail it is in under review with tharun",
+            "2026-08-28": "Worked on RVM check files generation",
+            "2026-08-31": "Sent blocker mail to VLV, delivered RVM and worked on old DC review (MPA_00060)"
+          }
+        }
+      ],
+      "totalFT": 7,
+      "completedFT": 0,
+      "progress": 0,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-02"
+    },
+    {
+      "sno": 71,
+      "function": "FSEE_PCGA",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00384",
+        "AMAL_00372",
+        "AMAL_00383",
+        "AMAL_00401",
+        "AMAL_00402"
+      ],
+      "startDate": "2026-08-26",
+      "endDate": "2026-09-10",
+      "status": "Delivered",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_958",
+          "name": "Isha Rai",
+          "totalFT": 13,
+          "completedFT": 13,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1.44,
+          "startDate": "2026-08-26",
+          "endDate": "2026-09-07",
+          "remarks": "",
+          "todayFTs": {
+            "2026-08-31": 2,
+            "2026-09-01": 3,
+            "2026-09-03": 1,
+            "2026-09-04": 4,
+            "2026-09-07": "",
+            "2026-09-08": 3
+          },
+          "dailyRemarks": {
+            "2026-08-31": "Impacted 2 sheets for 3 DCI requirements, and opened QIA spec for the 3 DCI requirements",
+            "2026-09-01": "Impacted 2 sheets and created one sheet",
+            "2026-09-02": "Worked on requirements analysis and analysis of the supporting requirements, no sheets impacted",
+            "2026-09-03": "Impacted 1 sheet and opened some QIA spec points and QIA param global points",
+            "2026-09-04": "Worked on QIA SS 9 points analysis and for QIA PT impacted 4 sheets",
+            "2026-09-07": "Leave",
+            "2026-09-08": "\t\nWorked on reports generation, NOKs, and impacted 3 sheets",
+            "2026-09-09": "Leave"
+          }
+        },
+        {
+          "id": "usr_514",
+          "name": "Hepsiba Pilli",
+          "totalFT": 8,
+          "completedFT": 8,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1,
+          "startDate": "2026-08-26",
+          "endDate": "2026-09-07",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-08-27": "Worked on analysis and sent analysis mail , replied to the block task mail for ACTIVE_BRAKE",
+            "2026-08-28": "Worked on new task analysis for ACTIVE_BRAKE ",
+            "2026-08-31": "Sent mail to ACTIVE_BRAKE blocker and impacted 2 sheets for PCGA",
+            "2026-09-01": "Leave",
+            "2026-09-02": "Created 3 sheets for 4 new requirements",
+            "2026-09-03": "Created 1 sheet for the 9 requirements",
+            "2026-09-04": "Impacted 1 sheet for 8 new requirements and 4 supporting requirements",
+            "2026-09-07": "Impacted 1 sheet with 5 new requirements",
+            "2026-09-08": "Raised 2 spec points, KT, New task analysis started",
+            "2026-09-09": "Completed FR & QG points validation, pending with delivery mail",
+            "2026-09-10": "Delivered task, Worked on new task ACTIVE_BRAKE the task is blocked"
+          },
+          "todayFTs": {
+            "2026-08-31": 2,
+            "2026-09-02": 3,
+            "2026-09-03": 1,
+            "2026-09-04": 1,
+            "2026-09-07": 1
+          }
+        }
+      ],
+      "totalFT": 21,
+      "completedFT": 21,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-15"
+    },
+    {
+      "sno": 72,
+      "function": "FSEE_CONFORT_THERMIQUE",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00419"
+      ],
+      "startDate": "2026-08-27",
+      "endDate": "2026-09-17",
+      "status": "In Progress",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_850",
+          "name": "Sampath Akula",
+          "totalFT": 95,
+          "completedFT": 60,
+          "bufferDays": 0,
+          "plannedFTPerDay": 5.94,
+          "startDate": "2026-08-27",
+          "endDate": "2026-09-17",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-08-27": "Worked on the blocked task analysis for PCGA and KT , started new task analysis",
+            "2026-08-28": "Worked on new task analysis FEPS - 60 and QIA PT- 35 sheets need to impact",
+            "2026-08-31": "Impacted 10 sheets",
+            "2026-09-01": "Impacted 10 sheets",
+            "2026-09-02": "Worked on LIGHTING PBO points and impacted 5 sheets for FSEE_CONFORT_THERMIQUE",
+            "2026-09-03": "Impacted 5 sheets and worked on GIH FTR analysis sent mail",
+            "2026-09-04": "Impacted 10 sheets",
+            "2026-09-07": "Impacted 10 sheets",
+            "2026-09-08": "Impacted 10 sheets",
+            "2026-09-09": "Worked on 6 QIA PT points and opened 9 QIA SS points and 32 QIA Param global",
+            "2026-09-10": "Leave",
+            "2026-09-11": "Leave",
+            "2026-09-15": "Worked on 14 QIA PT in analysis and worked on Old DC review (MPA_00065), and worked on GIH FTR",
+            "2026-09-16": "Leave"
+          },
+          "todayFTs": {
+            "2026-08-31": 10,
+            "2026-09-01": 10,
+            "2026-09-02": 5,
+            "2026-09-03": 5,
+            "2026-09-04": 10,
+            "2026-09-07": 10,
+            "2026-09-08": 10
+          }
+        }
+      ],
+      "totalFT": 95,
+      "completedFT": 60,
+      "progress": 0.631578947368421,
       "include_in_dsr": true,
-      "last_updated": "2026-08-21"
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 73,
+      "function": "FSEE_CLIM_IHM",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00390"
+      ],
+      "startDate": "2026-08-26",
+      "endDate": "2026-09-08",
+      "status": "FR",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_757",
+          "name": "Kimaya Patil",
+          "totalFT": 17,
+          "completedFT": 17,
+          "bufferDays": 0,
+          "plannedFTPerDay": 2.83,
+          "startDate": "2026-08-26",
+          "endDate": "2026-09-02",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-08-27": "Worked on ESL QIA PT and started a new task analysis for Clim_IHM",
+            "2026-08-28": "Task analysis completed total 33 sheets need to impact",
+            "2026-08-31": "Impacted 11 sheets",
+            "2026-09-01": "Reworked on 10 sheets for the other 10 requirements",
+            "2026-09-02": "impacted 2 sheets and created 4 sheets",
+            "2026-09-03": "Worked on PCGA QIA PT analysis, completed 10 points still 40 are pending ",
+            "2026-09-04": "Worked on FSEE_PCGA QIA PT analysis 15 points completed",
+            "2026-09-07": "Worke on 20 QIA points for PCGA",
+            "2026-09-08": "Started PCGA review, completed 9 sheets.",
+            "2026-09-09": "Worked on FR and QG for PCGA",
+            "2026-09-10": "Leave",
+            "2026-09-11": "Worked on QIA PT completed 16 points",
+            "2026-09-15": "Leave",
+            "2026-09-16": "Leave"
+          },
+          "todayFTs": {
+            "2026-08-31": 11,
+            "2026-09-02": 6
+          }
+        }
+      ],
+      "totalFT": 17,
+      "completedFT": 17,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 74,
+      "function": "FSEE_TPMS_QIA_PT_Analysis",
+      "taskType": "QG",
+      "taskIds": [
+        "--"
+      ],
+      "startDate": "2026-08-26",
+      "endDate": "2026-08-31",
+      "status": "In Progress",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_160",
+          "name": "Mamata Patil",
+          "totalFT": 19,
+          "completedFT": 9,
+          "bufferDays": 0,
+          "plannedFTPerDay": 4.75,
+          "startDate": "2026-08-26",
+          "endDate": "2026-08-31",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-08-27": "Worked on IA for CLIM_IHM, ACTIVE_BRAKE and Supervision is blocked",
+            "2026-08-28": "Worked on QIA PT analysis completed 4 points",
+            "2026-08-31": "IA for PICC and NTW , for the TPMS worked on 1 QIA PT point analysis",
+            "2026-09-01": "Worked on IA for PCGA and NTW",
+            "2026-09-02": "IA for DESP, VLV and DC review analysis for PUCSM",
+            "2026-09-03": "Worked on DC review MPA_00073 and IA for ACTIVE_BRAKE and ACT_TC",
+            "2026-09-04": "Leave",
+            "2026-09-07": "Done IA for PUCSM, ISA",
+            "2026-09-08": "Done IA for EPB, PUCSM(Blocked)",
+            "2026-09-09": "IA for PCGA and SUPERVISION(blocked)"
+          },
+          "todayFTs": {
+            "2026-08-28": 4,
+            "2026-08-31": 1,
+            "2026-09-02": ""
+          }
+        }
+      ],
+      "totalFT": 19,
+      "completedFT": 9,
+      "progress": 0.47368421052631576,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-10"
+    },
+    {
+      "sno": 75,
+      "function": "FSEE_ALARAM_QIA_PT",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "--"
+      ],
+      "startDate": "2026-08-12",
+      "endDate": "2026-09-04",
+      "status": "In Progress",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_778",
+          "name": "Shilpa Chavan",
+          "totalFT": 61,
+          "completedFT": 61,
+          "bufferDays": 0,
+          "plannedFTPerDay": 3.39,
+          "startDate": "2026-08-12",
+          "endDate": "2026-09-04",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-08-31": "38 sheets impacted for ALARAM QIA PT analysis",
+            "2026-09-01": "Impacted 23 sheets",
+            "2026-09-02": "Worked on DC review for FSEE_DESP (MPA_00074)",
+            "2026-09-03": "Worked on one QIA PT point analysis without impact"
+          },
+          "todayFTs": {
+            "2026-08-31": 38,
+            "2026-09-01": 23
+          }
+        }
+      ],
+      "totalFT": 61,
+      "completedFT": 61,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-09"
+    },
+    {
+      "sno": 76,
+      "function": "FSEE_INFO_QIA_PT",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "--"
+      ],
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-04",
+      "status": "In Progress",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_106",
+          "name": "Kavipriya Balasubramani ",
+          "totalFT": 1,
+          "completedFT": 1,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1,
+          "startDate": "2026-08-31",
+          "endDate": "2026-09-04",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-08-31": "Worked on QIA PT analysis ",
+            "2026-09-01": "Impacted 1 sheet and completed 12 QIA PT analysis",
+            "2026-09-02": "Worked on QIA PT analysis",
+            "2026-09-03": "Leave",
+            "2026-09-07": "Leave",
+            "2026-09-08": "Leave",
+            "2026-09-09": "Leave",
+            "2026-09-10": "Leave",
+            "2026-09-11": "Leave"
+          },
+          "todayFTs": {
+            "2026-09-01": 1
+          }
+        }
+      ],
+      "totalFT": 1,
+      "completedFT": 1,
+      "progress": 1,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-15"
+    },
+    {
+      "sno": 77,
+      "function": "FSEE_REPAS_NEA_NTW",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00421"
+      ],
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-04",
+      "status": "FR",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_848",
+          "name": "Divya Patil",
+          "totalFT": 22,
+          "completedFT": 22,
+          "bufferDays": 0,
+          "plannedFTPerDay": 5.5,
+          "startDate": "2026-09-01",
+          "endDate": "2026-09-04",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-09-01": "Worked on the new task analysis for the FEPS need to impact 5 sheets and for QIA PT need to impact total test plan because of the one general point",
+            "2026-09-02": "Impacted 5 sheets and for the other FEPS need to impacted 10 sheets ",
+            "2026-09-03": "Impacted 10 sheets",
+            "2026-09-04": "Worked on 32 QIA PT analyses with 7 sheets impacted",
+            "2026-09-07": "Worked on QIA SS , QIA param, check reports generation and NOKs",
+            "2026-09-08": "Worked on new task analysis for EEM_VLV",
+            "2026-09-09": "Worked on 13 QIA PT points and worked on old DC review point (MPA_00069)",
+            "2026-09-10": "Worked on 14 QIA PT analysis for FSEE_CONFORT_THERMIQUE and worked on PHOT block task analysis",
+            "2026-09-11": "Laptop issue, replaced with new laptop ",
+            "2026-09-15": "Worked on FR & QG comments and worked on check file generation",
+            "2026-09-16": "Leave"
+          },
+          "todayFTs": {
+            "2026-09-02": 5,
+            "2026-09-03": 10,
+            "2026-09-04": 7
+          }
+        }
+      ],
+      "totalFT": 22,
+      "completedFT": 22,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 78,
+      "function": "FSEE_PICC",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00422"
+      ],
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-11",
+      "status": "FR",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_692",
+          "name": "Sri Suriya Prakash",
+          "totalFT": 18,
+          "completedFT": 18,
+          "bufferDays": 2,
+          "plannedFTPerDay": 2.57,
+          "startDate": "2026-09-01",
+          "endDate": "2026-09-11",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-09-01": "Worked on New task analysis for FEPS, need to create 30 sheets and QIA PT analysis is pending, KT for Mahesh",
+            "2026-09-02": "Worked on QIA PT points analysis, QIA PT - 2, FEPS - 35",
+            "2026-09-03": "Impacted 5 sheets and one FEPS need to be blocked, worked on task blocker mail, 1 hr KT for Mahesh",
+            "2026-09-04": "Created 3 sheets and 2 sheets impacted",
+            "2026-09-07": "\t\nCreate 5 sheets",
+            "2026-09-08": "Worked on 3 DRE points, impacted 2 sheets",
+            "2026-09-09": "Created one sheet and opened QIA PT and QIA specs for the blocked requirements ",
+            "2026-09-10": "Worked on 1 QIA PT point analysis",
+            "2026-09-11": "Worked on VLV and EPB block task analysis, worked on PICC check report errors",
+            "2026-09-15": "Worked on check file generation",
+            "2026-09-16": "Worked on FR and QG comments, worked on DC review (MPA_00076)"
+          },
+          "todayFTs": {
+            "2026-09-03": 5,
+            "2026-09-04": 5,
+            "2026-09-07": 5,
+            "2026-09-08": 2,
+            "2026-09-09": 1
+          }
+        }
+      ],
+      "totalFT": 18,
+      "completedFT": 18,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 79,
+      "function": "FSEE_DESP",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00373"
+      ],
+      "startDate": "2026-09-04",
+      "endDate": "2026-09-09",
+      "status": "FR",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_207",
+          "name": "Shilpa Chavan",
+          "totalFT": 9,
+          "completedFT": 9,
+          "bufferDays": 0,
+          "plannedFTPerDay": 2.25,
+          "startDate": "2026-09-04",
+          "endDate": "2026-09-09",
+          "remarks": "",
+          "todayFTs": {
+            "2026-09-04": 1,
+            "2026-09-07": 4,
+            "2026-09-08": 1,
+            "2026-09-09": 3
+          },
+          "dailyRemarks": {
+            "2026-09-04": "Worked on new task analysis and impacted 1 sheet",
+            "2026-09-07": "\t\n\t\nImpacted 4 sheets for 8 QIA points",
+            "2026-09-08": "\t\nWorked on 3 QIA points, impacted 1 sheet",
+            "2026-09-09": "Worked on 2 QIA PT with 3 sheets impact",
+            "2026-09-10": "Worked on check file generation and supported PICC on check file generation",
+            "2026-09-11": "Delivered DC review (MPA_00075) ",
+            "2026-09-15": "Supported on NTW check list generation",
+            "2026-09-16": "Worked on FR and QG comments "
+          }
+        }
+      ],
+      "totalFT": 9,
+      "completedFT": 9,
+      "progress": 1,
+      "include_in_dsr": true,
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 80,
+      "function": "FSEE_EPB",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00392"
+      ],
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-25",
+      "status": "Initial",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_876",
+          "name": "Divya Patil",
+          "totalFT": 1,
+          "completedFT": 0,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1,
+          "startDate": "",
+          "endDate": "",
+          "remarks": ""
+        }
+      ],
+      "totalFT": 1,
+      "completedFT": 0,
+      "progress": 0,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-10"
+    },
+    {
+      "sno": 81,
+      "function": "FSEE_ACT_TC",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00427"
+      ],
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-18",
+      "status": "In Progress",
+      "remarks": "FEPS- 3\nQIA PT - 10 ",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_967",
+          "name": "Isha Rai",
+          "totalFT": 13,
+          "completedFT": 3,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1.86,
+          "startDate": "2026-09-10",
+          "endDate": "",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-09-10": "Completed new task analysis, total 13 sheets need to be impacted, impacted 3 sheets and worked on 2 QIA PT analysis",
+            "2026-09-11": "Impacted 2 sheets for QIA PT and Updated comments for QIA Param global",
+            "2026-09-15": "Worked on 2 sheets that are already impacted and QIA PT points",
+            "2026-09-16": "Worked on PCGA FTR points and worked on the task analysis EPB. The task is blocked, for the ACT_TC, worked on 3 QIA PT analysis points"
+          },
+          "todayFTs": {
+            "2026-09-10": 3
+          }
+        }
+      ],
+      "totalFT": 13,
+      "completedFT": 3,
+      "progress": 0.23076923076923078,
+      "include_in_dsr": true,
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 82,
+      "function": "FSEE_PCGA",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00428"
+      ],
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-18",
+      "status": "In Progress",
+      "remarks": "FEPS - 6\nQIA PT - 7 sheets",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_665",
+          "name": "Hepsiba Pilli",
+          "totalFT": 36,
+          "completedFT": 3,
+          "bufferDays": 1,
+          "plannedFTPerDay": 5.14,
+          "startDate": "2026-09-10",
+          "endDate": "",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-09-10": "Completed new task analysis, total 13 sheets need to be impacted",
+            "2026-09-11": "Worked on FR and QG for CLIM_IHM, test plan review is completed and started FR & QG for DESP",
+            "2026-09-15": "Worked on FR & QG for DESP",
+            "2026-09-16": "Impacted 2 sheets and created 1 sheet, worked on new opened 21 QIA PT points analysis"
+          },
+          "todayFTs": {
+            "2026-09-16": 3
+          }
+        }
+      ],
+      "totalFT": 36,
+      "completedFT": 3,
+      "progress": 0.08333333333333333,
+      "include_in_dsr": true,
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 83,
+      "function": "FSEE_PUCSM",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00399"
+      ],
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-18",
+      "status": "Initial",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_151",
+          "name": "Mamata Patil",
+          "totalFT": 1,
+          "completedFT": 0,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1,
+          "startDate": "2026-09-10",
+          "endDate": "2026-09-18",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-09-10": "Worked on new task analysis, FEPS requirements have a supporting issue , this task will block",
+            "2026-09-11": "Worked on task analysis, prepared mail and QIA's for task block",
+            "2026-09-15": "Worked on IA for PCGA",
+            "2026-09-16": "Worked on IA for VLV but this task blocked, worked on block task analysis for 2 functions "
+          }
+        }
+      ],
+      "totalFT": 1,
+      "completedFT": 0,
+      "progress": 0,
+      "include_in_dsr": true,
+      "last_updated": "2026-09-16"
+    },
+    {
+      "sno": 84,
+      "function": "FSE_ISA",
+      "taskType": "Update_BRANCH_PT",
+      "taskIds": [
+        "AMAL_00430"
+      ],
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-30",
+      "status": "Initial",
+      "remarks": "",
+      "deliveredDate": "",
+      "ftrOtd": "",
+      "owners": [
+        {
+          "id": "usr_83",
+          "name": "Shilpa Chavan",
+          "totalFT": 12,
+          "completedFT": 0,
+          "bufferDays": 0,
+          "plannedFTPerDay": 1,
+          "startDate": "2026-09-15",
+          "endDate": "",
+          "remarks": "",
+          "dailyRemarks": {
+            "2026-09-15": "Worked on the new task analysis"
+          }
+        }
+      ],
+      "totalFT": 12,
+      "completedFT": 0,
+      "progress": 0,
+      "include_in_dsr": false,
+      "last_updated": "2026-09-16"
     }
   ],
   "taskDailyLogs": [
@@ -12796,7 +13535,7 @@
     {
       "name": "Malik Angadi",
       "date": "2026-08-10",
-      "mode": "WFH",
+      "mode": "LEAVE",
       "half": null
     },
     {
@@ -13457,13 +14196,15 @@
       "name": "Sampath Akula",
       "date": "2026-08-21",
       "mode": "LEAVE",
-      "half": null
+      "half": null,
+      "leaveType": "Planned leave"
     },
     {
       "name": "Sri Suriya Prakash",
       "date": "2026-08-21",
       "mode": "LEAVE",
-      "half": null
+      "half": null,
+      "leaveType": "Planned leave"
     },
     {
       "name": "Malik Angadi",
@@ -13475,6 +14216,1328 @@
       "name": "Kavipriya Balasubramani ",
       "date": "2026-08-21",
       "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-20",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-20",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-24",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-24",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-25",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-25",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-25",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-25",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-25",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-26",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-26",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-26",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-26",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-27",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-27",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-27",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-28",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-08-31",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-08-31",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Unplanned leave"
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-08-31",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-01",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-01",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-01",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-01",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-02",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-02",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-03",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-03",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-03",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-03",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-04",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-04",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-04",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-04",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-07",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-07",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-07",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-07",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-07",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-07",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-07",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-07",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-07",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-07",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-07",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-07",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-08",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-08",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-08",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-08",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-08",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-08",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-08",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-08",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-08",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-08",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-08",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-08",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-09",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-09",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-09",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-09",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Sick leave"
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-09",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-09",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-09",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-10",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-10",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-11",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-10",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-10",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-10",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-10",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-11",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-11",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-11",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-11",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-11",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-11",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-11",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-11",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-15",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-15",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-15",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-15",
+      "mode": "WFH",
+      "half": null
+    },
+    {
+      "name": "Kavipriya Balasubramani ",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Malik Angadi",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sri Suriya Prakash",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Tharun Kumar",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Shilpa Chavan",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Sampath Akula",
+      "date": "2026-09-16",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Kimaya Patil",
+      "date": "2026-09-16",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Divya Patil",
+      "date": "2026-09-16",
+      "mode": "LEAVE",
+      "half": null,
+      "leaveType": "Planned leave"
+    },
+    {
+      "name": "Isha Rai",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Hepsiba Pilli",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mamata Patil",
+      "date": "2026-09-16",
+      "mode": "WFO",
+      "half": null
+    },
+    {
+      "name": "Mahesh Udgire",
+      "date": "2026-09-16",
+      "mode": "WFO",
       "half": null
     }
   ],
@@ -13589,6 +15652,12 @@
     {
       "date": "2026-05-01",
       "name": "Labour Day",
+      "scope": "ALL",
+      "locations": []
+    },
+    {
+      "date": "2026-09-14",
+      "name": "Ganesh Chaturthi",
       "scope": "ALL",
       "locations": []
     }
@@ -13839,6 +15908,66 @@
       "reviewer": "Tharun Kumar",
       "review_status": "Pending",
       "assigned_date": "2026-08-21T11:42:28.515Z"
+    },
+    {
+      "sno": 58,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-24T10:47:38.599Z"
+    },
+    {
+      "sno": 59,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-24T10:47:44.867Z"
+    },
+    {
+      "sno": 64,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-24T10:47:50.430Z"
+    },
+    {
+      "sno": 48,
+      "reviewer": "Kimaya Patil",
+      "review_status": "Pending",
+      "assigned_date": "2026-08-24T12:26:13.229Z"
+    },
+    {
+      "sno": 73,
+      "reviewer": "Hepsiba Pilli",
+      "review_status": "Approved",
+      "assigned_date": "2026-09-02T12:10:03.773Z"
+    },
+    {
+      "sno": 79,
+      "reviewer": "Hepsiba Pilli",
+      "review_status": "Pending",
+      "assigned_date": "2026-09-09T12:21:45.827Z"
+    },
+    {
+      "sno": 77,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-09-09T12:22:22.525Z"
+    },
+    {
+      "sno": 71,
+      "reviewer": "Kimaya Patil",
+      "review_status": "Pending",
+      "assigned_date": "2026-09-10T11:53:41.640Z"
+    },
+    {
+      "sno": 72,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-09-10T11:53:56.339Z"
+    },
+    {
+      "sno": 78,
+      "reviewer": "Tharun Kumar",
+      "review_status": "Pending",
+      "assigned_date": "2026-09-10T11:54:03.024Z"
     }
   ],
   "excelTasks": [
@@ -98540,7 +100669,16 @@
       "workload": 1.681578947368421
     }
   ],
-  "layouts": [],
+  "layouts": [
+    {
+      "id": "lay_1789625812029",
+      "name": "function",
+      "columns": [
+        "function"
+      ],
+      "filters": []
+    }
+  ],
   "dsrLocalEdits": {},
   "dsrLeaveTypes": {},
   "dsrIsEditMode": false,
