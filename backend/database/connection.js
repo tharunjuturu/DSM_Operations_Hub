@@ -102,13 +102,38 @@ export const readDatabase = async (variantOverride) => {
   }
 };
 
+const writeQueues = {};
+
 /**
- * Simulates writing to the flat JSON database
+ * Simulates writing to the flat JSON database atomically and sequentially
  */
 export const writeDatabase = async (data, variantOverride) => {
   const store = requestContext.getStore();
   const variant = variantOverride || store?.variant || 'vsm_pt';
-  const filename = `database_${variant.toLowerCase().replace(/\s+/g, '_')}.json`;
-  const dbPath = path.resolve(filename);
-  await fs.writeFile(dbPath, JSON.stringify(data, null, 2), 'utf8');
+
+  if (!writeQueues[variant]) {
+    writeQueues[variant] = Promise.resolve();
+  }
+
+  // Queue this write operation to prevent concurrent overlapping writes to the same file
+  writeQueues[variant] = writeQueues[variant].then(async () => {
+    const filename = `database_${variant.toLowerCase().replace(/\s+/g, '_')}.json`;
+    const dbPath = path.resolve(filename);
+    const tempPath = `${dbPath}.tmp`;
+
+    try {
+      // Write atomically using a temporary file and rename
+      await fs.writeFile(tempPath, JSON.stringify(data, null, 2), 'utf8');
+      await fs.rename(tempPath, dbPath);
+    } catch (err) {
+      console.error(`[DATABASE ERROR] Atomic write failed for variant ${variant}:`, err);
+      // Clean up temp file if it exists
+      try {
+        await fs.unlink(tempPath);
+      } catch (_) {}
+      throw err;
+    }
+  });
+
+  return writeQueues[variant];
 };

@@ -7,11 +7,15 @@ import { saveAs } from 'file-saver';
 import { eachDayOfInterval, format, startOfMonth } from 'date-fns';
 
 const DSR = () => {
-  const { updateTask, teamModes, getDSRTasks, setTeamMode } = useStore();
+  const { 
+    updateTask, teamModes, getDSRTasks, setTeamMode,
+    dsrLocalEdits, dsrLeaveTypes, dsrIsEditMode,
+    setDsrLocalEdit, setDsrLeaveType, setDsrIsEditMode,
+    clearDsrLocalEdits, updateMultipleTasks
+  } = useStore();
   const dsrTasks = getDSRTasks();
 
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
-  const [leaveTypes, setLeaveTypes] = useState({});
   const [syncInfo, setSyncInfo] = useState({ status: 'Disconnected', user: '' });
 
   useEffect(() => {
@@ -25,8 +29,6 @@ const DSR = () => {
       .catch(e => console.error('Failed to load sync status in DSR:', e));
   }, []);
 
-  const [isEditMode, setIsEditMode] = useState(false);
-  const [localEdits, setLocalEdits] = useState({});
   const [isImprovingRemark, setIsImprovingRemark] = useState(null);
 
   // Export Modal State
@@ -43,9 +45,7 @@ const DSR = () => {
   };
 
   useEffect(() => {
-    setLocalEdits({});
-    setLeaveTypes({});
-    setIsEditMode(false);
+    clearDsrLocalEdits();
   }, [selectedDate]);
 
   const handleUpdate = (task_id, field, value) => {
@@ -54,31 +54,25 @@ const DSR = () => {
 
   const handleLocalUpdate = (task_id, owner_id, field, value) => {
     const key = `${task_id}-${owner_id}`;
-    setLocalEdits(prev => ({
-      ...prev,
-      [key]: {
-        ...(prev[key] || {}),
-        [field]: value
-      }
-    }));
+    setDsrLocalEdit(key, field, value);
   };
 
   const currentLocalVal = (t, o, field) => {
     const key = `${t.sno}-${o.id}`;
 
-    if (localEdits[key] && localEdits[key][field] !== undefined) {
+    if (dsrLocalEdits[key] && dsrLocalEdits[key][field] !== undefined) {
       if (field === 'todayFT' || field === 'completedFT') {
-        if (localEdits[key][field] === '') return '';
+        if (dsrLocalEdits[key][field] === '') return '';
       }
-      return localEdits[key][field];
+      return dsrLocalEdits[key][field];
     }
 
     if (field === 'completedFT') {
       const baseCompleted = o.completedFT !== undefined ? o.completedFT : 0;
-      if (localEdits[key] && localEdits[key]['todayFT'] !== undefined) {
+      if (dsrLocalEdits[key] && dsrLocalEdits[key]['todayFT'] !== undefined) {
         const oldTodayRaw = (o.todayFTs && o.todayFTs[selectedDate]);
         const oldTodayVal = (oldTodayRaw === undefined || oldTodayRaw === '') ? 0 : parseInt(oldTodayRaw, 10);
-        const newTodayRaw = localEdits[key]['todayFT'];
+        const newTodayRaw = dsrLocalEdits[key]['todayFT'];
         const newTodayVal = newTodayRaw === '' ? 0 : parseInt(newTodayRaw, 10);
         const delta = newTodayVal - oldTodayVal;
         return baseCompleted + delta;
@@ -94,18 +88,20 @@ const DSR = () => {
   };
 
   const handleSave = () => {
-    if (Object.keys(localEdits).length === 0 && Object.keys(leaveTypes).length === 0) {
-      setIsEditMode(false);
+    if (Object.keys(dsrLocalEdits).length === 0 && Object.keys(dsrLeaveTypes).length === 0) {
+      setDsrIsEditMode(false);
       return;
     }
 
     const tasksToUpdate = {};
-    Object.keys(localEdits).forEach(key => {
+    Object.keys(dsrLocalEdits).forEach(key => {
       const [t_sno_str, o_id] = key.split('-');
       const t_sno = Number(t_sno_str);
       if (!tasksToUpdate[t_sno]) tasksToUpdate[t_sno] = [];
-      tasksToUpdate[t_sno].push({ ownerId: o_id, edits: localEdits[key] });
+      tasksToUpdate[t_sno].push({ ownerId: o_id, edits: dsrLocalEdits[key] });
     });
+
+    const tasksUpdatesMap = {};
 
     Object.keys(tasksToUpdate).forEach(t_sno_str => {
       const t_sno = Number(t_sno_str);
@@ -147,28 +143,29 @@ const DSR = () => {
         });
       });
 
-      updateTask(t_sno, { owners: newOwners });
+      tasksUpdatesMap[t_sno] = { owners: newOwners };
     });
 
-    Object.keys(leaveTypes).forEach(name => {
-      setTeamMode(name, selectedDate, { leaveType: leaveTypes[name] });
+    // Save all tasks in a single atomic bulk update action
+    if (Object.keys(tasksUpdatesMap).length > 0) {
+      updateMultipleTasks(tasksUpdatesMap);
+    }
+
+    Object.keys(dsrLeaveTypes).forEach(name => {
+      setTeamMode(name, selectedDate, { leaveType: dsrLeaveTypes[name] });
     });
 
-    setLocalEdits({});
-    setLeaveTypes({});
-    setIsEditMode(false);
+    clearDsrLocalEdits();
     alert(`Success: DSR Data safely committed to the database!`);
   };
 
   const handleRestore = () => {
-    if (Object.keys(localEdits).length > 0 || Object.keys(leaveTypes).length > 0) {
+    if (Object.keys(dsrLocalEdits).length > 0 || Object.keys(dsrLeaveTypes).length > 0) {
       if (window.confirm("Are you sure you want to discard your unsaved changes and restore from the database?")) {
-        setLocalEdits({});
-        setLeaveTypes({});
-        setIsEditMode(false);
+        clearDsrLocalEdits();
       }
     } else {
-      setIsEditMode(false);
+      setDsrIsEditMode(false);
     }
   };
 
@@ -181,7 +178,7 @@ const DSR = () => {
   };
 
   const handleCopyEmail = async () => {
-    if (isEditMode) {
+    if (dsrIsEditMode) {
       alert("Please Save or Discard your edits before exporting the Email MOM.");
       return;
     }
@@ -327,8 +324,35 @@ const DSR = () => {
       await navigator.clipboard.write(data);
       alert('Email MOM successfully formatted and copied to your clipboard!\n\nOpen Outlook and press Ctrl+V to paste the styled table exactly as requested!');
     } catch (err) {
-      console.error('Failed to copy html: ', err);
-      alert('Clipboard Access Denied. Make sure you are accessing the site over localhost or HTTPS.');
+      console.error('Failed to copy HTML using navigator.clipboard: ', err);
+      try {
+        const doc = document;
+        const container = doc.createElement('div');
+        container.innerHTML = html;
+        container.style.position = 'fixed';
+        container.style.pointerEvents = 'none';
+        container.style.opacity = '0';
+        container.style.left = '-9999px';
+        doc.body.appendChild(container);
+
+        window.getSelection().removeAllRanges();
+        const range = doc.createRange();
+        range.selectNode(container);
+        window.getSelection().addRange(range);
+
+        const success = doc.execCommand('copy');
+        doc.body.removeChild(container);
+        window.getSelection().removeAllRanges();
+
+        if (success) {
+          alert('Email MOM successfully formatted and copied to your clipboard (fallback mode)!\n\nOpen Outlook and press Ctrl+V to paste the styled table exactly as requested!');
+        } else {
+          throw new Error('execCommand copy failed');
+        }
+      } catch (fallbackErr) {
+        console.error('Fallback copy failed: ', fallbackErr);
+        alert('Clipboard Access Denied. Make sure you are accessing the site over localhost or HTTPS.');
+      }
     }
   };
 
@@ -555,7 +579,7 @@ const DSR = () => {
         <div>
           <h1 className="title" style={{ margin: 0, display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
             Daily Status Report
-            {isEditMode && <span className="badge badge-warning" style={{ fontSize: '0.75rem', fontWeight: 'bold' }}>EDIT MODE ACTIVE</span>}
+            {dsrIsEditMode && <span className="badge badge-warning" style={{ fontSize: '0.75rem', fontWeight: 'bold' }}>EDIT MODE ACTIVE</span>}
             
             {(() => {
               const getSyncPill = (status) => {
@@ -594,19 +618,19 @@ const DSR = () => {
               type="date"
               value={selectedDate}
               onChange={(e) => {
-                if (Object.keys(localEdits).length > 0) {
+                if (Object.keys(dsrLocalEdits).length > 0) {
                   if (!window.confirm("You have unsaved changes. Discard and switch dates?")) return;
                 }
                 setSelectedDate(e.target.value);
               }}
               style={{ border: 'none', outline: 'none', fontWeight: 600, color: 'var(--primary)', cursor: 'pointer' }}
-              disabled={isEditMode}
+              disabled={dsrIsEditMode}
             />
 
             <div style={{ borderLeft: '1px solid #ccc', height: '24px', margin: '0 8px' }}></div>
 
-            {!isEditMode ? (
-              <button className="btn btn-secondary" onClick={() => setIsEditMode(true)} style={{ border: '1px solid currentColor' }}>Edit Data</button>
+            {!dsrIsEditMode ? (
+              <button className="btn btn-secondary" onClick={() => setDsrIsEditMode(true)} style={{ border: '1px solid currentColor' }}>Edit Data</button>
             ) : (
               <>
                 <button className="btn btn-primary" onClick={handleSave} style={{ background: '#16a34a', borderColor: '#16a34a', color: 'white' }}>Store Saved Data</button>
@@ -705,9 +729,9 @@ const DSR = () => {
                       <td style={{ ...cellStyle, background: getStatusBg(t.status), fontWeight: 'bold' }}>
                         <select
                           value={t.status}
-                          onChange={(e) => isEditMode && handleUpdate(t.sno, 'status', e.target.value)}
-                          style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', fontWeight: 'inherit', color: 'inherit', appearance: 'none', cursor: isEditMode ? 'pointer' : 'default' }}
-                          disabled={!isEditMode}
+                          onChange={(e) => dsrIsEditMode && handleUpdate(t.sno, 'status', e.target.value)}
+                          style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', fontWeight: 'inherit', color: 'inherit', appearance: 'none', cursor: dsrIsEditMode ? 'pointer' : 'default' }}
+                          disabled={!dsrIsEditMode}
                         >
                           <option>In Progress</option>
                           <option>Yet To Start</option>
@@ -729,7 +753,7 @@ const DSR = () => {
                           onChange={(e) => handleUpdate(t.sno, 'remarks', e.target.value)}
                           placeholder="General Task Remarks..."
                           style={{ width: '100%', height: '100%', minHeight: '35px', border: 'none', padding: '4px', resize: 'vertical', background: 'transparent', outline: 'none', fontSize: '0.75rem', fontFamily: 'inherit' }}
-                          disabled={!isEditMode}
+                          disabled={!dsrIsEditMode}
                         />
                       </td>
                     </tr>
@@ -772,7 +796,7 @@ const DSR = () => {
 
                       {/* --- INDIVIDUAL OWNER METRIC COLUMNS --- */}
                       <td style={{ ...cellStyle, padding: 0, background: '#f0fdf4' }}>
-                        {isEditMode ? (
+                        {dsrIsEditMode ? (
                           <input
                             type="number"
                             value={compVal}
@@ -784,7 +808,7 @@ const DSR = () => {
                         )}
                       </td>
                       <td style={{ ...cellStyle, padding: 0, background: '#f0f9ff' }}>
-                        {isEditMode ? (
+                        {dsrIsEditMode ? (
                           <input
                             type="number"
                             value={todayVal}
@@ -801,9 +825,9 @@ const DSR = () => {
                         <td rowSpan={ownersCount} style={{ ...cellStyle, background: getStatusBg(t.status), fontWeight: 'bold' }}>
                           <select
                             value={t.status}
-                            onChange={(e) => isEditMode && handleUpdate(t.sno, 'status', e.target.value)}
-                            style={{ width: '100%', height: '100%', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', fontWeight: 'inherit', color: 'inherit', appearance: 'none', cursor: isEditMode ? 'pointer' : 'default' }}
-                            disabled={!isEditMode}
+                            onChange={(e) => dsrIsEditMode && handleUpdate(t.sno, 'status', e.target.value)}
+                            style={{ width: '100%', height: '100%', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', fontWeight: 'inherit', color: 'inherit', appearance: 'none', cursor: dsrIsEditMode ? 'pointer' : 'default' }}
+                            disabled={!dsrIsEditMode}
                           >
                             <option>In Progress</option>
                             <option>Yet To Start</option>
@@ -822,7 +846,7 @@ const DSR = () => {
                       <td style={{ ...cellStyle }}>{o.startDate ? o.startDate.split('-').reverse().join('-') : 'TBD'}</td>
                       <td style={{ ...cellStyle }}>{o.endDate ? o.endDate.split('-').reverse().join('-') : 'TBD'}</td>
                       <td style={{ ...cellStyle, padding: 0 }}>
-                        {isEditMode ? (
+                        {dsrIsEditMode ? (
                           <div style={{ position: 'relative', height: '100%' }}>
                             <textarea
                               value={dailyRemark}
@@ -891,15 +915,15 @@ const DSR = () => {
             </thead>
             <tbody>
               {totalLeaveList.map(m => {
-                const currentLeaveType = leaveTypes[m.name] !== undefined ? leaveTypes[m.name] : (m.leaveType || '');
+                const currentLeaveType = dsrLeaveTypes[m.name] !== undefined ? dsrLeaveTypes[m.name] : (m.leaveType || '');
                 return (
                   <tr key={m.name}>
                     <td style={{ padding: '6px 12px', border: '1px solid black', background: 'white', textAlign: 'center' }}>{m.name}</td>
                     <td style={{ padding: 0, border: '1px solid black', background: '#0ea5e9' }}>
-                      {isEditMode ? (
+                      {dsrIsEditMode ? (
                         <select
                           value={currentLeaveType}
-                          onChange={e => setLeaveTypes({ ...leaveTypes, [m.name]: e.target.value })}
+                          onChange={e => setDsrLeaveType(m.name, e.target.value)}
                           style={{ width: '100%', height: '100%', minHeight: '30px', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', color: 'black', cursor: 'pointer', fontSize: '0.875rem' }}
                         >
                           <option value="" disabled>Select Leave Type</option>

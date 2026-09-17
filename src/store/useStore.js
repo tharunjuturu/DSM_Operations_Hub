@@ -25,6 +25,9 @@ const storeConfig = (set, get) => ({
   reviews: [],
   excelTasks: [],
   layouts: [],
+  dsrLocalEdits: {},
+  dsrLeaveTypes: {},
+  dsrIsEditMode: false,
 
   // Personal Tracker Models
   currentVariant: 'vsm_pt',
@@ -80,6 +83,37 @@ const storeConfig = (set, get) => ({
       })
     };
   }),
+
+  updateMultipleTasks: (updatesMap) => set((state) => {
+    const today = getToday();
+    const newTasks = state.tasks.map(t => {
+      const updates = updatesMap[t.sno];
+      if (!updates) return t;
+      const merged = { ...t, ...updates };
+      if (updates.owners) {
+        merged.totalFT = merged.owners.reduce((sum, o) => sum + Number(o.totalFT || 0), 0);
+        merged.completedFT = merged.owners.reduce((sum, o) => sum + Number(o.completedFT || 0), 0);
+        merged.progress = merged.totalFT > 0 ? (merged.completedFT / merged.totalFT) : 0;
+      }
+      return { ...merged, last_updated: today };
+    });
+    return { tasks: newTasks };
+  }),
+
+  setDsrLocalEdit: (key, field, value) => set((state) => ({
+    dsrLocalEdits: {
+      ...state.dsrLocalEdits,
+      [key]: { ...(state.dsrLocalEdits[key] || {}), [field]: value }
+    }
+  })),
+
+  setDsrLeaveType: (name, value) => set((state) => ({
+    dsrLeaveTypes: { ...state.dsrLeaveTypes, [name]: value }
+  })),
+
+  setDsrIsEditMode: (val) => set({ dsrIsEditMode: val }),
+
+  clearDsrLocalEdits: () => set({ dsrLocalEdits: {}, dsrLeaveTypes: {}, dsrIsEditMode: false }),
 
   appendTaskLog: (log) => set((state) => ({ logs: [...state.logs, log] })),
   upsertTaskDailyLog: (taskSno, ownerName, date, updates) => set((state) => {
@@ -180,7 +214,8 @@ export const useStore = create((set, get) => {
 
     // Check if this update is purely transient UI state (e.g., currentVariant, systemInfo)
     const partialState = typeof updateFnOrObj === 'function' ? updateFnOrObj(get()) : updateFnOrObj;
-    const isTransient = partialState && Object.keys(partialState).every(k => k === 'currentVariant' || k === 'systemInfo');
+    const transientKeys = ['currentVariant', 'systemInfo', 'dsrLocalEdits', 'dsrLeaveTypes', 'dsrIsEditMode'];
+    const isTransient = partialState && Object.keys(partialState).every(k => transientKeys.includes(k));
     if (isTransient) return;
 
     // 2. Debounce database updates to prevent redundant large JSON file writes on every cell click
