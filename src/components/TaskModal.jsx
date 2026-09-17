@@ -27,6 +27,86 @@ const calculatePlannedFT = (totalFTVal, startVal, endVal, bufferDaysVal) => {
   }
 };
 
+const FUNCTION_PRESETS = [
+  "FSE_ADV (ADAS_HMI)",
+  "FSE_AEBS",
+  "FSE_ISA (ADAS_HMI)",
+  "FSE_RCTA (ADAS_HMI)",
+  "FSEE_ACT_TC",
+  "FSEE_ACTIVE_BRAKE",
+  "FSEE_AFTM",
+  "FSEE_ALARM",
+  "FSEE_ARAMTH",
+  "FSEE_ATSV",
+  "FSEE_AVN",
+  "FSEE_BE_GUIDED",
+  "FSEE_BIG_DATA",
+  "FSEE_CLIM_IHM",
+  "FSEE_CONFORT_THERMIQUE",
+  "FSEE_CONNECTING_AND_MIRRORING",
+  "FSEE_CVMODE",
+  "FSEE_DAA",
+  "FSEE_DAGMP",
+  "FSEE_DDA",
+  "FSEE_DEFROST",
+  "FSEE_DEH",
+  "FSEE_DESP",
+  "FSEE_EDR",
+  "FSEE_ECLI",
+  "FSEE_EEM_LV",
+  "FSEE_EEM_VLV",
+  "FSEE_EPB",
+  "FSEE_ESL",
+  "FSEE_FAP",
+  "FSEE_GAV",
+  "FSEE_GCT",
+  "FSEE_GIH",
+  "FSEE_GSI",
+  "FSEE_HA",
+  "FSEE_HADC",
+  "FSEE_INFRA_EE",
+  "FSEE_INFO",
+  "FSEE_INSTRUM",
+  "FSEE_JGC",
+  "FSEE_LIGHTING",
+  "FSEE_LISTEN_AUDIO_MEDIA",
+  "FSEE_LISTEN_RADIO",
+  "FSEE_MAINT",
+  "FSEE_MONTAGE",
+  "FSEE_OBD",
+  "FSEE_ODB",
+  "FSEE_OFOARM",
+  "FSEE_OTA_UPDATE",
+  "FSEE_PARAM",
+  "FSEE_PCGA",
+  "FSEE_PHAB",
+  "FSEE_PHOT",
+  "FSEE_PICC",
+  "FSEE_PRECOND",
+  "FSEE_PUCSM",
+  "FSEE_REMOTE_SERVICES",
+  "FSEE_REPAS_HAB_NEA_NTW",
+  "FSEE_REPAS_HAB_SEV",
+  "FSEE_REPAS_SC",
+  "FSEE_RTAB",
+  "FSEE_RVM",
+  "FSEE_S_AS",
+  "FSEE_SBR",
+  "FSEE_SCPB",
+  "FSEE_SCR",
+  "FSEE_SLI_ETSR",
+  "FSEE_SUPERVISION",
+  "FSEE_TELEDIAG",
+  "FSEE_TPMS",
+  "FSEE_TSC",
+  "FSEE_TURNKEY_CPK4",
+  "FSEE_ULTRASONIC_PERCEPTION",
+  "FSEE_VISIO_PARK",
+  "FSEE_VMC",
+  "FSEE_VOL",
+  "FSEE_WL"
+];
+
 const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
   const tasks = useStore(state => state.tasks);
   const teamMembers = useStore(state => state.teamMembers);
@@ -50,6 +130,42 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
   const [error, setError] = useState('');
   const [isImprovingGroup, setIsImprovingGroup] = useState(false);
   const [improvingOwnerIdx, setImprovingOwnerIdx] = useState(null);
+  
+  // Searchable Function Combobox State
+  const [showFunctionDropdown, setShowFunctionDropdown] = useState(false);
+  const functionRef = React.useRef(null);
+
+  // Combine preset list with existing function names in database
+  const availableFunctions = React.useMemo(() => {
+    const fromTasks = (tasks || []).map(t => t.function).filter(Boolean);
+    const combined = Array.from(new Set([...FUNCTION_PRESETS, ...fromTasks]));
+    return combined.sort();
+  }, [tasks]);
+
+  // Filter options based on user typing
+  const filteredFunctions = React.useMemo(() => {
+    const query = (formData.function || '').trim().toLowerCase();
+    if (!query) return availableFunctions;
+    return availableFunctions.filter(f => f.toLowerCase().includes(query));
+  }, [availableFunctions, formData.function]);
+
+  // Check if current typed input is a new custom function
+  const isCustomFunction = React.useMemo(() => {
+    const val = (formData.function || '').trim();
+    if (!val) return false;
+    return !availableFunctions.some(f => f.toLowerCase() === val.toLowerCase());
+  }, [availableFunctions, formData.function]);
+
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (functionRef.current && !functionRef.current.contains(e.target)) {
+        setShowFunctionDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleImproveGroupRemarks = async () => {
     setIsImprovingGroup(true);
@@ -220,9 +336,80 @@ const TaskModal = ({ isOpen, onClose, existingTask = null }) => {
               <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>S.No</label>
               <input type="number" value={formData.sno} disabled style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)', background: 'var(--bg)' }} />
             </div>
-            <div>
+            <div ref={functionRef} style={{ position: 'relative' }}>
               <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>Function *</label>
-              <input type="text" value={formData.function} onChange={e => setFormData({...formData, function: e.target.value})} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid var(--border)' }} />
+              <div style={{ position: 'relative' }}>
+                <input
+                  type="text"
+                  value={formData.function}
+                  onChange={e => {
+                    setFormData({ ...formData, function: e.target.value });
+                    setShowFunctionDropdown(true);
+                  }}
+                  onFocus={() => setShowFunctionDropdown(true)}
+                  placeholder="Type or select Function..."
+                  style={{ width: '100%', padding: '8px 24px 8px 8px', borderRadius: '4px', border: '1px solid var(--border)' }}
+                />
+                <span
+                  onClick={() => setShowFunctionDropdown(prev => !prev)}
+                  style={{ position: 'absolute', right: '8px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer', opacity: 0.5, fontSize: '0.7rem', userSelect: 'none' }}
+                >
+                  ▼
+                </span>
+              </div>
+
+              {/* Searchable Combobox Dropdown */}
+              {showFunctionDropdown && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: 0,
+                  right: 0,
+                  maxHeight: '220px',
+                  overflowY: 'auto',
+                  background: 'white',
+                  border: '1px solid var(--border)',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                  zIndex: 1000,
+                  marginTop: '4px'
+                }}>
+                  {filteredFunctions.length > 0 ? (
+                    filteredFunctions.map((fnName) => (
+                      <div
+                        key={fnName}
+                        onClick={() => {
+                          setFormData({ ...formData, function: fnName });
+                          setShowFunctionDropdown(false);
+                        }}
+                        style={{
+                          padding: '8px 12px',
+                          fontSize: '0.85rem',
+                          cursor: 'pointer',
+                          borderBottom: '1px solid #f1f5f9',
+                          background: formData.function === fnName ? '#eff6ff' : 'transparent',
+                          color: formData.function === fnName ? '#2563eb' : 'inherit',
+                          fontWeight: formData.function === fnName ? 600 : 400
+                        }}
+                        onMouseDown={(e) => e.preventDefault()}
+                      >
+                        {fnName}
+                      </div>
+                    ))
+                  ) : (
+                    <div style={{ padding: '10px 12px', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                      No matching functions found in standard list.
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Custom Function Notification Badge */}
+              {isCustomFunction && (
+                <div style={{ fontSize: '0.72rem', color: '#d97706', background: '#fffbe6', border: '1px solid #ffe58f', borderRadius: '4px', padding: '3px 8px', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <span>⚠️</span> <span>New custom function: <b>"{formData.function}"</b> (Will be saved as new entry)</span>
+                </div>
+              )}
             </div>
             <div>
               <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '4px' }}>Task Type *</label>
