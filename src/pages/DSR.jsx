@@ -11,7 +11,7 @@ const DSR = () => {
     updateTask, teamModes, getDSRTasks, setTeamMode,
     dsrLocalEdits, dsrLeaveTypes, dsrIsEditMode,
     setDsrLocalEdit, setDsrLeaveType, setDsrIsEditMode,
-    clearDsrLocalEdits, updateMultipleTasks
+    clearDsrLocalEdits, updateMultipleTasks, addToast
   } = useStore();
   const dsrTasks = getDSRTasks();
 
@@ -170,13 +170,14 @@ const DSR = () => {
     });
 
     clearDsrLocalEdits();
-    alert(`Success: DSR Data safely committed to the database!`);
+    addToast('Success: DSR Data safely committed to the database!', 'success');
   };
 
   const handleRestore = () => {
     if (Object.keys(dsrLocalEdits).length > 0 || Object.keys(dsrLeaveTypes).length > 0) {
       if (window.confirm("Are you sure you want to discard your unsaved changes and restore from the database?")) {
         clearDsrLocalEdits();
+        addToast('Unsaved changes discarded.', 'info');
       }
     } else {
       setDsrIsEditMode(false);
@@ -193,7 +194,7 @@ const DSR = () => {
 
   const handleCopyEmail = async () => {
     if (dsrIsEditMode) {
-      alert("Please Save or Discard your edits before exporting the Email MOM.");
+      addToast('Please Save or Discard your edits before exporting the Email MOM.', 'warning');
       return;
     }
 
@@ -336,7 +337,7 @@ const DSR = () => {
       const blob = new Blob([html], { type });
       const data = [new ClipboardItem({ [type]: blob })];
       await navigator.clipboard.write(data);
-      alert('Email MOM successfully formatted and copied to your clipboard!\n\nOpen Outlook and press Ctrl+V to paste the styled table exactly as requested!');
+      addToast('Email MOM formatted and copied to clipboard!\nOpen Outlook and press Ctrl+V to paste table.', 'success');
     } catch (err) {
       console.error('Failed to copy HTML using navigator.clipboard: ', err);
       try {
@@ -359,20 +360,20 @@ const DSR = () => {
         window.getSelection().removeAllRanges();
 
         if (success) {
-          alert('Email MOM successfully formatted and copied to your clipboard (fallback mode)!\n\nOpen Outlook and press Ctrl+V to paste the styled table exactly as requested!');
+          addToast('Email MOM formatted and copied to clipboard (fallback mode)!', 'info');
         } else {
           throw new Error('execCommand copy failed');
         }
       } catch (fallbackErr) {
         console.error('Fallback copy failed: ', fallbackErr);
-        alert('Clipboard Access Denied. Make sure you are accessing the site over localhost or HTTPS.');
+        addToast('Clipboard Access Denied. Access site over localhost or HTTPS.', 'error');
       }
     }
   };
 
   const handleExportExcel = async () => {
     if (!exportStart || !exportEnd) {
-      alert("Please select both start and end dates for export.");
+      addToast('Please select both start and end dates for export.', 'warning');
       return;
     }
 

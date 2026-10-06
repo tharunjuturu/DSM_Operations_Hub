@@ -14,6 +14,7 @@ import Burndown from './pages/Burndown';
 import ManagerHub from './pages/ManagerHub';
 import LayoutsPage from './pages/LayoutsPage';
 import SyncPage from './pages/SyncPage';
+import ToastContainer from './components/ToastContainer';
 import { useStore } from './store/useStore';
 
 function App() {
@@ -58,25 +59,28 @@ function App() {
   }, [navigate, currentVariant]);
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePortal />} />
-      <Route path="/sync" element={<SyncPage />} />
-      <Route path="/hub" element={<Navigate to="/hub/vsm_pt/dashboard" replace />} />
-      <Route path="/hub/:variant" element={<Layout />}>
-        <Route index element={<Navigate to="dashboard" replace />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="analytics-dashboard" element={<AnalyticsDashboard />} />
-        <Route path="tasks" element={<Tasks />} />
-        <Route path="reviews" element={<Reviews />} />
-        <Route path="dsr" element={<DSR />} />
-        <Route path="layouts" element={<LayoutsPage />} />
-        <Route path="team" element={<Team />} />
-        <Route path="manager-hub" element={<ManagerHub />} />
-        <Route path="archive" element={<Archive />} />
-        <Route path="burndown" element={<Burndown />} />
-        <Route path="productivity" element={<Productivity />} />
-      </Route>
-    </Routes>
+    <>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<HomePortal />} />
+        <Route path="/sync" element={<SyncPage />} />
+        <Route path="/hub" element={<Navigate to="/hub/vsm_pt/dashboard" replace />} />
+        <Route path="/hub/:variant" element={<Layout />}>
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="analytics-dashboard" element={<AnalyticsDashboard />} />
+          <Route path="tasks" element={<Tasks />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="dsr" element={<DSR />} />
+          <Route path="layouts" element={<LayoutsPage />} />
+          <Route path="team" element={<Team />} />
+          <Route path="manager-hub" element={<ManagerHub />} />
+          <Route path="archive" element={<Archive />} />
+          <Route path="burndown" element={<Burndown />} />
+          <Route path="productivity" element={<Productivity />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
 

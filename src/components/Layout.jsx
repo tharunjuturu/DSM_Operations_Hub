@@ -4,10 +4,11 @@ import { useStore } from '../store/useStore';
 import { differenceInDays, parseISO } from 'date-fns';
 import {
   LayoutDashboard, CheckSquare, ClipboardCheck, FileText,
-  Users, Archive, Bot, X, Sparkles, AlertTriangle, ArrowLeft, BarChart2, Settings, Activity, BookOpen, ShieldCheck, Sliders, RefreshCw
+  Users, Archive, Bot, X, Sparkles, AlertTriangle, ArrowLeft, BarChart2, Settings, Activity, BookOpen, ShieldCheck, Sliders, RefreshCw, Menu
 } from 'lucide-react';
 
 const Layout = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [aiOpen, setAiOpen] = useState(false);
   const [aiLoading, setAiLoading] = useState(false);
   const [aiResult, setAiResult] = useState(null);
@@ -50,26 +51,44 @@ const Layout = () => {
 
   return (
     <div style={{ display: 'flex', width: '100vw', minHeight: '100vh', position: 'relative' }}>
-      <aside className="glass" style={{ width: 'var(--sidebar-w)', borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', padding: 'var(--space-lg) 0', zIndex: 10 }}>
-        <div style={{ padding: '0 var(--space-lg)', marginBottom: 'var(--space-xl)' }}>
-          <h1 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+      {/* Mobile Drawer Overlay Backdrop */}
+      {sidebarOpen && (
+        <div 
+          onClick={() => setSidebarOpen(false)} 
+          style={{
+            position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+            background: 'rgba(0,0,0,0.4)', zIndex: 90
+          }}
+        />
+      )}
+
+      <aside className={`sidebar-drawer ${sidebarOpen ? 'open' : ''} glass`} style={{ width: 'var(--sidebar-w)', borderRight: '1px solid var(--border)', display: 'flex', flexDirection: 'column', padding: 'var(--space-lg) 0', zIndex: 100 }}>
+        <div style={{ padding: '0 var(--space-lg)', marginBottom: 'var(--space-xl)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <h1 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>
             <div style={{ width: '24px', height: '24px', background: 'var(--primary)', borderRadius: '6px' }} />
             DSM Ops Hub
           </h1>
+          <button 
+            onClick={() => setSidebarOpen(false)} 
+            className="mobile-close-btn btn-icon-sm"
+            style={{ display: 'none' }}
+          >
+            <X size={20} />
+          </button>
         </div>
 
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '0 var(--space-md)' }}>
-          <NavItem to={`/hub/${variant}/dashboard`} icon={<LayoutDashboard size={20} />} label="Overview" />
-          <NavItem to={`/hub/${variant}/analytics-dashboard`} icon={<BarChart2 size={20} />} label="Analytics Dashboard" />
-          <NavItem to={`/hub/${variant}/tasks`} icon={<CheckSquare size={20} />} label="Task Info" />
-          <NavItem to={`/hub/${variant}/reviews`} icon={<ClipboardCheck size={20} />} label="Task Review" />
-          <NavItem to={`/hub/${variant}/dsr`} icon={<FileText size={20} />} label="DSR Generator" />
-          <NavItem to={`/hub/${variant}/layouts`} icon={<Sliders size={20} />} label="Custom Layouts" />
-          <NavItem to={`/hub/${variant}/team`} icon={<Users size={20} />} label="Team Data Hub" />
-          <NavItem to={`/hub/${variant}/manager-hub`} icon={<ShieldCheck size={20} />} label="Manager Hub" />
-          <NavItem to={`/hub/${variant}/archive`} icon={<Archive size={20} />} label="Archive" />
-          <NavItem to={`/hub/${variant}/burndown`} icon={<CheckSquare size={20} />} label="Burndown Matrix" />
-          <NavItem to={`/hub/${variant}/productivity`} icon={<Activity size={20} />} label="Daily Productivity" />
+          <NavItem to={`/hub/${variant}/dashboard`} icon={<LayoutDashboard size={20} />} label="Overview" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/analytics-dashboard`} icon={<BarChart2 size={20} />} label="Analytics Dashboard" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/tasks`} icon={<CheckSquare size={20} />} label="Task Info" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/reviews`} icon={<ClipboardCheck size={20} />} label="Task Review" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/dsr`} icon={<FileText size={20} />} label="DSR Generator" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/layouts`} icon={<Sliders size={20} />} label="Custom Layouts" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/team`} icon={<Users size={20} />} label="Team Data Hub" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/manager-hub`} icon={<ShieldCheck size={20} />} label="Manager Hub" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/archive`} icon={<Archive size={20} />} label="Archive" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/burndown`} icon={<CheckSquare size={20} />} label="Burndown Matrix" onClick={() => setSidebarOpen(false)} />
+          <NavItem to={`/hub/${variant}/productivity`} icon={<Activity size={20} />} label="Daily Productivity" onClick={() => setSidebarOpen(false)} />
           
           <div style={{ marginTop: 'auto', paddingTop: '24px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
             <a 
@@ -103,8 +122,18 @@ const Layout = () => {
       </aside>
 
       <main style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
-        <header className="glass" style={{ height: '30px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 var(--space-xl)', flexShrink: 0 }}>
-          <h2 style={{ fontSize: '0.875rem', fontWeight: '500', color: 'var(--text-muted)' }}> {systemInfo?.username || 'System User'} </h2>
+        <header className="glass" style={{ height: '42px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 var(--space-lg)', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button 
+              onClick={() => setSidebarOpen(true)}
+              className="mobile-menu-toggle btn-icon-sm"
+              style={{ display: 'none' }}
+              title="Open Navigation Menu"
+            >
+              <Menu size={22} />
+            </button>
+            <h2 style={{ fontSize: '0.875rem', fontWeight: '500', color: 'var(--text-muted)', margin: 0 }}> {systemInfo?.username || 'System User'} </h2>
+          </div>
           <span style={{ fontSize: '0.75rem', fontWeight: '600', textTransform: 'uppercase', color: 'var(--primary)', background: 'var(--purple-bg)', padding: '2px 8px', borderRadius: '4px' }}>
             {variant ? variant.toUpperCase().replace('_', ' ') : ''}
           </span>
@@ -168,10 +197,11 @@ const Layout = () => {
   );
 };
 
-const NavItem = ({ to, icon, label }) => {
+const NavItem = ({ to, icon, label, onClick }) => {
   return (
     <NavLink
       to={to}
+      onClick={onClick}
       className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}
       style={({ isActive }) => ({
         display: 'flex', alignItems: 'center', gap: '12px', padding: '10px 16px', borderRadius: '8px',

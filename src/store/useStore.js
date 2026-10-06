@@ -28,6 +28,19 @@ const storeConfig = (set, get) => ({
   dsrLocalEdits: {},
   dsrLeaveTypes: {},
   dsrIsEditMode: false,
+  toasts: [],
+  addToast: (message, type = 'info', duration = 4000) => {
+    const id = 'toast_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4);
+    set((state) => ({ toasts: [...(state.toasts || []), { id, message, type }] }));
+    if (duration > 0) {
+      setTimeout(() => {
+        set((state) => ({ toasts: (state.toasts || []).filter((t) => t.id !== id) }));
+      }, duration);
+    }
+    return id;
+  },
+  removeToast: (id) => set((state) => ({ toasts: (state.toasts || []).filter((t) => t.id !== id) })),
+
 
   // Personal Tracker Models
   currentVariant: 'vsm_pt',
@@ -214,7 +227,7 @@ export const useStore = create((set, get) => {
 
     // Check if this update is purely transient UI state (e.g., currentVariant, systemInfo)
     const partialState = typeof updateFnOrObj === 'function' ? updateFnOrObj(get()) : updateFnOrObj;
-    const transientKeys = ['currentVariant', 'systemInfo', 'dsrLocalEdits', 'dsrLeaveTypes', 'dsrIsEditMode'];
+    const transientKeys = ['currentVariant', 'systemInfo', 'dsrLocalEdits', 'dsrLeaveTypes', 'dsrIsEditMode', 'toasts'];
     const isTransient = partialState && Object.keys(partialState).every(k => transientKeys.includes(k));
     if (isTransient) return;
 

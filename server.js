@@ -7,6 +7,8 @@ import { fileURLToPath } from 'url';
 import { config } from './backend/config/index.js';
 import routes from './backend/routes/index.js';
 import { requestContext } from './backend/utils/context.js';
+import { createBackup } from './backend/github_sync/backup_manager.js';
+import { getDbPath } from './backend/database/connection.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,4 +47,17 @@ app.listen(config.port, () => {
   console.log(`\n✅ DSM Ops Hub Backend Server running on port ${config.port}`);
   console.log(`💾 Database mapped to: ${config.dbPath}\n`);
   console.log(`🏗️  Modular Architecture Pattern Active 🚀\n`);
+
+  // Start automated hourly rolling backup scheduler (every 60 minutes)
+  const ONE_HOUR = 60 * 60 * 1000;
+  setInterval(async () => {
+    try {
+      const backupPath = await createBackup(getDbPath(), 'vsm_pt');
+      if (backupPath) {
+        console.log(`[AUTO-BACKUP] Hourly snapshot created: ${backupPath}`);
+      }
+    } catch (e) {
+      console.error('[AUTO-BACKUP ERROR]', e.message);
+    }
+  }, ONE_HOUR);
 });
