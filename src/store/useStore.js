@@ -286,7 +286,13 @@ export const useStore = create((set, get) => {
                 return updated ? { ...t, owners: newOwners } : t;
               });
             }
-            set(dbState);
+            const curr = get();
+            set({
+              ...dbState,
+              dsrLocalEdits: curr.dsrLocalEdits || {},
+              dsrLeaveTypes: curr.dsrLeaveTypes || {},
+              dsrIsEditMode: curr.dsrIsEditMode || false
+            });
           } else {
             // Create db.json for the first time with base structure
             isHydrating = false;

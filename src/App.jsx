@@ -26,8 +26,12 @@ function App() {
     loadDatabase();
     loadSystemInfo();
 
-    // Auto-sync other tabs when they regain focus
+    // Auto-sync other tabs when they regain focus, unless DSR edit mode is active
     const handleFocus = () => {
+      const state = useStore.getState();
+      if (state.dsrIsEditMode || (state.dsrLocalEdits && Object.keys(state.dsrLocalEdits).length > 0)) {
+        return;
+      }
       loadDatabase();
       loadSystemInfo();
     };
@@ -38,6 +42,9 @@ function App() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
+      if (e.target.isContentEditable) return;
+      const state = useStore.getState();
+      if (state.dsrIsEditMode) return;
 
       if (e.key.toLowerCase() === 'h') navigate('/');
       if (e.key.toLowerCase() === 'n') navigate(`/hub/${currentVariant}/tasks`); 

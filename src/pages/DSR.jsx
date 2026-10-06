@@ -57,6 +57,14 @@ const DSR = () => {
     setDsrLocalEdit(key, field, value);
   };
 
+  const currentTaskVal = (t, field) => {
+    const taskKey = `${t.sno}-task`;
+    if (dsrLocalEdits[taskKey] && dsrLocalEdits[taskKey][field] !== undefined) {
+      return dsrLocalEdits[taskKey][field];
+    }
+    return t[field] !== undefined && t[field] !== null ? t[field] : (field === 'status' ? 'Yet To Start' : '');
+  };
+
   const currentLocalVal = (t, o, field) => {
     const key = `${t.sno}-${o.id}`;
 
@@ -108,42 +116,48 @@ const DSR = () => {
       const taskObj = dsrTasks.find(t => t.sno === t_sno);
       if (!taskObj) return;
 
-      let newOwners = [...taskObj.owners];
+      let newOwners = [...(taskObj.owners || [])];
+      let taskLevelEdits = {};
+
       tasksToUpdate[t_sno].forEach(updateReq => {
-        newOwners = newOwners.map(o => {
-          if (o.id !== updateReq.ownerId) return o;
+        if (updateReq.ownerId === 'task') {
+          taskLevelEdits = { ...taskLevelEdits, ...updateReq.edits };
+        } else if (newOwners.length > 0) {
+          newOwners = newOwners.map(o => {
+            if (o.id !== updateReq.ownerId) return o;
 
-          let updateTarget = { ...o };
-          const e = updateReq.edits;
+            let updateTarget = { ...o };
+            const e = updateReq.edits;
 
-          if (e.completedFT !== undefined) {
-            const num = parseInt(e.completedFT, 10);
-            updateTarget.completedFT = isNaN(num) ? 0 : num;
-          } else if (e.todayFT !== undefined) {
-            const baseCompleted = o.completedFT || 0;
-            const oldTodayRaw = (o.todayFTs && o.todayFTs[selectedDate]);
-            const oldTodayVal = (oldTodayRaw === undefined || oldTodayRaw === '') ? 0 : parseInt(oldTodayRaw, 10);
-            const newTodayRaw = e.todayFT;
-            const newTodayVal = newTodayRaw === '' ? 0 : parseInt(newTodayRaw, 10);
-            const delta = newTodayVal - oldTodayVal;
-            updateTarget.completedFT = baseCompleted + delta;
-          }
+            if (e.completedFT !== undefined) {
+              const num = parseInt(e.completedFT, 10);
+              updateTarget.completedFT = isNaN(num) ? 0 : num;
+            } else if (e.todayFT !== undefined) {
+              const baseCompleted = o.completedFT || 0;
+              const oldTodayRaw = (o.todayFTs && o.todayFTs[selectedDate]);
+              const oldTodayVal = (oldTodayRaw === undefined || oldTodayRaw === '') ? 0 : parseInt(oldTodayRaw, 10);
+              const newTodayRaw = e.todayFT;
+              const newTodayVal = newTodayRaw === '' ? 0 : parseInt(newTodayRaw, 10);
+              const delta = newTodayVal - oldTodayVal;
+              updateTarget.completedFT = baseCompleted + delta;
+            }
 
-          if (e.todayFT !== undefined) {
-            const num = parseInt(e.todayFT, 10);
-            updateTarget.todayFTs = { ...(updateTarget.todayFTs || {}), [selectedDate]: isNaN(num) ? '' : num };
-          }
-          if (e.dailyRemark !== undefined) {
-            updateTarget.dailyRemarks = { ...(updateTarget.dailyRemarks || {}), [selectedDate]: e.dailyRemark };
-          }
-          if (e.status !== undefined) {
-            updateTarget.status = e.status;
-          }
-          return updateTarget;
-        });
+            if (e.todayFT !== undefined) {
+              const num = parseInt(e.todayFT, 10);
+              updateTarget.todayFTs = { ...(updateTarget.todayFTs || {}), [selectedDate]: isNaN(num) ? '' : num };
+            }
+            if (e.dailyRemark !== undefined) {
+              updateTarget.dailyRemarks = { ...(updateTarget.dailyRemarks || {}), [selectedDate]: e.dailyRemark };
+            }
+            if (e.status !== undefined) {
+              updateTarget.status = e.status;
+            }
+            return updateTarget;
+          });
+        }
       });
 
-      tasksUpdatesMap[t_sno] = { owners: newOwners };
+      tasksUpdatesMap[t_sno] = { owners: newOwners, ...taskLevelEdits };
     });
 
     // Save all tasks in a single atomic bulk update action
@@ -726,10 +740,10 @@ const DSR = () => {
                       <td style={{ ...cellStyle }}>{t.completedFT || 0}</td>
                       <td style={{ ...cellStyle }}>--</td>
 
-                      <td style={{ ...cellStyle, background: getStatusBg(t.status), fontWeight: 'bold' }}>
+                      <td style={{ ...cellStyle, background: getStatusBg(currentTaskVal(t, 'status')), fontWeight: 'bold' }}>
                         <select
-                          value={t.status}
-                          onChange={(e) => dsrIsEditMode && handleUpdate(t.sno, 'status', e.target.value)}
+                          value={currentTaskVal(t, 'status')}
+                          onChange={(e) => dsrIsEditMode && handleLocalUpdate(t.sno, 'task', 'status', e.target.value)}
                           style={{ width: '100%', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', fontWeight: 'inherit', color: 'inherit', appearance: 'none', cursor: dsrIsEditMode ? 'pointer' : 'default' }}
                           disabled={!dsrIsEditMode}
                         >
@@ -749,8 +763,8 @@ const DSR = () => {
                       <td style={{ ...cellStyle }}>{t.endDate ? t.endDate.split('-').reverse().join('-') : 'TBD'}</td>
                       <td style={{ ...cellStyle, padding: 0 }}>
                         <textarea
-                          value={t.remarks}
-                          onChange={(e) => handleUpdate(t.sno, 'remarks', e.target.value)}
+                          value={currentTaskVal(t, 'remarks')}
+                          onChange={(e) => dsrIsEditMode && handleLocalUpdate(t.sno, 'task', 'remarks', e.target.value)}
                           placeholder="General Task Remarks..."
                           style={{ width: '100%', height: '100%', minHeight: '35px', border: 'none', padding: '4px', resize: 'vertical', background: 'transparent', outline: 'none', fontSize: '0.75rem', fontFamily: 'inherit' }}
                           disabled={!dsrIsEditMode}
@@ -822,10 +836,10 @@ const DSR = () => {
 
                       {/* --- MERGED TASK STATUS --- */}
                       {isFirst && (
-                        <td rowSpan={ownersCount} style={{ ...cellStyle, background: getStatusBg(t.status), fontWeight: 'bold' }}>
+                        <td rowSpan={ownersCount} style={{ ...cellStyle, background: getStatusBg(currentTaskVal(t, 'status')), fontWeight: 'bold' }}>
                           <select
-                            value={t.status}
-                            onChange={(e) => dsrIsEditMode && handleUpdate(t.sno, 'status', e.target.value)}
+                            value={currentTaskVal(t, 'status')}
+                            onChange={(e) => dsrIsEditMode && handleLocalUpdate(t.sno, 'task', 'status', e.target.value)}
                             style={{ width: '100%', height: '100%', border: 'none', background: 'transparent', outline: 'none', textAlign: 'center', fontWeight: 'inherit', color: 'inherit', appearance: 'none', cursor: dsrIsEditMode ? 'pointer' : 'default' }}
                             disabled={!dsrIsEditMode}
                           >

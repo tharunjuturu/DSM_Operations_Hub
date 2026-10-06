@@ -4,6 +4,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
+    watch: {
+      ignored: ['**/database*.json', '**/*.json', '**/gl_legacy_data.json', '**/uploads/**']
+    },
     proxy: {
       '/db': 'http://localhost:3001',
       '/api': 'http://localhost:3001',
